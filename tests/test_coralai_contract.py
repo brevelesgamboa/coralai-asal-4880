@@ -1,4 +1,4 @@
-"""Tests of the shared format; no simulations, model downloads, or GPU needed."""
+"""Tests of the shared format"""
 
 import copy
 import json
