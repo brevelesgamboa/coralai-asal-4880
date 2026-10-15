@@ -1,3 +1,4 @@
+import argparse
 import csv
 from pathlib import Path
 
@@ -5,8 +6,12 @@ import numpy as np
 from score_entropy import score_checkpoint
 
 ROOT = Path(__file__).resolve().parents[1]
-RUNS = ROOT / "data/raw/runs"
-OUTPUT = ROOT / "results/week7"
+parser = argparse.ArgumentParser(description="Compare saved flat and patch checkpoint entropy.")
+parser.add_argument("--runs", type=Path, default=ROOT / "data/raw/runs")
+parser.add_argument("--output", type=Path, default=ROOT / "results/week7")
+args = parser.parse_args()
+RUNS = args.runs.resolve()
+OUTPUT = args.output.resolve()
 
 RUN_IDS = {
     "flat": [
@@ -45,7 +50,10 @@ for condition, seed, checkpoint in jobs:
         "condition": condition,
         "seed": seed,
         "checkpoint_label": 1000,
-        "checkpoint": checkpoint.relative_to(ROOT).as_posix(),
+        "checkpoint": (
+            checkpoint.relative_to(ROOT).as_posix()
+            if checkpoint.is_relative_to(ROOT) else checkpoint.as_posix()
+        ),
         "bin_width": 1.0,
     }
     row.update({metric: result[metric] for metric in METRICS})
@@ -88,5 +96,5 @@ with summary_path.open("w", newline="") as file:
 print("\nCheckpoint label: 1000; five seeds per condition.")
 print("Resource entropy: whole grid, fixed one-unit bins.")
 print("Genome entropy: living cells only.")
-print("Saved:", details_path.relative_to(ROOT))
-print("Saved:", summary_path.relative_to(ROOT))
+print("Saved:", details_path)
+print("Saved:", summary_path)

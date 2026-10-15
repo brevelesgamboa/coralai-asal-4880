@@ -21,6 +21,9 @@ python -m unittest discover -s tests -p 'test_coralai_contract.py'
 
 The config-driven runner and target search are planned in issues #3 and #4.
 
+See [pilot validation](docs/coralai_pilot_validation.md) for saved-artifact checks,
+reproduction commands, and [the recorded checks](results/week8/validation/README.md).
+
 ## Next steps
 - Compute Shannon and discretized entropy on saved runs.
 - Connect Coralai simulation frames to ASAL scoring.
