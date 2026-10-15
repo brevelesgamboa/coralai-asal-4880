@@ -1,0 +1,8 @@
+{
+  "image": "results/week8/issue4_radiate_interval/radiate_050_baseline_frame.png",
+  "prompt": "branching colonies",
+  "model": "ASAL CLIP",
+  "asal_target_loss": -0.2472730427980423,
+  "alignment": 0.2472730427980423,
+  "interpretation": "Lower target loss means stronger prompt alignment."
+}
