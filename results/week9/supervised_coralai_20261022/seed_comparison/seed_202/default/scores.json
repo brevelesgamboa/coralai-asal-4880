@@ -1,0 +1,155 @@
+{
+  "mean_loss": -0.24842727184295654,
+  "mean_alignment": 0.24842727184295654,
+  "best_sample_loss": -0.26006296277046204,
+  "best_sample_alignment": 0.26006296277046204,
+  "best_sample_step": 1000,
+  "final_loss": -0.26006296277046204,
+  "final_alignment": 0.26006296277046204,
+  "seed": 202,
+  "simulation_seconds": 5.722430898000312,
+  "scoring_seconds": 3.4030394519995752,
+  "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/checkpoint_0001000",
+  "frame_scores": [
+    {
+      "step": 50,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000050.png",
+      "sha256": "7d6d10482976a9891c160e0d327443a1d046d8682ce86f65126a4f6af7ce0f5f",
+      "loss": -0.24518707394599915,
+      "alignment": 0.24518707394599915
+    },
+    {
+      "step": 100,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000100.png",
+      "sha256": "71c6efc005582d3cdf3d89a0f82b337d56b8a9aeb9acc6fac36dcc2e4ecec03f",
+      "loss": -0.24186502397060394,
+      "alignment": 0.24186502397060394
+    },
+    {
+      "step": 150,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000150.png",
+      "sha256": "0359e269792e48fd478abf8908a9d41fca454d2d4a8f4148ec64a43769f51a67",
+      "loss": -0.23553432524204254,
+      "alignment": 0.23553432524204254
+    },
+    {
+      "step": 200,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000200.png",
+      "sha256": "98d340610a05917d4ed600de8f1a83d666b526a80c3baa37d9f93f0a1702ee67",
+      "loss": -0.2379034459590912,
+      "alignment": 0.2379034459590912
+    },
+    {
+      "step": 250,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000250.png",
+      "sha256": "41266d2d2eb475cb17ebacbf05af8cadfee54d79c092caea576f7695dbf86a68",
+      "loss": -0.24583709239959717,
+      "alignment": 0.24583709239959717
+    },
+    {
+      "step": 300,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000300.png",
+      "sha256": "b553ccc784ac025f8c6dd94d088cadf4e48ba1eacde673a996802e5edb8f5f2a",
+      "loss": -0.23639556765556335,
+      "alignment": 0.23639556765556335
+    },
+    {
+      "step": 350,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000350.png",
+      "sha256": "ac0958501398f9c75e3782c171db0001ae15d99a006422e53b2ba7472be5f36b",
+      "loss": -0.23872946202754974,
+      "alignment": 0.23872946202754974
+    },
+    {
+      "step": 400,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000400.png",
+      "sha256": "f703d1f0787d5f0169798f0dfbd6d0c11716146237c9ac1ddd75fcbccf8efcff",
+      "loss": -0.2411118447780609,
+      "alignment": 0.2411118447780609
+    },
+    {
+      "step": 450,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000450.png",
+      "sha256": "a2c590426a461b22b35b956465362f97ba2202e3d6faabd7fef196a38b60aaf5",
+      "loss": -0.24273262917995453,
+      "alignment": 0.24273262917995453
+    },
+    {
+      "step": 500,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000500.png",
+      "sha256": "01bfc341c6783285a8152c696a5a300eefddcaa822e0d342c911f1861ff3ede2",
+      "loss": -0.25049901008605957,
+      "alignment": 0.25049901008605957
+    },
+    {
+      "step": 550,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000550.png",
+      "sha256": "b96326a0f5b2df1fc233b116f065f57edff11e17eab4fc329489d89a5133c2eb",
+      "loss": -0.25304463505744934,
+      "alignment": 0.25304463505744934
+    },
+    {
+      "step": 600,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000600.png",
+      "sha256": "7dd82600cfca8c4a2e342a5d90bdb72445b9d0fbc02451fc27eafcba23f06ec7",
+      "loss": -0.2551257610321045,
+      "alignment": 0.2551257610321045
+    },
+    {
+      "step": 650,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000650.png",
+      "sha256": "c35ad4fcfb2bb5888dcb8db4a9107597327a89965056cfb16f99a56352732289",
+      "loss": -0.2557099461555481,
+      "alignment": 0.2557099461555481
+    },
+    {
+      "step": 700,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000700.png",
+      "sha256": "01a3b096a6dc5ea1af8b80dd4a9b95792d12e95d75c142b613d209b5738f4973",
+      "loss": -0.25624996423721313,
+      "alignment": 0.25624996423721313
+    },
+    {
+      "step": 750,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000750.png",
+      "sha256": "2183f76f82a4ea4d04701e10d3b48007ffa60e1a823ba841e8f24df31e464f0e",
+      "loss": -0.2550225257873535,
+      "alignment": 0.2550225257873535
+    },
+    {
+      "step": 800,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000800.png",
+      "sha256": "8541669c775a5c8ed18cdb33a0a613044ec3deed82c87aa3b5bbd9d25007407d",
+      "loss": -0.2556457817554474,
+      "alignment": 0.2556457817554474
+    },
+    {
+      "step": 850,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000850.png",
+      "sha256": "1aee8cf4e1ddbe12fa6c4afe3bc901aaca3a6032f2da2d527ec4f4fc55f509f3",
+      "loss": -0.2545604109764099,
+      "alignment": 0.2545604109764099
+    },
+    {
+      "step": 900,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000900.png",
+      "sha256": "d41d722e4de47b3f95e7c133f12f6ccd49277da05b0623a85e8c90046bb68892",
+      "loss": -0.25355684757232666,
+      "alignment": 0.25355684757232666
+    },
+    {
+      "step": 950,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000950.png",
+      "sha256": "7e82c6f1ecdb401f2368de62ed1a6f9ba4f58ac3cf4cff9fdf8c296d66deff07",
+      "loss": -0.25377097725868225,
+      "alignment": 0.25377097725868225
+    },
+    {
+      "step": 1000,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0001000.png",
+      "sha256": "1e9c2720377a7e7d773ba8e9b003277b1e4baef88fc7dbf6bf5e563504f490c5",
+      "loss": -0.26006296277046204,
+      "alignment": 0.26006296277046204
+    }
+  ]
+}

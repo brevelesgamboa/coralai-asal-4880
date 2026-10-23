@@ -1,0 +1,405 @@
+{
+  "legacy_source_commit": "c782434f33807704d52982c353854771fa15591c",
+  "single_frame": {
+    "before_loss": -0.246830552816391,
+    "after_loss": -0.246830552816391,
+    "difference": 0.0
+  },
+  "progression": {
+    "frames": 21,
+    "max_abs_difference": 0.0,
+    "rankings_agree": true
+  },
+  "legacy_outputs": {
+    "single": {
+      "image": "results/week7/coralai_frame.png",
+      "prompt": "branching colonies",
+      "model": "ASAL CLIP",
+      "asal_target_loss": -0.246830552816391,
+      "alignment": 0.246830552816391,
+      "interpretation": "Lower target loss means stronger prompt alignment."
+    },
+    "progression": [
+      {
+        "step": 0,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000000.png",
+        "asal_target_loss": -0.219599649310112,
+        "alignment": 0.219599649310112,
+        "change_from_initial_loss": 0.0,
+        "best_loss_so_far": -0.219599649310112,
+        "is_best_so_far": true
+      },
+      {
+        "step": 50,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000050.png",
+        "asal_target_loss": -0.23160375654697418,
+        "alignment": 0.23160375654697418,
+        "change_from_initial_loss": -0.012004107236862183,
+        "best_loss_so_far": -0.23160375654697418,
+        "is_best_so_far": true
+      },
+      {
+        "step": 100,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000100.png",
+        "asal_target_loss": -0.23293256759643555,
+        "alignment": 0.23293256759643555,
+        "change_from_initial_loss": -0.013332918286323547,
+        "best_loss_so_far": -0.23293256759643555,
+        "is_best_so_far": true
+      },
+      {
+        "step": 150,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000150.png",
+        "asal_target_loss": -0.23160620033740997,
+        "alignment": 0.23160620033740997,
+        "change_from_initial_loss": -0.012006551027297974,
+        "best_loss_so_far": -0.23293256759643555,
+        "is_best_so_far": false
+      },
+      {
+        "step": 200,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000200.png",
+        "asal_target_loss": -0.22948968410491943,
+        "alignment": 0.22948968410491943,
+        "change_from_initial_loss": -0.009890034794807434,
+        "best_loss_so_far": -0.23293256759643555,
+        "is_best_so_far": false
+      },
+      {
+        "step": 250,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000250.png",
+        "asal_target_loss": -0.22979675233364105,
+        "alignment": 0.22979675233364105,
+        "change_from_initial_loss": -0.010197103023529053,
+        "best_loss_so_far": -0.23293256759643555,
+        "is_best_so_far": false
+      },
+      {
+        "step": 300,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000300.png",
+        "asal_target_loss": -0.23360444605350494,
+        "alignment": 0.23360444605350494,
+        "change_from_initial_loss": -0.014004796743392944,
+        "best_loss_so_far": -0.23360444605350494,
+        "is_best_so_far": true
+      },
+      {
+        "step": 350,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000350.png",
+        "asal_target_loss": -0.23753458261489868,
+        "alignment": 0.23753458261489868,
+        "change_from_initial_loss": -0.017934933304786682,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": true
+      },
+      {
+        "step": 400,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000400.png",
+        "asal_target_loss": -0.23593580722808838,
+        "alignment": 0.23593580722808838,
+        "change_from_initial_loss": -0.01633615791797638,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 450,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000450.png",
+        "asal_target_loss": -0.23537199199199677,
+        "alignment": 0.23537199199199677,
+        "change_from_initial_loss": -0.015772342681884766,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 500,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000500.png",
+        "asal_target_loss": -0.23666368424892426,
+        "alignment": 0.23666368424892426,
+        "change_from_initial_loss": -0.017064034938812256,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 550,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000550.png",
+        "asal_target_loss": -0.2303321361541748,
+        "alignment": 0.2303321361541748,
+        "change_from_initial_loss": -0.010732486844062805,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 600,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000600.png",
+        "asal_target_loss": -0.23492515087127686,
+        "alignment": 0.23492515087127686,
+        "change_from_initial_loss": -0.015325501561164856,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 650,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000650.png",
+        "asal_target_loss": -0.23440824449062347,
+        "alignment": 0.23440824449062347,
+        "change_from_initial_loss": -0.014808595180511475,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 700,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000700.png",
+        "asal_target_loss": -0.23475690186023712,
+        "alignment": 0.23475690186023712,
+        "change_from_initial_loss": -0.015157252550125122,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 750,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000750.png",
+        "asal_target_loss": -0.2362498790025711,
+        "alignment": 0.2362498790025711,
+        "change_from_initial_loss": -0.016650229692459106,
+        "best_loss_so_far": -0.23753458261489868,
+        "is_best_so_far": false
+      },
+      {
+        "step": 800,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000800.png",
+        "asal_target_loss": -0.2378888726234436,
+        "alignment": 0.2378888726234436,
+        "change_from_initial_loss": -0.018289223313331604,
+        "best_loss_so_far": -0.2378888726234436,
+        "is_best_so_far": true
+      },
+      {
+        "step": 850,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000850.png",
+        "asal_target_loss": -0.2403654009103775,
+        "alignment": 0.2403654009103775,
+        "change_from_initial_loss": -0.020765751600265503,
+        "best_loss_so_far": -0.2403654009103775,
+        "is_best_so_far": true
+      },
+      {
+        "step": 900,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000900.png",
+        "asal_target_loss": -0.24476392567157745,
+        "alignment": 0.24476392567157745,
+        "change_from_initial_loss": -0.025164276361465454,
+        "best_loss_so_far": -0.24476392567157745,
+        "is_best_so_far": true
+      },
+      {
+        "step": 950,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000950.png",
+        "asal_target_loss": -0.24759890139102936,
+        "alignment": 0.24759890139102936,
+        "change_from_initial_loss": -0.02799925208091736,
+        "best_loss_so_far": -0.24759890139102936,
+        "is_best_so_far": true
+      },
+      {
+        "step": 1000,
+        "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0001000.png",
+        "asal_target_loss": -0.2445099800825119,
+        "alignment": 0.2445099800825119,
+        "change_from_initial_loss": -0.024910330772399902,
+        "best_loss_so_far": -0.24759890139102936,
+        "is_best_so_far": false
+      }
+    ]
+  },
+  "updated_progression_scores": [
+    {
+      "step": 0,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000000.png",
+      "asal_target_loss": -0.219599649310112,
+      "alignment": 0.219599649310112,
+      "change_from_initial_loss": 0.0,
+      "best_loss_so_far": -0.219599649310112,
+      "is_best_so_far": true
+    },
+    {
+      "step": 50,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000050.png",
+      "asal_target_loss": -0.23160375654697418,
+      "alignment": 0.23160375654697418,
+      "change_from_initial_loss": -0.012004107236862183,
+      "best_loss_so_far": -0.23160375654697418,
+      "is_best_so_far": true
+    },
+    {
+      "step": 100,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000100.png",
+      "asal_target_loss": -0.23293256759643555,
+      "alignment": 0.23293256759643555,
+      "change_from_initial_loss": -0.013332918286323547,
+      "best_loss_so_far": -0.23293256759643555,
+      "is_best_so_far": true
+    },
+    {
+      "step": 150,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000150.png",
+      "asal_target_loss": -0.23160620033740997,
+      "alignment": 0.23160620033740997,
+      "change_from_initial_loss": -0.012006551027297974,
+      "best_loss_so_far": -0.23293256759643555,
+      "is_best_so_far": false
+    },
+    {
+      "step": 200,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000200.png",
+      "asal_target_loss": -0.22948968410491943,
+      "alignment": 0.22948968410491943,
+      "change_from_initial_loss": -0.009890034794807434,
+      "best_loss_so_far": -0.23293256759643555,
+      "is_best_so_far": false
+    },
+    {
+      "step": 250,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000250.png",
+      "asal_target_loss": -0.22979675233364105,
+      "alignment": 0.22979675233364105,
+      "change_from_initial_loss": -0.010197103023529053,
+      "best_loss_so_far": -0.23293256759643555,
+      "is_best_so_far": false
+    },
+    {
+      "step": 300,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000300.png",
+      "asal_target_loss": -0.23360444605350494,
+      "alignment": 0.23360444605350494,
+      "change_from_initial_loss": -0.014004796743392944,
+      "best_loss_so_far": -0.23360444605350494,
+      "is_best_so_far": true
+    },
+    {
+      "step": 350,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000350.png",
+      "asal_target_loss": -0.23753458261489868,
+      "alignment": 0.23753458261489868,
+      "change_from_initial_loss": -0.017934933304786682,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": true
+    },
+    {
+      "step": 400,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000400.png",
+      "asal_target_loss": -0.23593580722808838,
+      "alignment": 0.23593580722808838,
+      "change_from_initial_loss": -0.01633615791797638,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 450,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000450.png",
+      "asal_target_loss": -0.23537199199199677,
+      "alignment": 0.23537199199199677,
+      "change_from_initial_loss": -0.015772342681884766,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 500,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000500.png",
+      "asal_target_loss": -0.23666368424892426,
+      "alignment": 0.23666368424892426,
+      "change_from_initial_loss": -0.017064034938812256,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 550,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000550.png",
+      "asal_target_loss": -0.2303321361541748,
+      "alignment": 0.2303321361541748,
+      "change_from_initial_loss": -0.010732486844062805,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 600,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000600.png",
+      "asal_target_loss": -0.23492515087127686,
+      "alignment": 0.23492515087127686,
+      "change_from_initial_loss": -0.015325501561164856,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 650,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000650.png",
+      "asal_target_loss": -0.23440824449062347,
+      "alignment": 0.23440824449062347,
+      "change_from_initial_loss": -0.014808595180511475,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 700,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000700.png",
+      "asal_target_loss": -0.23475690186023712,
+      "alignment": 0.23475690186023712,
+      "change_from_initial_loss": -0.015157252550125122,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 750,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000750.png",
+      "asal_target_loss": -0.2362498790025711,
+      "alignment": 0.2362498790025711,
+      "change_from_initial_loss": -0.016650229692459106,
+      "best_loss_so_far": -0.23753458261489868,
+      "is_best_so_far": false
+    },
+    {
+      "step": 800,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000800.png",
+      "asal_target_loss": -0.2378888726234436,
+      "alignment": 0.2378888726234436,
+      "change_from_initial_loss": -0.018289223313331604,
+      "best_loss_so_far": -0.2378888726234436,
+      "is_best_so_far": true
+    },
+    {
+      "step": 850,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000850.png",
+      "asal_target_loss": -0.2403654009103775,
+      "alignment": 0.2403654009103775,
+      "change_from_initial_loss": -0.020765751600265503,
+      "best_loss_so_far": -0.2403654009103775,
+      "is_best_so_far": true
+    },
+    {
+      "step": 900,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000900.png",
+      "asal_target_loss": -0.24476392567157745,
+      "alignment": 0.24476392567157745,
+      "change_from_initial_loss": -0.025164276361465454,
+      "best_loss_so_far": -0.24476392567157745,
+      "is_best_so_far": true
+    },
+    {
+      "step": 950,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000950.png",
+      "asal_target_loss": -0.24759890139102936,
+      "alignment": 0.24759890139102936,
+      "change_from_initial_loss": -0.02799925208091736,
+      "best_loss_so_far": -0.24759890139102936,
+      "is_best_so_far": true
+    },
+    {
+      "step": 1000,
+      "image": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0001000.png",
+      "asal_target_loss": -0.2445099800825119,
+      "alignment": 0.2445099800825119,
+      "change_from_initial_loss": -0.024910330772399902,
+      "best_loss_so_far": -0.24759890139102936,
+      "is_best_so_far": false
+    }
+  ]
+}

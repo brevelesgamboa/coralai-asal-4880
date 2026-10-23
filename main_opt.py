@@ -24,6 +24,8 @@ group.add_argument("--save_dir", type=str, default=None, help="path to save resu
 group = parser.add_argument_group("substrate")
 group.add_argument("--substrate", type=str, default='boids', help="name of the substrate")
 group.add_argument("--rollout_steps", type=int, default=None, help="number of rollout timesteps, leave None for the default of the substrate")
+group.add_argument("--coralai_config", type=str, help="saved headless Coralai simulation config")
+group.add_argument("--coralai_search_config", type=str, help="Coralai prompt, seeds, and parameter bounds")
 
 group = parser.add_argument_group("evaluation")
 group.add_argument("--foundation_model", type=str, default="clip", help="the foundation model to use (don't touch this)")
@@ -47,6 +49,9 @@ def parse_args(*args, **kwargs):
     return args
 
 def main(args):
+    if args.substrate == "coralai":
+        from scripts.coralai_search import run_search
+        return run_search(args)
     prompts = args.prompts.split(";")
     if args.time_sampling < len(prompts): # doing multiple prompts
         args.time_sampling = len(prompts)

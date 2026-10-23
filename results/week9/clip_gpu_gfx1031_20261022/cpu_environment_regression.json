@@ -1,0 +1,44 @@
+{
+  "validated_cpu_reference": "results/week9/clip_device_comparison_20261022/comparison.json",
+  "image_count": 21,
+  "prompt_count": 2,
+  "same_input_images": true,
+  "same_preprocessed_hash": true,
+  "same_weights_and_processor_hashes": true,
+  "original_software": {
+    "python": "3.11.17",
+    "jax": "0.4.38",
+    "jaxlib": "0.4.38",
+    "flax": "0.10.2",
+    "transformers": "4.47.1",
+    "numpy": "2.2.1",
+    "pillow": "11.0.0",
+    "huggingface-hub": "0.27.0",
+    "torch": "2.7.1+cpu"
+  },
+  "new_software": {
+    "python": "3.11.17",
+    "jax": "0.9.1",
+    "jaxlib": "0.9.1",
+    "flax": "0.12.0",
+    "transformers": "4.47.1",
+    "numpy": "2.2.1",
+    "pillow": "11.0.0",
+    "huggingface-hub": "0.27.0",
+    "jax-rocm7-plugin": "0.9.1+rocm7.14.1",
+    "jax-rocm7-pjrt": "0.9.1+rocm7.14.1",
+    "rocm": "7.14.1",
+    "rocm-sdk-core": "7.14.1",
+    "rocm-sdk-libraries": "7.14.1",
+    "rocm-sdk-device-gfx1030": "7.14.1",
+    "rocm-sdk-device-gfx1031": "7.14.1"
+  },
+  "max_abs_difference": 3.2782554626464844e-07,
+  "mean_abs_difference": 1.2772423880440848e-07,
+  "tolerance": 1e-06,
+  "within_tolerance": true,
+  "rankings_agree": [
+    true,
+    true
+  ]
+}

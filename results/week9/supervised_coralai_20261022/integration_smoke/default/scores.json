@@ -1,0 +1,29 @@
+{
+  "mean_loss": -0.24681413173675537,
+  "mean_alignment": 0.24681413173675537,
+  "best_sample_loss": -0.24721869826316833,
+  "best_sample_alignment": 0.24721869826316833,
+  "best_sample_step": 50,
+  "final_loss": -0.24721869826316833,
+  "final_alignment": 0.24721869826316833,
+  "seed": 42,
+  "simulation_seconds": 1.9673240089996398,
+  "scoring_seconds": 1.0129208710004605,
+  "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/default/run/checkpoint_0000050",
+  "frame_scores": [
+    {
+      "step": 25,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/default/run/screenshots/step_0000025.png",
+      "sha256": "451b2e5cc92ecb0ed1241552a4a4eb4618635a42d53759afd4c62d7ffcc302ce",
+      "loss": -0.2464095503091812,
+      "alignment": 0.2464095503091812
+    },
+    {
+      "step": 50,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/default/run/screenshots/step_0000050.png",
+      "sha256": "d3f17fc7a0d95052388e70cbd5e6266d03ad1be50e0c32d00231a260d85e6ba6",
+      "loss": -0.24721869826316833,
+      "alignment": 0.24721869826316833
+    }
+  ]
+}

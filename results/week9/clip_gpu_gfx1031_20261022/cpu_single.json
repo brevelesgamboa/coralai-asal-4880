@@ -1,0 +1,9 @@
+{
+  "image": "results/week7/coralai_frame.png",
+  "prompt": "branching colonies",
+  "model": "ASAL CLIP",
+  "asal_target_loss": -0.24683064222335815,
+  "alignment": 0.24683064222335815,
+  "interpretation": "Lower target loss means stronger prompt alignment.",
+  "device": "cpu"
+}

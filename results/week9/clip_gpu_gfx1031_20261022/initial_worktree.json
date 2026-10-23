@@ -1,0 +1,12 @@
+{
+  "git_status": " M README.md\n M foundation_models/clip.py\n M scripts/score_coralai.py\n M scripts/score_coralai_progression.py\n?? results/week9/clip_device_comparison_20261022/\n?? scripts/clip_scoring.py\n?? scripts/compare_clip_devices.py\n?? tests/test_clip_devices.py\n",
+  "files_sha256": {
+    "README.md": "fa2705db9f24af72ef18d4bd79ab2c6db5aee20a33c25be82022158e3bf9e27a",
+    "foundation_models/clip.py": "50fdd9067ef4059f164524981a3f21a7224737b8e40974c2b9fa842fff898b1c",
+    "scripts/clip_scoring.py": "ede775adbdf494ae5af52ef4f4105d1a916f52f5f64a2b75a2ef61d20eb0114e",
+    "scripts/compare_clip_devices.py": "092f2c20caf63d4cbbd2803e0932f416b92c2ce6da2a36e8e0a7f85355048eca",
+    "scripts/score_coralai.py": "b1789df9ff0fc98f00fdff141153552758a5fcaf24226efbeff2ca1b6391a918",
+    "scripts/score_coralai_progression.py": "7b3ef20ed482160a7493a60b82e926cd35f0bcc46da2220c94b75904dce73c28",
+    "external/coralai/experiments/coral_dev/headless_coral.py": "92bb59a99bfa7ad6b02a0431ef4520cda79e1cd01350867884cbb08ba1a977be"
+  }
+}

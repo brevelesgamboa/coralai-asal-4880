@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "override": "10.3.0",
+  "stdout": "DEVICES [RocmDevice(id=0)]\n",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 8, in <module>\nAssertionError\n"
+}

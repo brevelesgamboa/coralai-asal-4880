@@ -1,0 +1,10 @@
+{
+  "search": "JAX_PLATFORMS=cpu /home/sparky/.venvs/coralai-asal/bin/python main_opt.py --substrate coralai --coralai_config configs/coralai_supervised.default.json --coralai_search_config configs/coralai_supervised.search.json --pop_size 4 --n_iters 2 --sigma 0.25 --seed 0 --save_dir results/week9/supervised_coralai_20261022/search",
+  "seed_comparison": "JAX_PLATFORMS=cpu /home/sparky/.venvs/coralai-asal/bin/python scripts/coralai_search.py compare --experiment results/week9/supervised_coralai_20261022/search --output-dir results/week9/supervised_coralai_20261022/seed_comparison",
+  "reproduction_note": "Activate the validated CPU environment and use new output directories; README contains portable python commands.",
+  "checks": [
+    "python -m unittest discover -s tests -p 'test_coralai*.py'",
+    "PYTHONPATH=\"$PWD:$PWD/external/coralai:$PWD/external/coralai/coralai/dependencies/PyTorch-NEAT\" python -m unittest discover -s tests -p test_headless_coral_runner.py",
+    "python -m unittest discover -s tests -p test_clip_devices.py"
+  ]
+}

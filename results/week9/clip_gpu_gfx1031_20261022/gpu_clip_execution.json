@@ -1,0 +1,12 @@
+{
+  "requested_device": "gpu",
+  "actual_parameter_device": "rocm:0",
+  "actual_score_array_device": "rocm:0",
+  "device_kind": "AMD Radeon RX 6700 XT",
+  "loss": -0.2468305230140686,
+  "parameter_dtypes": [
+    "float32"
+  ],
+  "gpu_clip_execution_verified": true,
+  "compatibility_override": "10.3.0"
+}
