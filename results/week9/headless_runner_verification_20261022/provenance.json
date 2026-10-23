@@ -1,0 +1,39 @@
+{
+  "base_commit": "7bd38b87673376b841d0394843471425606d9459",
+  "python": "3.11.17 (main, Oct  1 2026, 00:00:00) [GCC 16.2.1 20260819 (Red Hat 16.2.1-2)]",
+  "interpreter": "/tmp/coralai-headless-stage1.3q5HGL/venv/bin/python",
+  "system_site_packages": false,
+  "coralai_import": "/tmp/coralai-headless-stage1.3q5HGL/venv/lib64/python3.11/site-packages/coralai/__init__.py",
+  "pytorch_neat_import": "/tmp/coralai-headless-stage1.3q5HGL/venv/lib64/python3.11/site-packages/pytorch_neat/__init__.py",
+  "runner_sha256": "92bb59a99bfa7ad6b02a0431ef4520cda79e1cd01350867884cbb08ba1a977be",
+  "config_sha256": "6ebdad9b366924dd5c303a1595a82909ac631eb730669d7012af5ce2fa9d3215",
+  "base_archive_sha256": "38248e42ae5f89c1ea74952089da10f6363863d0b3a2a9604d8acf6c9607e1c0",
+  "source_config": "configs/issue4_radiate_interval/sanity_check.json",
+  "config_changes": {
+    "output_dir": null
+  },
+  "verification_owner": "Codex; all three runs performed by the same agent",
+  "original_runner_audit": {
+    "completed": true,
+    "steps": 51,
+    "frames": 4,
+    "checkpoint_0000050_contains_updates": 51,
+    "history_directory": "history/NEAT_261022-1859_28",
+    "history_note": "The original runner creates history relative to the repo root. This path was left in place; automatic approval review rejected relocation as an unnecessary mutation. The patched runner saves new histories inside each output directory."
+  },
+  "checks": {
+    "headless_runner_integration_tests": {
+      "passed": 3,
+      "skipped": 0
+    },
+    "existing_coralai_contract_and_artifact_tests": {
+      "passed": 24
+    },
+    "fresh_environment_pip_check": "No broken requirements found.",
+    "git_diff_check": "passed",
+    "readme_addition_lines": 21,
+    "existing_worktree_at_start": "clean",
+    "existing_experiment_outputs_and_presentations": "not modified",
+    "remaining_execution_blocker_for_verified_config": null
+  }
+}

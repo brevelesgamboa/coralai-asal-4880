@@ -1,0 +1,183 @@
+{
+  "same_config_and_seed_except_output_directory": true,
+  "runs": [
+    {
+      "run": "run_a",
+      "completed_steps": 51,
+      "seed": 42,
+      "frames": 4,
+      "checkpoints": [
+        {
+          "directory": "checkpoint_0000050",
+          "metadata_step": 50,
+          "population_timestep": 50,
+          "finite": true
+        },
+        {
+          "directory": "checkpoint_0000051",
+          "metadata_step": 51,
+          "population_timestep": 51,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "run": "run_b",
+      "completed_steps": 51,
+      "seed": 42,
+      "frames": 4,
+      "checkpoints": [
+        {
+          "directory": "checkpoint_0000050",
+          "metadata_step": 50,
+          "population_timestep": 50,
+          "finite": true
+        },
+        {
+          "directory": "checkpoint_0000051",
+          "metadata_step": 51,
+          "population_timestep": 51,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "run": "isolated_run",
+      "completed_steps": 51,
+      "seed": 42,
+      "frames": 4,
+      "checkpoints": [
+        {
+          "directory": "checkpoint_0000050",
+          "metadata_step": 50,
+          "population_timestep": 50,
+          "finite": true
+        },
+        {
+          "directory": "checkpoint_0000051",
+          "metadata_step": 51,
+          "population_timestep": 51,
+          "finite": true
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "first": "run_a",
+    "second": "run_b",
+    "frames": [
+      {
+        "frame": "step_0000000.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      },
+      {
+        "frame": "step_0000025.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      },
+      {
+        "frame": "step_0000050.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      },
+      {
+        "frame": "step_0000051.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      }
+    ],
+    "states": [
+      {
+        "state": "initial_state.pt",
+        "equal": true,
+        "different_values": 0,
+        "max_absolute_difference": 0.0
+      },
+      {
+        "state": "checkpoint_0000050/substrate.pt",
+        "equal": false,
+        "different_values": 10381,
+        "max_absolute_difference": 5.9604644775390625e-06
+      },
+      {
+        "state": "checkpoint_0000051/substrate.pt",
+        "equal": false,
+        "different_values": 10441,
+        "max_absolute_difference": 7.092952728271484e-06
+      }
+    ],
+    "step_logs_identical": true
+  },
+  "clean_source": {
+    "first": "run_a",
+    "second": "isolated_run",
+    "frames": [
+      {
+        "frame": "step_0000000.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      },
+      {
+        "frame": "step_0000025.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      },
+      {
+        "frame": "step_0000050.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      },
+      {
+        "frame": "step_0000051.png",
+        "pixels_equal": true,
+        "changed_pixels": 0,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_rgb_difference": 0
+      }
+    ],
+    "states": [
+      {
+        "state": "initial_state.pt",
+        "equal": true,
+        "different_values": 0,
+        "max_absolute_difference": 0.0
+      },
+      {
+        "state": "checkpoint_0000050/substrate.pt",
+        "equal": false,
+        "different_values": 10169,
+        "max_absolute_difference": 1.0251998901367188e-05
+      },
+      {
+        "state": "checkpoint_0000051/substrate.pt",
+        "equal": false,
+        "different_values": 10223,
+        "max_absolute_difference": 1.0669231414794922e-05
+      }
+    ],
+    "step_logs_identical": true
+  },
+  "independent_teammate_reproduction": false,
+  "scope": "51-step 50x50 CPU sanity config; no GPU or search verification",
+  "interpretation": {
+    "frames": "All four saved RGB frames were pixel-identical between both repeats and the clean-source run.",
+    "tensors": "Identical initial state; subsequent tensors are finite but not bit-identical. Maximum difference: 7.092952728271484e-6 for the repeat and 1.0669231414794922e-5 for the clean-source run.",
+    "explanation": "The small floating-point differences are consistent with the parallel Taichi CPU accumulation order described in external/coralai/AGENTS.md. Eight-bit image quantization hides these differences. This check did not isolate a specific kernel as their cause.",
+    "limits": "Visual reproduction was checked for this short CPU configuration only; strict tensor determinism and independent teammate reproduction are not claimed."
+  }
+}
