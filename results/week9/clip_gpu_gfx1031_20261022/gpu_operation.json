@@ -1,0 +1,15 @@
+{
+  "jax": "0.9.1",
+  "devices": [
+    "rocm:0"
+  ],
+  "device_kind": "AMD Radeon RX 6700 XT",
+  "platform": "gpu",
+  "elementwise_sum": 1240.0,
+  "matrix_result_0_0": 1241.0,
+  "gpu_operation_passed": true,
+  "HSA_OVERRIDE_GFX_VERSION": "10.3.0",
+  "physical_gpu": "AMD Radeon RX 6700 XT / gfx1031",
+  "compatibility_target": "gfx1030",
+  "required_extra_kernel_package": "rocm-sdk-device-gfx1030==7.14.1"
+}

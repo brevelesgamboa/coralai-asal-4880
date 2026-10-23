@@ -1,0 +1,166 @@
+[
+  {
+    "id": "g00_c00",
+    "generation": 0,
+    "vector": [
+      0.0,
+      0.0
+    ],
+    "parameters": {
+      "radiate_interval": 10,
+      "infra_decay": 0.0
+    },
+    "scores": {
+      "mean_loss": -0.24584034085273743,
+      "mean_alignment": 0.24584034085273743,
+      "best_sample_loss": -0.24947097897529602,
+      "best_sample_alignment": 0.24947097897529602,
+      "best_sample_step": 50,
+      "final_loss": -0.24947097897529602,
+      "final_alignment": 0.24947097897529602,
+      "seed": 42,
+      "simulation_seconds": 2.1188433980005357,
+      "scoring_seconds": 0.38066563199936354,
+      "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c00/run/checkpoint_0000050",
+      "frame_scores": [
+        {
+          "step": 25,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c00/run/screenshots/step_0000025.png",
+          "sha256": "25acfe0ea12981c1b415033a858f2fcac1fcadbc83ec29b140eac6382a425ee5",
+          "loss": -0.24220971763134003,
+          "alignment": 0.24220971763134003
+        },
+        {
+          "step": 50,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c00/run/screenshots/step_0000050.png",
+          "sha256": "38eece739cf57ad280df00ddc54841dd8262fa198345cc84e696f8eccb8f0504",
+          "loss": -0.24947097897529602,
+          "alignment": 0.24947097897529602
+        }
+      ]
+    }
+  },
+  {
+    "id": "g00_c01",
+    "generation": 0,
+    "vector": [
+      0.19625495374202728,
+      0.04326809197664261
+    ],
+    "parameters": {
+      "radiate_interval": 47,
+      "infra_decay": 0.0004326809197664261
+    },
+    "scores": {
+      "mean_loss": -0.24579444527626038,
+      "mean_alignment": 0.24579444527626038,
+      "best_sample_loss": -0.24603039026260376,
+      "best_sample_alignment": 0.24603039026260376,
+      "best_sample_step": 25,
+      "final_loss": -0.24555851519107819,
+      "final_alignment": 0.24555851519107819,
+      "seed": 42,
+      "simulation_seconds": 2.121082759998899,
+      "scoring_seconds": 0.3772307780000119,
+      "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c01/run/checkpoint_0000050",
+      "frame_scores": [
+        {
+          "step": 25,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c01/run/screenshots/step_0000025.png",
+          "sha256": "19603fdddfd7356733cc638d7c0e09eaf9f4e9341343d3faed94d71e103dfbe2",
+          "loss": -0.24603039026260376,
+          "alignment": 0.24603039026260376
+        },
+        {
+          "step": 50,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c01/run/screenshots/step_0000050.png",
+          "sha256": "9eaf4b289975e6012e2d0f5ba3a9fe220b27347e80e87d4cf02d7842220c6506",
+          "loss": -0.24555851519107819,
+          "alignment": 0.24555851519107819
+        }
+      ]
+    }
+  },
+  {
+    "id": "g00_c02",
+    "generation": 0,
+    "vector": [
+      0.2348780333995819,
+      0.09977316111326218
+    ],
+    "parameters": {
+      "radiate_interval": 55,
+      "infra_decay": 0.0009977316111326217
+    },
+    "scores": {
+      "mean_loss": -0.24699175357818604,
+      "mean_alignment": 0.24699175357818604,
+      "best_sample_loss": -0.24953293800354004,
+      "best_sample_alignment": 0.24953293800354004,
+      "best_sample_step": 50,
+      "final_loss": -0.24953293800354004,
+      "final_alignment": 0.24953293800354004,
+      "seed": 42,
+      "simulation_seconds": 2.0672744149997015,
+      "scoring_seconds": 0.3413585910002439,
+      "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c02/run/checkpoint_0000050",
+      "frame_scores": [
+        {
+          "step": 25,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c02/run/screenshots/step_0000025.png",
+          "sha256": "632222f484681f95f041a73cbe72fa28664e256d750a3f699eb478caf17dde7f",
+          "loss": -0.24445058405399323,
+          "alignment": 0.24445058405399323
+        },
+        {
+          "step": 50,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c02/run/screenshots/step_0000050.png",
+          "sha256": "92c86fa9528a59344c31b610a4341fcf158dac48bc626762b312b6e8b2da322a",
+          "loss": -0.24953293800354004,
+          "alignment": 0.24953293800354004
+        }
+      ]
+    }
+  },
+  {
+    "id": "g00_c03",
+    "generation": 0,
+    "vector": [
+      0.15216876566410065,
+      0.08910968899726868
+    ],
+    "parameters": {
+      "radiate_interval": 39,
+      "infra_decay": 0.0008910968899726868
+    },
+    "scores": {
+      "mean_loss": -0.24433031678199768,
+      "mean_alignment": 0.24433031678199768,
+      "best_sample_loss": -0.24438618123531342,
+      "best_sample_alignment": 0.24438618123531342,
+      "best_sample_step": 25,
+      "final_loss": -0.24427446722984314,
+      "final_alignment": 0.24427446722984314,
+      "seed": 42,
+      "simulation_seconds": 2.117569556001399,
+      "scoring_seconds": 0.3321426190013881,
+      "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c03/run/checkpoint_0000050",
+      "frame_scores": [
+        {
+          "step": 25,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c03/run/screenshots/step_0000025.png",
+          "sha256": "e61a4fd8747cf1e489ae0bcd15c0375089dd85f2bed8935978d45fbef5d510ac",
+          "loss": -0.24438618123531342,
+          "alignment": 0.24438618123531342
+        },
+        {
+          "step": 50,
+          "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/integration_smoke/candidates/g00_c03/run/screenshots/step_0000050.png",
+          "sha256": "c23a5f8283952a3ddf6fbf991e8bc53f041185b90e2cdaa728b19f632bbfef7a",
+          "loss": -0.24427446722984314,
+          "alignment": 0.24427446722984314
+        }
+      ]
+    }
+  }
+]

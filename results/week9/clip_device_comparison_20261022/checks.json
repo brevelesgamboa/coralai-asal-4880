@@ -1,0 +1,16 @@
+{
+  "cpu_legacy_regression": "passed",
+  "explicit_gpu_cli_exit": 2,
+  "gpu_cli_created_output": false,
+  "gpu_execution_tested": false,
+  "device_preprocessing_and_ranking_tests": {
+    "passed": 5
+  },
+  "existing_coralai_validation_tests": {
+    "passed": 24
+  },
+  "cpu_legacy_single_and_21_frame_regression": "exact match",
+  "stage1_runner_unchanged": true,
+  "existing_screenshots_unchanged": true,
+  "git_diff_check": "passed"
+}

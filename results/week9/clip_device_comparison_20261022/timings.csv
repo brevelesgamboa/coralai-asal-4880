@@ -1,0 +1,3 @@
+device,status,model_load_seconds,median_scoring_seconds,median_ms_per_image
+cpu,ok,4.355503867000152,3.4523214969995024,164.39626176188108
+gpu,unavailable,,,

@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/home/sparky/.venvs/coralai-asal/bin/python",
+    "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/experiments/coral_dev/headless_coral.py",
+    "--config",
+    "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/input_config.json",
+    "--seed",
+    "303",
+    "--output-dir",
+    "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run"
+  ],
+  "cwd": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880",
+  "PYTHONPATH": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai:/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/external/coralai/coralai/dependencies/PyTorch-NEAT:"
+}

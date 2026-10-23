@@ -1,0 +1,70 @@
+{
+  "status": "gpu_clip_verified_in_compatibility_mode",
+  "environment": "data/venvs/asal-rocm-gfx1031-20261022",
+  "physical_gpu": "AMD Radeon RX 6700 XT (gfx1031)",
+  "compatibility_target": "gfx1030",
+  "environment_variables": {
+    "HSA_OVERRIDE_GFX_VERSION": "10.3.0",
+    "XLA_PYTHON_CLIENT_PREALLOCATE": "false"
+  },
+  "verification_stages": {
+    "gpu_enumerated": true,
+    "gpu_arithmetic_executed": true,
+    "clip_parameters_and_scores_on_rocm_device": true,
+    "same_input_cpu_gpu_benchmark_completed": true
+  },
+  "image_count": 21,
+  "prompt_count": 2,
+  "warmup_passes": 2,
+  "timed_passes": 5,
+  "max_cpu_gpu_score_difference": 2.5331974029541016e-07,
+  "mean_cpu_gpu_score_difference": 8.302075522286551e-08,
+  "strict_rankings_agree": true,
+  "near_ties": [
+    {
+      "prompt": "green energy patches",
+      "images": [
+        "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000050.png",
+        "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000150.png"
+      ],
+      "cpu_gap": 2.7567148208618164e-06,
+      "gpu_gap": 2.652406692504883e-06,
+      "order_agrees": true
+    }
+  ],
+  "cpu_vs_validated_environment_max_difference": 3.2782554626464844e-07,
+  "original_cpu_environment_packages_unchanged": true,
+  "timings": {
+    "cpu": {
+      "model_load_seconds": 6.859897966000062,
+      "median_scoring_seconds": 3.3513128260001395,
+      "median_ms_per_image": 159.58632504762568
+    },
+    "gpu": {
+      "model_load_seconds": 30.23833486500007,
+      "median_scoring_seconds": 5.8381154839999,
+      "median_ms_per_image": 278.00549923809047
+    }
+  },
+  "gpu_vs_cpu_median_runtime_ratio": 1.7420383554488437,
+  "checks": {
+    "new_gpu_environment_device_tests_passed": 5,
+    "original_cpu_environment_device_tests_passed": 5,
+    "existing_coralai_validation_tests_passed": 24,
+    "gpu_environment_pip_check": "No broken requirements found."
+  },
+  "limitations": [
+    "Native gfx1031 rejected by this official PJRT build; verified using a process-local gfx1030 compatibility override and matching rocBLAS kernels.",
+    "This existing sequential scoring benchmark is slower on GPU than CPU.",
+    "MIOpen emitted missing tuning-database/optional CK-library warnings; the tested CLIP operations completed successfully.",
+    "The separate environment is for scoring; the project ASAL optimization dependencies and original CPU environment were not upgraded."
+  ],
+  "official_sources": [
+    "https://docs.jax.dev/en/latest/installation.html",
+    "https://github.com/ROCm/TheRock/blob/main/RELEASES.md",
+    "https://github.com/ROCm/TheRock/blob/main/SUPPORTED_GPUS.md",
+    "https://github.com/ROCm/rocm-libraries/issues/8539"
+  ],
+  "recipe": "README.md: AMD RX 6700 XT scoring setup",
+  "package_lock": "results/week9/clip_gpu_gfx1031_20261022/requirements-gpu.txt"
+}

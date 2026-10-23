@@ -1,0 +1,155 @@
+{
+  "mean_loss": -0.23858606815338135,
+  "mean_alignment": 0.23858606815338135,
+  "best_sample_loss": -0.24779853224754333,
+  "best_sample_alignment": 0.24779853224754333,
+  "best_sample_step": 200,
+  "final_loss": -0.24169765412807465,
+  "final_alignment": 0.24169765412807465,
+  "seed": 42,
+  "simulation_seconds": 5.822801587999493,
+  "scoring_seconds": 3.366385856999841,
+  "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/checkpoint_0001000",
+  "frame_scores": [
+    {
+      "step": 50,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000050.png",
+      "sha256": "ee34cdd93f19438cfaed7a4575e54c2bcb0b69c89c2af80747cc88c4b27d586b",
+      "loss": -0.24556702375411987,
+      "alignment": 0.24556702375411987
+    },
+    {
+      "step": 100,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000100.png",
+      "sha256": "b2a549b19e1ce39ff7aae37e60db75f31ec5c73afdfc6c06d871b6025c4780d4",
+      "loss": -0.24442273378372192,
+      "alignment": 0.24442273378372192
+    },
+    {
+      "step": 150,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000150.png",
+      "sha256": "e710024132192d0a5592e826f454edb4f39f16da5810f51d932ed9f2e8238b04",
+      "loss": -0.2449917495250702,
+      "alignment": 0.2449917495250702
+    },
+    {
+      "step": 200,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000200.png",
+      "sha256": "91d1c5c8f16bed3378caf5e2452186de72be5d2f5f74b030f30f2c7a0918b1cb",
+      "loss": -0.24779853224754333,
+      "alignment": 0.24779853224754333
+    },
+    {
+      "step": 250,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000250.png",
+      "sha256": "044775328d42737af600a62d372b661e84b630a2c389ab26f9bf3c8347b22bd2",
+      "loss": -0.2462398260831833,
+      "alignment": 0.2462398260831833
+    },
+    {
+      "step": 300,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000300.png",
+      "sha256": "a4dd683f0aff1b08d184f5faaadac607fbe93708ecd6c261d58e15863b3c1a08",
+      "loss": -0.24194742739200592,
+      "alignment": 0.24194742739200592
+    },
+    {
+      "step": 350,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000350.png",
+      "sha256": "c43ef2971573ec94dac33c8655a5c2dc07e5f01114578a6bcda4c9cf68f0df4a",
+      "loss": -0.2300272285938263,
+      "alignment": 0.2300272285938263
+    },
+    {
+      "step": 400,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000400.png",
+      "sha256": "59cf12bb04aee7f19197babf178ef9c8037225892a5e6914451f7cb1881a7827",
+      "loss": -0.22414401173591614,
+      "alignment": 0.22414401173591614
+    },
+    {
+      "step": 450,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000450.png",
+      "sha256": "1ddc4933899bfb1df0c39aa021c23d685445f3b7e7b5413430c1a8e019ef415c",
+      "loss": -0.23561425507068634,
+      "alignment": 0.23561425507068634
+    },
+    {
+      "step": 500,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000500.png",
+      "sha256": "d3778af2075016df8b1cd4d410a8530b93010a9d884b760b5bb276f301479c40",
+      "loss": -0.2279907763004303,
+      "alignment": 0.2279907763004303
+    },
+    {
+      "step": 550,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000550.png",
+      "sha256": "48d376e12541277817b0ad1d538f66ebab637b28e7077032bfd8af57b75018be",
+      "loss": -0.23629318177700043,
+      "alignment": 0.23629318177700043
+    },
+    {
+      "step": 600,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000600.png",
+      "sha256": "4b99ca7b8efa06e7cb88a703f081762b9fb94a14681b5acc372204b0116a72c2",
+      "loss": -0.2333596795797348,
+      "alignment": 0.2333596795797348
+    },
+    {
+      "step": 650,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000650.png",
+      "sha256": "b2359a12f3ba5fcb1f343ce3adfd43719603e6eb0d175cd9434c500508f4c266",
+      "loss": -0.22784273326396942,
+      "alignment": 0.22784273326396942
+    },
+    {
+      "step": 700,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000700.png",
+      "sha256": "8c2834327e09ea707bff8486ada272a69cfffab4cb99a5c3436054395e239b74",
+      "loss": -0.2324504554271698,
+      "alignment": 0.2324504554271698
+    },
+    {
+      "step": 750,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000750.png",
+      "sha256": "a54474f42441989d8b6b8cbf593bf9bc8ca0ef736cab0e1a5d335555e6010097",
+      "loss": -0.2369479387998581,
+      "alignment": 0.2369479387998581
+    },
+    {
+      "step": 800,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000800.png",
+      "sha256": "a19aaceab92373c2eb259cfe98e0d7b7858a46f9f988b240fb01e1272bbebda7",
+      "loss": -0.24470780789852142,
+      "alignment": 0.24470780789852142
+    },
+    {
+      "step": 850,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000850.png",
+      "sha256": "b10d0d7550402971e5419fad880da449e3bd412adf36d521201daf5762f83731",
+      "loss": -0.24388794600963593,
+      "alignment": 0.24388794600963593
+    },
+    {
+      "step": 900,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000900.png",
+      "sha256": "4a4227a1aad429fbc17b32c8659b9397b9ab4be4952fe50fa935bf2c06806f7a",
+      "loss": -0.24169866740703583,
+      "alignment": 0.24169866740703583
+    },
+    {
+      "step": 950,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0000950.png",
+      "sha256": "1229cf848adb0ebf14cf761f79bc4d46009a95cb61b1a9757db457157ee56345",
+      "loss": -0.24409164488315582,
+      "alignment": 0.24409164488315582
+    },
+    {
+      "step": 1000,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/search/candidates/g01_c01/run/screenshots/step_0001000.png",
+      "sha256": "c6efc73b37eb708fe7805379dcb40137c177ce6a4784cbbe8cb9cc534960668d",
+      "loss": -0.24169765412807465,
+      "alignment": 0.24169765412807465
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "create_fresh_environment": "python3.11 -m venv data/venvs/asal-rocm-gfx1031",
+  "install": "data/venvs/asal-rocm-gfx1031/bin/python -m pip install --extra-index-url https://repo.amd.com/rocm/whl-multi-arch/ -r results/week9/clip_gpu_gfx1031_20261022/requirements-gpu.txt",
+  "run_existing_verified_environment": "HSA_OVERRIDE_GFX_VERSION=10.3.0 XLA_PYTHON_CLIENT_PREALLOCATE=false data/venvs/asal-rocm-gfx1031-20261022/bin/python scripts/compare_clip_devices.py --images-glob 'external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_*.png' --prompts 'green energy patches' 'branching colonies' --warmup 2 --repeats 5 --local-files-only --output-dir results/week9/clip_gpu_repro",
+  "working_directory": "repository root",
+  "output_requirement": "Choose a fresh output directory for each invocation."
+}

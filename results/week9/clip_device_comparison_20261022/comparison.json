@@ -1,0 +1,374 @@
+{
+  "command": "python scripts/compare_clip_devices.py --images-glob 'external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_*.png' --prompts 'green energy patches' 'branching colonies' --warmup 2 --repeats 5 --local-files-only --output-dir results/week9/clip_device_comparison_20261022",
+  "cwd": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880",
+  "images": [
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000000.png",
+      "sha256": "e7f01bcc1fda286b040225cc76859600b93a198ff1b6d792adbb1a0d104db74d"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000050.png",
+      "sha256": "1bbebe3b7d25b3a0bc0838b8b1408a0a8cc2d0293925f88cdc8275de66b01c3e"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000100.png",
+      "sha256": "e0f63fcbf6523278074e635a330171fb083777accfff77e19648436318b2180c"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000150.png",
+      "sha256": "9fa1edd6ce468e21fbb2cad8e20ab188da2b0a41ee30fed283b1653eb04fa0f4"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000200.png",
+      "sha256": "c044e603ad8c5c44eb5dec59767509ca0629bd88026ab81e106d8638f70ffd64"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000250.png",
+      "sha256": "ce99da74d4e9fcbe05455aac8bae50e6e9ae37448147462a839a793bd3fe1287"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000300.png",
+      "sha256": "e3de0c139ebcab8d34c2e2d57b5a1267ed4ebd4a2280fac4eb5bdc2ed1c3dde3"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000350.png",
+      "sha256": "4e7a4f912322c0eef93ef1111741bdc2a04612c2a666088e84bd860af26daeab"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000400.png",
+      "sha256": "94557eedbaca6c30f32d9d87e4ae2d8aee3fc01ea5c8ff3d51cd56c84aa2213c"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000450.png",
+      "sha256": "a5ba6da09fa0507eb0fb1bf96c817d022b84721cd09337bccbb084bfeb54d677"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000500.png",
+      "sha256": "a90e04769afe51f34b06f551a8d8f06ad671deece45e9ebdbf0ef8b98d12980b"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000550.png",
+      "sha256": "e15385f7e3db0e4bf0f513aedeb7dfa7ffd7afaf76197a71f2940c34f3799b64"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000600.png",
+      "sha256": "3335be2552f1696bec651b6f5942622c5daa4b1d47bcece868976eb4cd336d70"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000650.png",
+      "sha256": "a606877c26e9fca14770cfd51f597d03307238415a2ed9a2b619e2ea8545382c"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000700.png",
+      "sha256": "6d4b90339747a12bf542588b2106e0e1e19bd8af2c89d04c33ad64535b33db7d"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000750.png",
+      "sha256": "dfe79078d57a7e7282c5c5d3fdae8842024c474dc637235a3fd6f0c828d52e42"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000800.png",
+      "sha256": "d9f8fa35c1e5db9990b93d84377326bc35f71acdecbca05eb9fa4732aa89d802"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000850.png",
+      "sha256": "3e0351cc09eb5c3787d2c3209c015bc54a556a7d4f2ee3f028130cfc084829f1"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000900.png",
+      "sha256": "ca39999cd482e1153a7c34a90d1f24107fe9081e5a5f1513e2679f19456b29ae"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000950.png",
+      "sha256": "09c5f8985d4c434931fe9b9a2a842b51ab9ec4d1ded85843c38352ddd095d0b5"
+    },
+    {
+      "path": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0001000.png",
+      "sha256": "91ce756b63838ffee1d9f414eecf5f4f9326eddc70a6e0ffb4ac9c902513f73a"
+    }
+  ],
+  "prompts": [
+    "green energy patches",
+    "branching colonies"
+  ],
+  "model": "openai/clip-vit-base-patch32",
+  "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "model_files_sha256": {
+    "config.json": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+    "flax_model.msgpack": "2a2994d89bebd77abba5a554789dd9152a7e25467b79d88f6bd237d2dec5051c",
+    "merges.txt": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85",
+    "preprocessor_config.json": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd",
+    "special_tokens_map.json": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf",
+    "tokenizer.json": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842",
+    "tokenizer_config.json": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad",
+    "vocab.json": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363"
+  },
+  "preprocessing": "PIL RGB; 224x224 LANCZOS; float32 / 255; ASAL CLIP channel normalization",
+  "preprocessed_sha256": "4017dfbebaa66912adaced3b86c1c0d6294009c4e6caa5c0af3479bb6cf66a75",
+  "precision": "float32 parameters; highest JAX matmul precision",
+  "timing_scope": "Sequential image encoding plus ASAL losses for all prompts; resident inputs and cached text embeddings; synchronized after each full pass. Disk I/O, preprocessing, input transfer, and text setup excluded.",
+  "model_loading_scope": "Cached model/processor construction and parameter placement, synchronized; dependency imports and snapshot resolution/download excluded.",
+  "snapshot_resolution_seconds": 3.4251000215590466e-05,
+  "preprocessing_seconds": 0.10083753100025206,
+  "warmup_passes": 2,
+  "timed_passes": 5,
+  "hardware": {
+    "platform": "Linux-7.2.10-200.fc44.x86_64-x86_64-with-glibc2.43",
+    "logical_cpus": 12,
+    "lscpu": {
+      "exit_code": 0,
+      "output": [
+        "Architecture:                            x86_64",
+        "CPU(s):                                  12",
+        "Model name:                              AMD Ryzen 5 5600 6-Core Processor",
+        "NUMA node0 CPU(s):                       0-11"
+      ],
+      "stderr": ""
+    },
+    "lspci": {
+      "exit_code": 0,
+      "output": [
+        "0d:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 22 [Radeon RX 6700/6700 XT/6750 XT / 6800M/6850M XT] [1002:73df] (rev c1)"
+      ],
+      "stderr": ""
+    },
+    "rocminfo": {
+      "exit_code": 0,
+      "output": [
+        "Name:                    AMD Ryzen 5 5600 6-Core Processor",
+        "Marketing Name:          AMD Ryzen 5 5600 6-Core Processor",
+        "Vendor Name:             CPU",
+        "Device Type:             CPU",
+        "Name:                    gfx1031",
+        "Marketing Name:          AMD Radeon RX 6700 XT",
+        "Vendor Name:             AMD",
+        "Device Type:             GPU",
+        "Name:                    amdgcn-amd-amdhsa--gfx1031",
+        "Name:                    amdgcn-amd-amdhsa--gfx10-3-generic"
+      ],
+      "stderr": ""
+    },
+    "rocm-smi": {
+      "exit_code": 0,
+      "output": [
+        "",
+        "",
+        "============================ ROCm System Management Interface ============================",
+        "============================== Version of System Component ===============================",
+        "Driver version: 7.2.10-200.fc44.x86_64",
+        "==========================================================================================",
+        "====================================== Product Info ======================================",
+        "GPU[0]\t\t: Card Series: \t\tAMD Radeon RX 6700 XT",
+        "GPU[0]\t\t: Card Model: \t\t0x73df",
+        "GPU[0]\t\t: Card Vendor: \t\tAdvanced Micro Devices, Inc. [AMD/ATI]",
+        "GPU[0]\t\t: Card SKU: \t\tN/A",
+        "GPU[0]\t\t: Subsystem ID: \t0x2409",
+        "GPU[0]\t\t: Device Rev: \t\t0xc1",
+        "GPU[0]\t\t: Node ID: \t\t1",
+        "GPU[0]\t\t: GUID: \t\t45366",
+        "GPU[0]\t\t: GFX Version: \t\tgfx1031",
+        "==========================================================================================",
+        "================================== End of ROCm SMI Log ==================================="
+      ],
+      "stderr": "WARNING: AMD GPU device(s) is/are in a low-power state. Check power control/runtime_status"
+    },
+    "nvidia-smi": {
+      "unavailable": "[Errno 2] No such file or directory: 'nvidia-smi'"
+    }
+  },
+  "software": {
+    "python": "3.11.17",
+    "jax": "0.4.38",
+    "jaxlib": "0.4.38",
+    "flax": "0.10.2",
+    "transformers": "4.47.1",
+    "numpy": "2.2.1",
+    "pillow": "11.0.0",
+    "huggingface-hub": "0.27.0",
+    "torch": "2.7.1+cpu"
+  },
+  "environment": {
+    "JAX_PLATFORMS": null,
+    "CUDA_VISIBLE_DEVICES": null,
+    "HIP_VISIBLE_DEVICES": null,
+    "ROCR_VISIBLE_DEVICES": null
+  },
+  "devices": {
+    "cpu": {
+      "requested_device": "cpu",
+      "status": "ok",
+      "actual_device": "TFRT_CPU_0",
+      "platform": "cpu",
+      "device_kind": "cpu",
+      "parameter_dtypes": [
+        "float32"
+      ],
+      "model_load_seconds": 4.355503867000152,
+      "input_transfer_seconds": 0.0029752990003544255,
+      "text_setup_seconds": 1.0253799940001045,
+      "warmup_seconds": [
+        4.218259643999772,
+        3.434219607000159
+      ],
+      "scoring_seconds": [
+        3.4293379789996834,
+        3.4206084920006106,
+        3.5615390220000336,
+        3.4812450440003886,
+        3.4523214969995024
+      ],
+      "median_scoring_seconds": 3.4523214969995024,
+      "median_ms_per_image": 164.39626176188108,
+      "repeat_max_abs_score_difference": 0.0,
+      "scores": [
+        [
+          -0.2195996791124344,
+          -0.2263336032629013
+        ],
+        [
+          -0.23160380125045776,
+          -0.2558896839618683
+        ],
+        [
+          -0.23293255269527435,
+          -0.24910500645637512
+        ],
+        [
+          -0.23160623013973236,
+          -0.2446955293416977
+        ],
+        [
+          -0.22948966920375824,
+          -0.23736877739429474
+        ],
+        [
+          -0.22979681193828583,
+          -0.2331210970878601
+        ],
+        [
+          -0.23360444605350494,
+          -0.23341625928878784
+        ],
+        [
+          -0.23753459751605988,
+          -0.24454517662525177
+        ],
+        [
+          -0.23593585193157196,
+          -0.24894557893276215
+        ],
+        [
+          -0.23537206649780273,
+          -0.24794600903987885
+        ],
+        [
+          -0.23666372895240784,
+          -0.24588653445243835
+        ],
+        [
+          -0.2303321659564972,
+          -0.24456676840782166
+        ],
+        [
+          -0.23492521047592163,
+          -0.24716095626354218
+        ],
+        [
+          -0.23440828919410706,
+          -0.2440626472234726
+        ],
+        [
+          -0.23475690186023712,
+          -0.24212931096553802
+        ],
+        [
+          -0.2362499088048935,
+          -0.24129079282283783
+        ],
+        [
+          -0.23788893222808838,
+          -0.24447695910930634
+        ],
+        [
+          -0.24036547541618347,
+          -0.24677303433418274
+        ],
+        [
+          -0.24476395547389984,
+          -0.2494865506887436
+        ],
+        [
+          -0.24759884178638458,
+          -0.24792949855327606
+        ],
+        [
+          -0.24451002478599548,
+          -0.24413293600082397
+        ]
+      ],
+      "software": {
+        "python": "3.11.17",
+        "jax": "0.4.38",
+        "jaxlib": "0.4.38",
+        "flax": "0.10.2",
+        "transformers": "4.47.1",
+        "numpy": "2.2.1",
+        "pillow": "11.0.0",
+        "huggingface-hub": "0.27.0",
+        "torch": "2.7.1+cpu"
+      },
+      "worker_wall_seconds": 33.48684367700025,
+      "worker_exit_code": 0
+    },
+    "gpu": {
+      "requested_device": "gpu",
+      "status": "unavailable",
+      "error": "Requested GPU is unavailable: Unknown backend: 'gpu' requested, but no platforms that are instances of gpu are present. Platforms present are: cpu",
+      "worker_wall_seconds": 0.3502364789992498,
+      "worker_exit_code": 2
+    }
+  },
+  "comparison": null,
+  "status": "partial",
+  "inputs_unchanged": true,
+  "cpu_near_ties": [
+    {
+      "prompt": "green energy patches",
+      "first": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000050.png",
+      "second": "external/coralai/runs/coral_dev_headless_20261021_143009/screenshots/step_0000150.png",
+      "absolute_gap": 2.428889274597168e-06
+    }
+  ],
+  "gpu_validation": {
+    "tested": false,
+    "score_difference": null,
+    "ranking_agreement": null,
+    "blocker": "Requested GPU is unavailable: Unknown backend: 'gpu' requested, but no platforms that are instances of gpu are present. Platforms present are: cpu"
+  },
+  "cpu_legacy_regression": {
+    "single_frame_difference": 0.0,
+    "progression_max_abs_difference": 0.0,
+    "progression_rankings_agree": true
+  },
+  "source_commit": "c782434f33807704d52982c353854771fa15591c",
+  "source_sha256": {
+    "foundation_models/clip.py": "50fdd9067ef4059f164524981a3f21a7224737b8e40974c2b9fa842fff898b1c",
+    "scripts/clip_scoring.py": "ede775adbdf494ae5af52ef4f4105d1a916f52f5f64a2b75a2ef61d20eb0114e",
+    "scripts/score_coralai.py": "b1789df9ff0fc98f00fdff141153552758a5fcaf24226efbeff2ca1b6391a918",
+    "scripts/score_coralai_progression.py": "7b3ef20ed482160a7493a60b82e926cd35f0bcc46da2220c94b75904dce73c28",
+    "scripts/compare_clip_devices.py": "092f2c20caf63d4cbbd2803e0932f416b92c2ce6da2a36e8e0a7f85355048eca"
+  },
+  "checks": {
+    "device_preprocessing_and_ranking_tests": {
+      "passed": 5
+    },
+    "existing_coralai_validation_tests": {
+      "passed": 24
+    },
+    "cpu_legacy_single_and_21_frame_regression": "exact match",
+    "stage1_runner_unchanged": true,
+    "existing_screenshots_unchanged": true,
+    "gpu_execution_tested": false,
+    "git_diff_check": "passed"
+  }
+}

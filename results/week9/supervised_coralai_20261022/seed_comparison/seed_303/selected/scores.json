@@ -1,0 +1,155 @@
+{
+  "mean_loss": -0.23476406931877136,
+  "mean_alignment": 0.23476406931877136,
+  "best_sample_loss": -0.2523500323295593,
+  "best_sample_alignment": 0.2523500323295593,
+  "best_sample_step": 50,
+  "final_loss": -0.2337348610162735,
+  "final_alignment": 0.2337348610162735,
+  "seed": 303,
+  "simulation_seconds": 7.077842280999903,
+  "scoring_seconds": 3.6693728849986655,
+  "final_checkpoint": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/checkpoint_0001000",
+  "frame_scores": [
+    {
+      "step": 50,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000050.png",
+      "sha256": "fe3d0fec4f6aea61a29fcb77d78b3de1b1334a23a795d9978340ea715c535131",
+      "loss": -0.2523500323295593,
+      "alignment": 0.2523500323295593
+    },
+    {
+      "step": 100,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000100.png",
+      "sha256": "1e9f221626af816e5045075bfac8e4987a4df310a3cc2cacbf716e6f8f03dd9a",
+      "loss": -0.23637139797210693,
+      "alignment": 0.23637139797210693
+    },
+    {
+      "step": 150,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000150.png",
+      "sha256": "a90c4292e5b1388bd1bc09a1a59cce85bf3f775b6eb72023bc1d3d27e51a85f1",
+      "loss": -0.2356041520833969,
+      "alignment": 0.2356041520833969
+    },
+    {
+      "step": 200,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000200.png",
+      "sha256": "6d292433070e89d526817b4377644de18d88407ac21421611e6c8f43486051b2",
+      "loss": -0.23969009518623352,
+      "alignment": 0.23969009518623352
+    },
+    {
+      "step": 250,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000250.png",
+      "sha256": "0fd5d4ed87ffcbbdec11c40017b600f77c48e8300948de794e019ff2b05f2405",
+      "loss": -0.23733142018318176,
+      "alignment": 0.23733142018318176
+    },
+    {
+      "step": 300,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000300.png",
+      "sha256": "81f73f8a1efc56be23c22ae566ded9cdb3c4cd8d506cff0cc74292b0f68e6c10",
+      "loss": -0.2419806718826294,
+      "alignment": 0.2419806718826294
+    },
+    {
+      "step": 350,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000350.png",
+      "sha256": "d1c571771774dbdb73a61914ab48109cce42e0eebe3ed3ad24a960f9bafadfbd",
+      "loss": -0.23852740228176117,
+      "alignment": 0.23852740228176117
+    },
+    {
+      "step": 400,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000400.png",
+      "sha256": "918c5c0eedf784b807297234b6aa4711198e24acae899c11e59bdcef12f15505",
+      "loss": -0.23743627965450287,
+      "alignment": 0.23743627965450287
+    },
+    {
+      "step": 450,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000450.png",
+      "sha256": "5be2e420b90d189636a936ad3c1f8ee4056c975101201dbfba804d4dc364773e",
+      "loss": -0.23776660859584808,
+      "alignment": 0.23776660859584808
+    },
+    {
+      "step": 500,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000500.png",
+      "sha256": "d99e285b22404ee9e5eef427c90b84c056af6ae54241c45868707473c4ff46e3",
+      "loss": -0.23158219456672668,
+      "alignment": 0.23158219456672668
+    },
+    {
+      "step": 550,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000550.png",
+      "sha256": "d770db56e3843932b01a081c1677a533f974fecc3b61c7737aee8d192103e56f",
+      "loss": -0.22710025310516357,
+      "alignment": 0.22710025310516357
+    },
+    {
+      "step": 600,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000600.png",
+      "sha256": "17e65c8775b1befd44684af12598188ac8c1ca8778779a9cd8173b31f54b59bf",
+      "loss": -0.23022492229938507,
+      "alignment": 0.23022492229938507
+    },
+    {
+      "step": 650,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000650.png",
+      "sha256": "fb920cf1177b123474ce1742acb6d819d027ae8624f04f4ebb229dabe7107008",
+      "loss": -0.22568519413471222,
+      "alignment": 0.22568519413471222
+    },
+    {
+      "step": 700,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000700.png",
+      "sha256": "a66eae28c6c36cd6b40f505072f1ad6a29f2969373fb0ead391e2e0f227b01f9",
+      "loss": -0.23018969595432281,
+      "alignment": 0.23018969595432281
+    },
+    {
+      "step": 750,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000750.png",
+      "sha256": "41832a328b5a5851563811cd5979582732a887a99f5042ae75259e9a1b442d4a",
+      "loss": -0.23041050136089325,
+      "alignment": 0.23041050136089325
+    },
+    {
+      "step": 800,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000800.png",
+      "sha256": "64e7c171a48a93d9d0336cb39151cf92bef2f5588b3b5655f02d5136961f9407",
+      "loss": -0.23596125841140747,
+      "alignment": 0.23596125841140747
+    },
+    {
+      "step": 850,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000850.png",
+      "sha256": "54fccc066e7431eee66951c36277e270c8ec456ac43a090c919c50726a75a657",
+      "loss": -0.23347437381744385,
+      "alignment": 0.23347437381744385
+    },
+    {
+      "step": 900,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000900.png",
+      "sha256": "1765a1b0c0ac2c03883ef45a1ad21f80c69783c5d6ea46f338a10b42a384fcf4",
+      "loss": -0.23208829760551453,
+      "alignment": 0.23208829760551453
+    },
+    {
+      "step": 950,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0000950.png",
+      "sha256": "b062a0318f7008c139bc167b71f8373dd3ded52d6304e83349c9f3e02573c7f2",
+      "loss": -0.22777175903320312,
+      "alignment": 0.22777175903320312
+    },
+    {
+      "step": 1000,
+      "image": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week9/supervised_coralai_20261022/seed_comparison/seed_303/selected/run/screenshots/step_0001000.png",
+      "sha256": "3a67365030b5a1f5389958248b135695a8384c48b4c175a7d6f67acaf2b5d50b",
+      "loss": -0.2337348610162735,
+      "alignment": 0.2337348610162735
+    }
+  ]
+}

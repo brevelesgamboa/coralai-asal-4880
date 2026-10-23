@@ -1,0 +1,5 @@
+{
+  "requested_device": "gpu",
+  "status": "unavailable",
+  "error": "Requested GPU is unavailable: Unknown backend: 'gpu' requested, but no platforms that are instances of gpu are present. Platforms present are: cpu"
+}

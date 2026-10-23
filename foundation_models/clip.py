@@ -7,9 +7,10 @@ from einops import rearrange
 from transformers import AutoProcessor, FlaxCLIPModel
 
 class CLIP():
-    def __init__(self, clip_model="clip-vit-base-patch32"):
-        self.processor = AutoProcessor.from_pretrained(f"openai/{clip_model}")
-        self.clip_model = FlaxCLIPModel.from_pretrained(f"openai/{clip_model}")
+    def __init__(self, clip_model="clip-vit-base-patch32", *, model_path=None):
+        source = model_path if model_path is not None else f"openai/{clip_model}"
+        self.processor = AutoProcessor.from_pretrained(source)
+        self.clip_model = FlaxCLIPModel.from_pretrained(source)
 
         self.img_mean = jnp.array(self.processor.image_processor.image_mean)
         self.img_std = jnp.array(self.processor.image_processor.image_std)
@@ -34,4 +35,3 @@ class CLIP():
         inputs = self.processor(text=prompts, return_tensors="jax", padding=True)
         z_text = self.clip_model.get_text_features(input_ids=inputs['input_ids'], attention_mask=inputs['attention_mask'])
         return z_text / jnp.linalg.norm(z_text, axis=-1, keepdims=True)
-    
