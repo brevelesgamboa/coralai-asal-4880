@@ -1,0 +1,55 @@
+[
+  {
+    "label": "run_a",
+    "cwd": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880",
+    "argv": [
+      "/tmp/coralai-headless-stage1.3q5HGL/venv/bin/python",
+      "external/coralai/experiments/coral_dev/headless_coral.py",
+      "--config",
+      "configs/headless_cpu_repro.json",
+      "--seed",
+      "42",
+      "--output-dir",
+      "data/raw/headless_runner_verification_20261022/run_a"
+    ],
+    "portable_command": "python external/coralai/experiments/coral_dev/headless_coral.py --config configs/headless_cpu_repro.json --seed 42 --output-dir data/raw/headless_runner_verification_20261022/run_a",
+    "exit_code": 0,
+    "output": "data/raw/headless_runner_verification_20261022/run_a"
+  },
+  {
+    "label": "run_b",
+    "cwd": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880",
+    "argv": [
+      "/tmp/coralai-headless-stage1.3q5HGL/venv/bin/python",
+      "external/coralai/experiments/coral_dev/headless_coral.py",
+      "--config",
+      "configs/headless_cpu_repro.json",
+      "--seed",
+      "42",
+      "--output-dir",
+      "data/raw/headless_runner_verification_20261022/run_b"
+    ],
+    "portable_command": "python external/coralai/experiments/coral_dev/headless_coral.py --config configs/headless_cpu_repro.json --seed 42 --output-dir data/raw/headless_runner_verification_20261022/run_b",
+    "exit_code": 0,
+    "output": "data/raw/headless_runner_verification_20261022/run_b"
+  },
+  {
+    "label": "isolated_run",
+    "cwd": "/tmp/coralai-headless-stage1.3q5HGL/source",
+    "argv": [
+      "/tmp/coralai-headless-stage1.3q5HGL/venv/bin/python",
+      "external/coralai/experiments/coral_dev/headless_coral.py",
+      "--config",
+      "configs/headless_cpu_repro.json",
+      "--seed",
+      "42",
+      "--output-dir",
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/raw/headless_runner_verification_20261022/isolated_run"
+    ],
+    "exit_code": 0,
+    "output": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/raw/headless_runner_verification_20261022/isolated_run",
+    "source": "git archive HEAD (external/coralai and configs), with only the runner patch and reproduction config overlaid",
+    "pythonpath_removed": true,
+    "user_site_disabled": true
+  }
+]

@@ -1,14 +1,13 @@
 """Headless screenshot runner for the development Coral experiment.
 
-Save this file beside ``experiments/coral_dev/run.py`` and run:
-    python experiments/coral_dev/headless_coral_dev.py
-
-Edit ``headless_coral_dev_config.json`` beside this script to configure a run.
+From the Coralai directory, run:
+    python experiments/coral_dev/headless_coral.py --config experiments/coral_dev/config/config_test.json --seed 42
 """
 
 import argparse
 import csv
 import json
+import os
 import random
 import time
 from datetime import datetime
@@ -20,7 +19,7 @@ import taichi as ti
 from PIL import Image
 
 
-DEFAULT_CONFIG_PATH = Path(__file__).with_name("headless_coral_dev_config.json")
+DEFAULT_CONFIG_PATH = Path(__file__).with_name("config") / "config_test.json"
 DEFAULT_CONFIG = {
     "steps": 300,
     "shape": 400,
@@ -45,6 +44,9 @@ DEFAULT_CONFIG = {
 parser = argparse.ArgumentParser(description="Headless Coral Dev runner with PNG output")
 parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH,
                     help="Path to a JSON run configuration")
+parser.add_argument("--seed", type=int, help="Override the saved configuration's random seed")
+parser.add_argument("--output-dir", type=Path,
+                    help="Write to a new directory instead of the configured output_dir")
 cli_args = parser.parse_args()
 
 try:
@@ -61,9 +63,15 @@ unknown_keys = set(config) - set(DEFAULT_CONFIG)
 if unknown_keys:
     parser.error(f"unknown config option(s): {', '.join(sorted(unknown_keys))}")
 args = argparse.Namespace(**(DEFAULT_CONFIG | config))
+if cli_args.seed is not None:
+    args.seed = cli_args.seed
+if cli_args.output_dir is not None:
+    args.output_dir = str(cli_args.output_dir)
 
 if args.steps < 1:
     parser.error("config option 'steps' must be positive")
+if not isinstance(args.seed, int) or not 0 <= args.seed < 2 ** 32:
+    parser.error("seed must be an integer from 0 to 4294967295")
 if args.screenshot_interval < 1:
     parser.error("config option 'screenshot_interval' must be positive")
 if args.backend not in {"cpu", "metal", "cuda", "vulkan"}:
@@ -123,33 +131,44 @@ def make_frame(substrate):
 
 
 def main():
+    run_dir = Path(args.output_dir) if args.output_dir else (
+        Path(__file__).resolve().parents[2] / "runs" /
+        f"coral_dev_headless_{datetime.now():%Y%m%d_%H%M%S_%f}"
+    )
+    # A repeated command must never overwrite an earlier experiment.
+    run_dir.mkdir(parents=True, exist_ok=False)
+    with (run_dir / "config.json").open("w") as file:
+        json.dump(vars(args), file, indent=2)
     shape = (args.shape, args.shape)
     substrate = exp.make_substrate(shape, DEVICE)
     env = exp.make_env(args.env, args.env_param)
     env.seed(substrate)
-    evolver = exp.make_evolver(substrate)
+    # SpaceEvolver creates history/ relative to the working directory.
+    previous_directory = Path.cwd()
+    try:
+        os.chdir(run_dir)
+        evolver = exp.make_evolver(substrate)
+    finally:
+        os.chdir(previous_directory)
 
     if args.resume_from:
         evolver.load_checkpoint(args.resume_from)
         print(f"[resume] loaded {args.resume_from} (step {evolver.timestep})")
 
     start_step = evolver.timestep
-    run_dir = Path(args.output_dir) if args.output_dir else (
-        Path(__file__).resolve().parents[2] / "runs" /
-        f"coral_dev_headless_{datetime.now():%Y%m%d_%H%M%S}"
-    )
-    run_dir.mkdir(parents=True, exist_ok=True)
     screenshots_dir = run_dir / "screenshots"
     screenshots_dir.mkdir(exist_ok=True)
 
-    with (run_dir / "meta.json").open("w") as file:
-        json.dump({
+    metadata = {
             "experiment": exp.name, "config_file": str(cli_args.config),
+            "effective_config": vars(args),
             "shape": list(shape), "seed": args.seed,
             "env": env.to_dict(), "env_persist": env.persist,
             "start_step": start_step, "resumed_from": args.resume_from,
             "infra_decay": args.infra_decay, "defense_coeff": args.defense_coeff,
-        }, file, indent=2)
+        }
+    with (run_dir / "meta.json").open("w") as file:
+        json.dump(metadata, file, indent=2)
     torch.save(substrate.mem.cpu(), run_dir / "initial_state.pt")
 
     log_file = (run_dir / "step_log.csv").open("w", newline="")
@@ -158,6 +177,7 @@ def main():
 
     screenshot_count = 0
     last_captured_step = None
+    last_checkpoint_step = None
 
     def capture(step):
         nonlocal screenshot_count, last_captured_step
@@ -206,13 +226,20 @@ def main():
                               100 * total_energy / (total_energy + total_infra + 1e-8),
                               alive, len(evolver.genomes)])
                 log_file.flush()
-            if (args.checkpoint_interval > 0 and step > 0
-                    and step % args.checkpoint_interval == 0):
-                evolver.save_checkpoint(run_dir, step)
+            if (args.checkpoint_interval > 0
+                    and evolver.timestep % args.checkpoint_interval == 0):
+                evolver.save_checkpoint(run_dir, evolver.timestep)
+                last_checkpoint_step = evolver.timestep
 
         # Always include the final state, unless it was already sampled.
         if last_captured_step != evolver.timestep:
             capture(evolver.timestep)
+        if last_checkpoint_step != evolver.timestep:
+            evolver.save_checkpoint(run_dir, evolver.timestep)
+        metadata["completed_steps"] = evolver.timestep - start_step
+        metadata["final_checkpoint"] = f"checkpoint_{evolver.timestep:07d}"
+        with (run_dir / "meta.json").open("w") as file:
+            json.dump(metadata, file, indent=2)
     finally:
         log_file.close()
 

@@ -19,7 +19,27 @@ python scripts/validate_coralai_contract.py result examples/coralai_pilot_result
 python -m unittest discover -s tests -p 'test_coralai_contract.py'
 ```
 
-The config-driven runner and target search are planned in issues #3 and #4.
+## Verified headless CPU run
+
+From the repository root, using Python 3.11 (the version checked here):
+
+```sh
+python3.11 -m venv .venv
+. .venv/bin/activate
+python -m pip install torch==2.7.1+cpu --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -c results/week9/headless_runner_verification_20261022/requirements-used.txt external/coralai external/coralai/coralai/dependencies/PyTorch-NEAT
+python external/coralai/experiments/coral_dev/headless_coral.py \
+  --config configs/headless_cpu_repro.json --seed 42 \
+  --output-dir data/raw/headless_repro/run_1
+```
+
+Use a fresh `--output-dir` on every invocation; repeat with `run_2` to compare.
+The config preserves the existing sanity check: 51 steps, 50×50 grid, CPU, seed 42.
+Each run saves `config.json`, `meta.json`, screenshots, and checkpoints at updates 50 and 51.
+Verification outputs: `data/raw/headless_runner_verification_20261022/{run_a,run_b,isolated_run}/`.
+Commands, versions, hashes, and comparisons: [verification records](results/week9/headless_runner_verification_20261022/).
+All four frames matched across these runs; repeat tensors differed by at most `7.1e-6`.
+The clean source export/fresh environment check was performed by Codex; independent teammate reproduction is pending.
 
 See [pilot validation](docs/coralai_pilot_validation.md) for saved-artifact checks,
 reproduction commands, and [the recorded checks](results/week8/validation/README.md).
