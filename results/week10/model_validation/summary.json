@@ -1,0 +1,145 @@
+{
+  "prompt": "branching colonies",
+  "n_runs": 6,
+  "n_frames": 120,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "sampled_updates": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    550,
+    600,
+    650,
+    700,
+    750,
+    800,
+    850,
+    900,
+    950,
+    1000
+  ],
+  "clip_scores_reused": true,
+  "per_seed": [
+    {
+      "seed": 101,
+      "clip_default_mean": 0.2558547854423523,
+      "siglip_default_mean": -8.40414080619812,
+      "clip_selected_mean": 0.2535431683063507,
+      "siglip_selected_mean": -7.343136596679687,
+      "clip_difference": -0.002311617136001587,
+      "clip_preferred": "default",
+      "clip_near_tie": false,
+      "siglip_difference": 1.0610042095184324,
+      "siglip_preferred": "selected",
+      "siglip_near_tie": false,
+      "models_agree": false
+    },
+    {
+      "seed": 202,
+      "clip_default_mean": 0.24842727184295654,
+      "siglip_default_mean": -7.843146848678589,
+      "clip_selected_mean": 0.2449958324432373,
+      "siglip_selected_mean": -6.662670850753784,
+      "clip_difference": -0.0034314393997192383,
+      "clip_preferred": "default",
+      "clip_near_tie": false,
+      "siglip_difference": 1.1804759979248045,
+      "siglip_preferred": "selected",
+      "siglip_near_tie": false,
+      "models_agree": false
+    },
+    {
+      "seed": 303,
+      "clip_default_mean": 0.246025949716568,
+      "siglip_default_mean": -6.915826940536499,
+      "clip_selected_mean": 0.23476406931877136,
+      "siglip_selected_mean": -8.076794362068176,
+      "clip_difference": -0.01126188039779663,
+      "clip_preferred": "default",
+      "clip_near_tie": false,
+      "siglip_difference": -1.1609674215316765,
+      "siglip_preferred": "default",
+      "siglip_near_tie": false,
+      "models_agree": true
+    }
+  ],
+  "agreement_count": 1,
+  "differences": "selected minus default, within each model's own units",
+  "tie_tolerances": {
+    "clip_alignment": 1e-06,
+    "siglip_logit": 0.0001,
+    "meaning": "Absolute numerical near-tie flags; these are not significance thresholds."
+  },
+  "repeat_check": {
+    "frames": 4,
+    "same_batch_max_abs_logit_difference": 0.0,
+    "single_vs_batch_abs_logit_difference": 9.5367431640625e-07
+  },
+  "timings": {
+    "per_run_inference_and_preprocessing": [
+      {
+        "seed": 101,
+        "configuration": "default",
+        "seconds": 2.7963893300038762
+      },
+      {
+        "seed": 101,
+        "configuration": "selected",
+        "seconds": 2.722727151995059
+      },
+      {
+        "seed": 202,
+        "configuration": "default",
+        "seconds": 2.7092919159986195
+      },
+      {
+        "seed": 202,
+        "configuration": "selected",
+        "seconds": 2.7575250419977237
+      },
+      {
+        "seed": 303,
+        "configuration": "default",
+        "seconds": 2.731004881003173
+      },
+      {
+        "seed": 303,
+        "configuration": "selected",
+        "seconds": 2.7117355189984664
+      }
+    ],
+    "model_load_seconds": 1.0867787209936068
+  },
+  "model_statistics": {
+    "clip": {
+      "mean_paired_difference": -0.005668312311172485,
+      "sample_std_paired_difference": 0.004876423221004767,
+      "default_mean": 0.2501026690006256,
+      "selected_mean": 0.24443435668945312
+    },
+    "siglip": {
+      "mean_paired_difference": 0.3601709286371868,
+      "sample_std_paired_difference": 1.3186981410929846,
+      "default_mean": -7.721038198471069,
+      "selected_mean": -7.360867269833882
+    }
+  },
+  "limitations": [
+    "Three seeds from one fixed prompt and previously selected configurations.",
+    "Temporal frames within a run are correlated; no independent-frame significance claims.",
+    "Model agreement is supporting evidence; neither model establishes visual or biological ground truth.",
+    "Preprocessing follows each model's own processor; score magnitudes have different units."
+  ],
+  "reproduction_command": "'/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/venvs/siglip-validation-20261027/bin/python' scripts/validate_saved_clip_siglip.py --source results/week9/supervised_coralai_20261022 --output-dir results/week10/model_validation --local-files-only --batch-size 4 --threads 4"
+}

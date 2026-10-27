@@ -1,0 +1,25 @@
+{
+  "command": "'/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/venvs/siglip-validation-20261027/bin/python' scripts/validate_saved_clip_siglip.py --source results/week9/supervised_coralai_20261022 --output-dir results/week10/model_validation --local-files-only --batch-size 4 --threads 4",
+  "cwd": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880",
+  "python": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/venvs/siglip-validation-20261027/bin/python",
+  "python_version": "3.11.17",
+  "platform": "Linux-7.2.10-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "cpu_threads": 4,
+  "batch_size": 4,
+  "device": "cpu",
+  "dtype": "float32",
+  "packages": {
+    "torch": "2.7.1+cpu",
+    "transformers": "4.47.1",
+    "sentencepiece": "0.2.1",
+    "protobuf": "5.29.2",
+    "numpy": "2.2.1",
+    "pillow": "11.0.0",
+    "matplotlib": "3.10.0",
+    "huggingface-hub": "0.27.0",
+    "tokenizers": "0.21.0",
+    "safetensors": "0.4.5"
+  },
+  "script_sha256": "db100a4695f2af3119b553d9b24415d1464b7006d13ac4523a3e0fad73cb9fde",
+  "git_head": "137e3c79220c04a0085524dfd1b3daef8444dda0"
+}

@@ -1,0 +1,13 @@
+test_all_real_inputs (__main__.Checks.test_all_real_inputs) ... ok
+test_changed_config_is_rejected (__main__.Checks.test_changed_config_is_rejected) ... ok
+test_inconsistent_cached_scores_are_rejected (__main__.Checks.test_inconsistent_cached_scores_are_rejected) ... ok
+test_missing_image_is_explicit (__main__.Checks.test_missing_image_is_explicit) ... ok
+test_missing_sample_update_is_rejected (__main__.Checks.test_missing_sample_update_is_rejected) ... ok
+test_model_specific_near_ties (__main__.Checks.test_model_specific_near_ties) ... ok
+test_modified_image_hash_is_rejected (__main__.Checks.test_modified_image_hash_is_rejected) ... ok
+test_temporal_means_and_disagreement (__main__.Checks.test_temporal_means_and_disagreement) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.148s
+
+OK

@@ -1,0 +1,7 @@
+{
+  "environment": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/venvs/siglip-validation-20261027",
+  "base_environment": "/home/sparky/.venvs/coralai-asal",
+  "reuse": "read-only base site-packages through asal_readonly.pth",
+  "additional_package": "sentencepiece==0.2.1",
+  "original_environment_unchanged": true
+}

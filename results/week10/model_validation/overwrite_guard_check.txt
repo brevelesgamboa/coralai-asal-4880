@@ -1,0 +1,2 @@
+Verified 6 runs and 120 images; prompt='branching colonies'
+Evaluation stopped: Evaluation outputs already exist: /home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week10/model_validation. Choose a fresh --output-dir.
