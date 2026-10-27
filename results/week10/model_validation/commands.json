@@ -1,0 +1,23 @@
+{
+  "evaluation_executed": "'/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/venvs/siglip-validation-20261027/bin/python' scripts/validate_saved_clip_siglip.py --source results/week9/supervised_coralai_20261022 --output-dir results/week10/model_validation --local-files-only --batch-size 4 --threads 4",
+  "reproduction": "data/venvs/siglip-validation-20261027/bin/python scripts/validate_saved_clip_siglip.py --source results/week9/supervised_coralai_20261022 --output-dir results/week10/model_validation_repro --local-files-only --batch-size 4 --threads 4",
+  "preflight": "data/venvs/siglip-validation-20261027/bin/python scripts/validate_saved_clip_siglip.py --check-inputs",
+  "existing_regression_check": "/home/sparky/.venvs/coralai-asal/bin/python -m unittest discover -s tests -p 'test_clip_devices.py'",
+  "environment": {
+    "environment": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/venvs/siglip-validation-20261027",
+    "base_environment": "/home/sparky/.venvs/coralai-asal",
+    "reuse": "read-only base site-packages through asal_readonly.pth",
+    "additional_package": "sentencepiece==0.2.1",
+    "original_environment_unchanged": true
+  },
+  "optional_clean_environment_setup": {
+    "tested": false,
+    "commands": [
+      "python3.11 -m venv .venv-siglip",
+      ". .venv-siglip/bin/activate",
+      "python -m pip install torch==2.7.1+cpu --index-url https://download.pytorch.org/whl/cpu",
+      "python -m pip install -c results/week10/model_validation/requirements-used.txt transformers sentencepiece protobuf numpy pillow matplotlib huggingface-hub tokenizers safetensors"
+    ],
+    "note": "The executed evaluation used the isolated overlay recorded in environment_setup.json; this fresh installation recipe has not been independently tested."
+  }
+}

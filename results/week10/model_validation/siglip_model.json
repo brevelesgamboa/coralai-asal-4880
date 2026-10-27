@@ -1,0 +1,57 @@
+{
+  "model": "google/siglip-base-patch16-224",
+  "revision": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed",
+  "snapshot": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/data/model_cache/siglip-validation/models--google--siglip-base-patch16-224/snapshots/7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed",
+  "file_sha256": {
+    "config.json": "cd85b3d28829722820bcb89a2cfbb4160e55fd359249a3044da724166a8d9688",
+    "tokenizer_config.json": "d6423dae508cc3a129d22ea443841c111832a1a73125b8f25ea8736951698bcb",
+    "preprocessor_config.json": "d11ccb80f15d358a11bdb070e92e2d889005874b7db15823d5f10d9b2533b14a",
+    "special_tokens_map.json": "2b6a1ff67a27e0df9ac0c7d93250fc0d87431c7b366b3d5669217104f9088a26",
+    "tokenizer.json": "c6e405cb7c670d56636a9402c81023a55bc6c3c53d89cf02b92f5c5005bfe920",
+    "spiece.model": "1e5036bed065526c3c212dfbe288752391797c4bb1a284aa18c9a0b23fcaf8ec",
+    "model.safetensors": "2c63cb7d1f2e95ba501893cbb8faeb4ea9a3af295498d35097126228659c2af8"
+  },
+  "processor_class": "SiglipProcessor",
+  "image_processor": {
+    "_processor_class": "SiglipProcessor",
+    "image_processor_type": "SiglipImageProcessor",
+    "do_resize": true,
+    "size": {
+      "height": 224,
+      "width": 224
+    },
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "do_convert_rgb": null
+  },
+  "tokenizer_class": "SiglipTokenizer",
+  "text_padding": "max_length",
+  "text_max_length": 64,
+  "text": "branching colonies",
+  "prompt_template": null,
+  "score": "outputs.logits_per_image[:, 0]; learned-scale cosine plus learned bias; higher is better",
+  "aggregation": "arithmetic mean of the 20 raw image-text logits for updates 50..1000",
+  "attention": "eager",
+  "training": false,
+  "autograd": false,
+  "sigmoid_applied": false,
+  "interpretation": "Uncalibrated model scores; CLIP and SigLIP units are kept separate.",
+  "references": [
+    "https://huggingface.co/google/siglip-base-patch16-224",
+    "https://huggingface.co/docs/transformers/v4.47.1/en/model_doc/siglip"
+  ],
+  "download_or_cache_seconds": 5.731999408453703e-05,
+  "model_load_seconds": 1.0867787209936068
+}

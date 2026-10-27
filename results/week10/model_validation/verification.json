@@ -1,0 +1,21 @@
+{
+  "validation_unit_checks": {
+    "passed": 8,
+    "details": "input_checks.txt"
+  },
+  "existing_clip_regression_tests_passed": 5,
+  "all_120_scores_finite": true,
+  "per_seed_temporal_means_and_differences_independently_checked": true,
+  "unchanged_week9_files": 638,
+  "existing_readme_unchanged": true,
+  "validated_cpu_packages_unchanged": true,
+  "executed_script_sha256_matches": true,
+  "overwrite_guard_passed": true,
+  "figure_visually_inspected": true,
+  "independent_teammate_reproduction": false,
+  "repeat_check": {
+    "frames": 4,
+    "same_batch_max_abs_logit_difference": 0.0,
+    "single_vs_batch_abs_logit_difference": 9.5367431640625e-07
+  }
+}
