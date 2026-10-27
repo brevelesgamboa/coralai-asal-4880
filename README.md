@@ -1,100 +1,52 @@
 # Coralai + ASAL
 
-CSC 4880 project using ASAL to search Coralai simulation settings with text prompts.
+CSC 4880 project connecting Coralai ecosystem simulations to ASAL supervised target search.
 
-## Setup
+## Current progress
+- Added Coralai source under external/coralai/.
+- Organized existing experiment results under results/.
+- Collected project documentation under docs/.
+- Defined the [Coralai pilot configuration and result contract](docs/coralai_pilot_contract.md), with JSON schemas, a default configuration, and an illustrative result.
 
-Use Python 3.11 and run commands from the repository root. The examples below use CPU.
+## Pilot format checks
+
+The shared format can be validated without running Coralai or downloading CLIP.
+Use a Python environment with the existing `jsonschema==4.23.0` dependency:
+
+```sh
+python scripts/validate_coralai_contract.py config configs/coralai_pilot.default.json
+python scripts/validate_coralai_contract.py result examples/coralai_pilot_result.json
+python -m unittest discover -s tests -p 'test_coralai_contract.py'
+```
+
+## Verified headless CPU run
+
+From the repository root, using Python 3.11 (the version checked here):
 
 ```sh
 python3.11 -m venv .venv
 . .venv/bin/activate
 python -m pip install torch==2.7.1+cpu --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -c results/week9/supervised_coralai_20261022/requirements-used.txt \
-  jax jaxlib flax transformers evosax einops tqdm dotmap jsonschema \
-  external/coralai external/coralai/coralai/dependencies/PyTorch-NEAT
-```
-
-Download the CLIP weights once before running a search:
-
-```sh
-python -c 'from huggingface_hub import snapshot_download; snapshot_download("openai/clip-vit-base-patch32", revision="3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268")'
-```
-
-## Run a simulation
-
-```sh
+python -m pip install -c results/week9/headless_runner_verification_20261022/requirements-used.txt external/coralai external/coralai/coralai/dependencies/PyTorch-NEAT
 python external/coralai/experiments/coral_dev/headless_coral.py \
   --config configs/headless_cpu_repro.json --seed 42 \
-  --output-dir data/raw/example_run
+  --output-dir data/raw/headless_repro/run_1
 ```
 
-This config runs 51 steps on a 50×50 grid. Each run saves its settings, screenshots, logs, and checkpoints.
-Use a new output directory for each run. Change the JSON config to adjust the simulation.
+Use a fresh `--output-dir` on every invocation; repeat with `run_2` to compare.
+The config preserves the existing sanity check: 51 steps, 50×50 grid, CPU, seed 42.
+Each run saves `config.json`, `meta.json`, screenshots, and checkpoints at updates 50 and 51.
+Verification outputs: `data/raw/headless_runner_verification_20261022/{run_a,run_b,isolated_run}/`.
+Commands, versions, hashes, and comparisons: [verification records](results/week9/headless_runner_verification_20261022/).
+All four frames matched across these runs; repeat tensors differed by at most `7.1e-6`.
 
-## Run supervised search
+See [pilot validation](docs/coralai_pilot_validation.md) for saved-artifact checks,
+reproduction commands, and [the recorded checks](results/week8/validation/README.md).
 
-```sh
-JAX_PLATFORMS=cpu python main_opt.py --substrate coralai \
-  --coralai_config configs/coralai_supervised.default.json \
-  --coralai_search_config configs/coralai_supervised.search.json \
-  --pop_size 4 --n_iters 2 --sigma 0.25 --seed 0 \
-  --save_dir results/supervised_search/search
-```
-
-ASAL's Sep-CMA-ES generates and evaluates eight candidates, plus the default configuration.
-Each simulation runs 1,000 steps on a 100×100 grid with screenshots every 50 steps.
-The search config sets the prompt, parameter ranges, and simulation seeds.
-
-Selection uses mean CLIP alignment across steps 50–1,000. Higher alignment is better.
-Results include separate scores for the best sampled frame and the final frame.
-The selected settings are saved in `results/supervised_search/search/selected_config.json`.
-
-Compare the selected settings with the default on three additional seeds:
-
-```sh
-JAX_PLATFORMS=cpu python scripts/coralai_search.py compare \
-  --experiment results/supervised_search/search \
-  --output-dir results/supervised_search/seed_comparison
-```
-
-The comparison saves per-seed scores, paired differences, averages, and variation.
-CPU runs can vary slightly with the same seed.
-
-## Score saved screenshots
-
-```sh
-python scripts/score_coralai_progression.py \
-  --images-glob 'data/raw/example_run/screenshots/step_*.png' \
-  --prompt 'branching colonies' --device cpu \
-  --output results/example_scores.json
-```
-
-For a CPU/GPU score and timing comparison, use an environment with GPU-enabled JAX:
-
-```sh
-python scripts/compare_clip_devices.py \
-  --images-glob 'data/raw/example_run/screenshots/step_*.png' \
-  --prompts 'branching colonies' --warmup 2 --repeats 5 \
-  --output-dir results/device_comparison
-```
-
-## Results and checks
-
-Saved experiments are in [results/](results/). The [supervised search results](results/week9/supervised_coralai_20261022/summary.json)
-include configs, seeds, scores, runtimes, and reproduction commands.
-That experiment improved the selection-seed score but scored lower than the default on all three additional seeds.
-Hardware details and device benchmarks are saved with the [GPU comparison results](results/week9/clip_gpu_gfx1031_20261022/).
-
-```sh
-python -m unittest discover -s tests -p 'test_coralai*.py'
-python -m unittest discover -s tests -p 'test_headless_coral_runner.py'
-python -m unittest discover -s tests -p 'test_clip_devices.py'
-```
-
-See the [pilot format guide](docs/coralai_pilot_contract.md) and [validation instructions](docs/coralai_pilot_validation.md) for artifact checks.
+## Next steps
+- Compute Shannon and discretized entropy on saved runs.
+- Connect Coralai simulation frames to ASAL scoring.
 
 ## Upstream projects
-
-- [ASAL](https://github.com/SakanaAI/asal)
-- [Coralai](https://github.com/aidanbx/coralai)
+- ASAL: https://github.com/SakanaAI/asal
+- Coralai: https://github.com/aidanbx/coralai
