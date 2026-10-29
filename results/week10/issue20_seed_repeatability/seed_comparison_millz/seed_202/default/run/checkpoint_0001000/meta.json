@@ -1,0 +1,10 @@
+{
+  "step": 1000,
+  "timestamp": "2026-10-29T15:16:01.392790",
+  "git_hash": "a66a35a7a8ee2c4d5e6babc6c4155d0a915934bd",
+  "shape": [
+    100,
+    100
+  ],
+  "n_genomes": 65
+}
