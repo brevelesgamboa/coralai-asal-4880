@@ -1,0 +1,155 @@
+{
+  "mean_loss": -0.25354263186454773,
+  "mean_alignment": 0.25354263186454773,
+  "best_sample_loss": -0.26008570194244385,
+  "best_sample_alignment": 0.26008570194244385,
+  "best_sample_step": 950,
+  "final_loss": -0.2585228383541107,
+  "final_alignment": 0.2585228383541107,
+  "seed": 101,
+  "simulation_seconds": 27.771212300285697,
+  "scoring_seconds": 6.379251100122929,
+  "final_checkpoint": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\checkpoint_0001000",
+  "frame_scores": [
+    {
+      "step": 50,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000050.png",
+      "sha256": "14c54a6266b25439a752c3cfcea425f7e4a8cd9f57ec2c41ad179add469ce4f2",
+      "loss": -0.24366866052150726,
+      "alignment": 0.24366866052150726
+    },
+    {
+      "step": 100,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000100.png",
+      "sha256": "93aab0bf07b0042274fe13b0d21a35432461c944728eaf790b80e2ca66e62d9e",
+      "loss": -0.2478296011686325,
+      "alignment": 0.2478296011686325
+    },
+    {
+      "step": 150,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000150.png",
+      "sha256": "8b199723f89ae9bb968654338bc4cf0f8808776c40f886e773e4e5b70cf3cbfd",
+      "loss": -0.24569810926914215,
+      "alignment": 0.24569810926914215
+    },
+    {
+      "step": 200,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000200.png",
+      "sha256": "b094ed55425c94e862ea31df008ed0e752d0d861deb7ee5894485b552a63ac14",
+      "loss": -0.24294641613960266,
+      "alignment": 0.24294641613960266
+    },
+    {
+      "step": 250,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000250.png",
+      "sha256": "fd875313115ecacb6f9069b42148e85673d0487d97d6fab00993b8a1c80fa828",
+      "loss": -0.24627816677093506,
+      "alignment": 0.24627816677093506
+    },
+    {
+      "step": 300,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000300.png",
+      "sha256": "59c92e9e52f0fc5bb9edfa2baac26af791edb2d752f7bab97aa514c183689211",
+      "loss": -0.24660378694534302,
+      "alignment": 0.24660378694534302
+    },
+    {
+      "step": 350,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000350.png",
+      "sha256": "76a6f340d91f725ba3d597c35ce9842b20d121048a4268dec946af42fa7f26c5",
+      "loss": -0.25337424874305725,
+      "alignment": 0.25337424874305725
+    },
+    {
+      "step": 400,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000400.png",
+      "sha256": "0c9390011cc8ea3a6fb3a4c60664a376a1e64adfe0870e83fcf841acd01bb35f",
+      "loss": -0.25379660725593567,
+      "alignment": 0.25379660725593567
+    },
+    {
+      "step": 450,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000450.png",
+      "sha256": "99a853f7a8de0f1aecba97d6b94f6066b76c07cfe3da109710a543ef52828fa1",
+      "loss": -0.2529786229133606,
+      "alignment": 0.2529786229133606
+    },
+    {
+      "step": 500,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000500.png",
+      "sha256": "c23749a4376f6cdf86aa0cef455dde633bcb39615fb54ed772eb0d9a991011f9",
+      "loss": -0.25723373889923096,
+      "alignment": 0.25723373889923096
+    },
+    {
+      "step": 550,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000550.png",
+      "sha256": "409c97f00dd4cc7571e99135cf5dd8211131c1db8b75e766aceb3496d668a6ec",
+      "loss": -0.25651293992996216,
+      "alignment": 0.25651293992996216
+    },
+    {
+      "step": 600,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000600.png",
+      "sha256": "4deb681c7b850f66655051843b005aadb6af70d0b70e5def4829627089f182a3",
+      "loss": -0.2582641839981079,
+      "alignment": 0.2582641839981079
+    },
+    {
+      "step": 650,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000650.png",
+      "sha256": "e9feeb053e4b86c7e80b275b0dc25161007f771755f6a530f645073501bc9fb8",
+      "loss": -0.2597923278808594,
+      "alignment": 0.2597923278808594
+    },
+    {
+      "step": 700,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000700.png",
+      "sha256": "8c61a2f459521cada2e09e67eeaec2e9488832e9372663fba1b7df876af9e8d0",
+      "loss": -0.2542203962802887,
+      "alignment": 0.2542203962802887
+    },
+    {
+      "step": 750,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000750.png",
+      "sha256": "4049d492ed0ad868bb719f066f762a456bd93d8ae871668ce335176ac7b521b3",
+      "loss": -0.2573084533214569,
+      "alignment": 0.2573084533214569
+    },
+    {
+      "step": 800,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000800.png",
+      "sha256": "4471170588e8d7a35d4d8dadab465d93a3c3e4d9f7bae9154575cec8e73e8229",
+      "loss": -0.25720900297164917,
+      "alignment": 0.25720900297164917
+    },
+    {
+      "step": 850,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000850.png",
+      "sha256": "e5d231765bafeab0f13357bc8ee66ea89c82f76d9a7994a67000a887e5a6c0d6",
+      "loss": -0.25894615054130554,
+      "alignment": 0.25894615054130554
+    },
+    {
+      "step": 900,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000900.png",
+      "sha256": "3138b3a448e4955f2bf4de75cb7e01ab9f9f511a57648100f008fad5e2aef832",
+      "loss": -0.2595830261707306,
+      "alignment": 0.2595830261707306
+    },
+    {
+      "step": 950,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0000950.png",
+      "sha256": "09c3a51770f88d9e240abd2858fff9237f095834aafc1e1b8a57e92d6cadab11",
+      "loss": -0.26008570194244385,
+      "alignment": 0.26008570194244385
+    },
+    {
+      "step": 1000,
+      "image": "C:\\dev\\coralai-asal-4880\\results\\week10\\issue20_seed_repeatability\\seed_comparison_millz\\seed_101\\selected\\run\\screenshots\\step_0001000.png",
+      "sha256": "0baf26e77c3bab6bcfbaf52ef34cfda72615ca00e6e3be32236ba7e76d67b80f",
+      "loss": -0.2585228383541107,
+      "alignment": 0.2585228383541107
+    }
+  ]
+}

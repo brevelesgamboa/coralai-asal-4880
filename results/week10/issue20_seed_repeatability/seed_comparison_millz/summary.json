@@ -1,0 +1,12 @@
+{
+  "n_seeds": 3,
+  "positive_means": "selected improves alignment",
+  "improved_seeds": 0,
+  "paired_difference_mean": -0.00571193794409434,
+  "paired_difference_sample_std": 0.004850715494192515,
+  "default_mean_alignment": 0.2500878969828288,
+  "default_sample_std": 0.0051077646599097986,
+  "selected_mean_alignment": 0.24437595903873444,
+  "selected_sample_std": 0.009396899582976476,
+  "total_seconds": 227.44053529994562
+}
