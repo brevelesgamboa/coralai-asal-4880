@@ -1,0 +1,113 @@
+{
+  "prompt": "branching colonies",
+  "seeds": [
+    101,
+    202
+  ],
+  "contact_sheet_updates": [
+    250,
+    500,
+    750,
+    1000
+  ],
+  "selection_rule": "The same four pre-specified updates for both seeds; no additional examples selected.",
+  "original_temporal_mean_updates": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    550,
+    600,
+    650,
+    700,
+    750,
+    800,
+    850,
+    900,
+    950,
+    1000
+  ],
+  "original_evaluation_files_sha256": {
+    "results/week10/model_validation/initial_state.json": "f7837f8c43bafa5d62ff2b883c22cb7987cc2435a82ebbc2608c00e1b57a1b9b",
+    "results/week10/model_validation/environment_setup.json": "94740fe3f436e318205916ebb5f4f6528aa386268df0bc06c84d9c9010615f34",
+    "results/week10/model_validation/siglip_revision.json": "d35a5c6c62297d7cbe5958cdad0ed93e43e635fa178a384c7f25a33f478f0e1d",
+    "results/week10/model_validation/evaluation.log": "741b25fd5008df4b39e27837b6b2b3faa6235b72567a9834ab0196543b5beb2a",
+    "results/week10/model_validation/manifest.json": "5cc3a7d5d536e437232cda7c403d952b5114a60f826c051f8775d5da90b82aa9",
+    "results/week10/model_validation/requirements-used.txt": "8f0402b9a4373e71c2e6417a483b3737d68edd9a5363586a1d9ff8194342d775",
+    "results/week10/model_validation/execution.json": "bfeab87c7c31368e06d15cf8d13cf02d9988087673ee7d7c8fb58afde8c4c1de",
+    "results/week10/model_validation/siglip_model.json": "933517dd0aee70de3287b62acde329a5ef7031c2f1f1ee2a1329cdbfecc65a48",
+    "results/week10/model_validation/per_frame.csv": "3d4e8f71eb02680752e384a328dc89d082348eee7f3d0c29e30caad804560d37",
+    "results/week10/model_validation/per_seed.csv": "0b69172e0195c081ea7699e30e9cdc9e764420e5e2101135214a630d68d0525a",
+    "results/week10/model_validation/per_seed_differences.png": "475891cc42d2dabc5a89f05556ae9cc93418fc91d7c466368edd07e8cf356e18",
+    "results/week10/model_validation/per_seed_differences.svg": "20abbc95592d9e7040e0de16c2edbc53c8d11bf160fa330b9d914de6ecc96511",
+    "results/week10/model_validation/summary.json": "ef0b4f231dff97096920fe64556baab6dc3c33d234172acf10693981273af515",
+    "results/week10/model_validation/input_checks.txt": "c946175cf0e6c131db86bf9e54bd21c3afdde79453c0f93b55e4fe12508ea5d3",
+    "results/week10/model_validation/overwrite_guard_check.txt": "6cd549593877f1fe048c76e663dfdda33bee069ff315786518ffdd399df12557",
+    "results/week10/model_validation/commands.json": "62652217e2e525641eddc07fac0b4372f9d9737805037bb2b073ef18d6b7316c",
+    "results/week10/model_validation/verification.json": "52fd8bc74daf2c543f2e63f6945b3d19d8b0c31afb9b80c17e5a6a0622fea616"
+  },
+  "source_images_sha256": {
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/default/run/screenshots/step_0000250.png": "414255c191245d08b6e8fd2d834aa08132938e0d3eb560a8e5f98f1088aadfdb",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/selected/run/screenshots/step_0000250.png": "b80bbc40ac21315163f024b60d6be44d29f05ce4c374498234e7ce858c39497f",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/default/run/screenshots/step_0000500.png": "04b4fdbc0be00a3943650b965f8dc7e772d28b0e3af8ef4ec6f14e618abb950e",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/selected/run/screenshots/step_0000500.png": "756906b337b90a48bd6be6e214dc59ba64920c422ed14643672704b4726a50a3",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/default/run/screenshots/step_0000750.png": "2727da7f0589e5754ee716f8bfa3cb7ae4efe6385daa71b4ae3298b9c172eea8",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/selected/run/screenshots/step_0000750.png": "5f2c63296fe5add48477a569801511332c2d4487911ee6b4aa77ca8bd597c325",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/default/run/screenshots/step_0001000.png": "38a9b724c98b175ad19481d1c865a0d4583bcf62e12d2e1857a1947399614fd2",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_101/selected/run/screenshots/step_0001000.png": "400066b9a12cf6fbb0e555316b10f4a98e0ada8a4906bcb9294d6cc7b3c71bba",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000250.png": "41266d2d2eb475cb17ebacbf05af8cadfee54d79c092caea576f7695dbf86a68",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/selected/run/screenshots/step_0000250.png": "f59122b60ae2a7356f53fe5d22ff0ac02077ff5c9fea5bf8e27c5c0f437351f7",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000500.png": "01bfc341c6783285a8152c696a5a300eefddcaa822e0d342c911f1861ff3ede2",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/selected/run/screenshots/step_0000500.png": "2af66674829eed03ae1dad1514548b826d9bb269306cbc1113f77adcb3c6df27",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0000750.png": "2183f76f82a4ea4d04701e10d3b48007ffa60e1a823ba841e8f24df31e464f0e",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/selected/run/screenshots/step_0000750.png": "b7cc7088757ee33b0ceb3c3699fa97f4e00173721529afb5b826ad60ff987f45",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/default/run/screenshots/step_0001000.png": "1e9c2720377a7e7d773ba8e9b003277b1e4baef88fc7dbf6bf5e563504f490c5",
+    "results/week9/supervised_coralai_20261022/seed_comparison/seed_202/selected/run/screenshots/step_0001000.png": "bff5ee36e69258eecf416cfa16569430af614e762fb5be62f21a4031c40bed3f"
+  },
+  "image_handling": "RGB screenshots at native 100x100, enlarged to 300x300 with nearest-neighbor; no crop or color changes. Pixel round-trip checked for all 16 panels.",
+  "figure_layout": "Default left, selected right; one row per update.",
+  "original_clip_model": "openai/clip-vit-base-patch32",
+  "original_clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "siglip_model": "google/siglip-base-patch16-224",
+  "siglip_revision": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed",
+  "recomputed_scores": false,
+  "rerun_simulations": false,
+  "visual_inspection": {
+    "contact_sheets": [
+      "seed_101_contact_sheet.png",
+      "seed_202_contact_sheet.png"
+    ],
+    "native_resolution_pairs": [
+      {
+        "seed": 101,
+        "update": 750
+      },
+      {
+        "seed": 202,
+        "update": 500
+      },
+      {
+        "seed": 202,
+        "update": 1000
+      }
+    ],
+    "native_resolution": [
+      100,
+      100
+    ],
+    "extra_examples_added": false
+  },
+  "checks": {
+    "all_16_panels_preserve_source_pixels": true,
+    "all_source_image_hashes_match_saved_evaluation": true,
+    "original_evaluation_files_unchanged": true,
+    "all_8_pairs_have_matching_updates": true,
+    "review_word_count": 246
+  }
+}
