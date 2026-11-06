@@ -1,0 +1,21 @@
+{
+  "python": "/tmp/coralai-aligned-pilot-env/bin/python",
+  "python_version": "3.11.17",
+  "platform": "Linux-7.2.14-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "packages": {
+    "torch": "2.7.1+cpu",
+    "numpy": "2.2.1",
+    "pillow": "11.0.0",
+    "taichi": "1.7.4",
+    "neat-python": "0.92",
+    "jax": "0.4.38",
+    "jaxlib": "0.4.38",
+    "flax": "0.10.2",
+    "transformers": "4.47.1",
+    "huggingface-hub": "0.27.0",
+    "safetensors": "0.4.5",
+    "sentencepiece": "0.2.1",
+    "protobuf": "5.29.2",
+    "matplotlib": "3.10.0"
+  }
+}

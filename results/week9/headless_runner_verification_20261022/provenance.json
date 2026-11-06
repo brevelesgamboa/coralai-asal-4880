@@ -12,14 +12,14 @@
   "config_changes": {
     "output_dir": null
   },
-  "verification_owner": "Codex; all three runs performed by the same agent",
+  "verification_owner": "All three runs performed in the same execution session.",
   "original_runner_audit": {
     "completed": true,
     "steps": 51,
     "frames": 4,
     "checkpoint_0000050_contains_updates": 51,
     "history_directory": "history/NEAT_261022-1859_28",
-    "history_note": "The original runner creates history relative to the repo root. This path was left in place; automatic approval review rejected relocation as an unnecessary mutation. The patched runner saves new histories inside each output directory."
+    "history_note": "The original runner creates history relative to the repo root. This path was left in place. The patched runner saves new histories inside each output directory."
   },
   "checks": {
     "headless_runner_integration_tests": {

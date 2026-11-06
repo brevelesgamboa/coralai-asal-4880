@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/tmp/coralai-aligned-pilot-env/bin/python",
+    "/tmp/coralai-aligned-pilot-source/external/coralai/experiments/coral_dev/headless_coral.py",
+    "--config",
+    "/home/sparky/Documents/School/CS 4880/coralai-asal-4880/results/week11/aligned_survival_pilot/seed303_c782434f_20261104/default/effective_config.json"
+  ],
+  "cwd": "/tmp/coralai-aligned-pilot-source",
+  "PYTHONPATH": "/tmp/coralai-aligned-pilot-source/external/coralai:/tmp/coralai-aligned-pilot-source/external/coralai/coralai/dependencies/PyTorch-NEAT"
+}

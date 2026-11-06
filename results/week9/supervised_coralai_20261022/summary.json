@@ -405,7 +405,7 @@
     "source_hashes_match_executed_code": true
   },
   "blockers": [],
-  "limitation": "Three held-out seeds; same-machine execution by Codex, not independent teammate reproduction.",
+  "limitation": "Three held-out seeds; same-machine execution, not independent teammate reproduction.",
   "presentation_bullets": [
     "Connected Coralai headless rollouts to ASAL Sep-CMA-ES with a reused CPU CLIP scorer.",
     "Evaluated eight candidates at 1000 steps, sampling every 50 steps on a 100x100 grid.",

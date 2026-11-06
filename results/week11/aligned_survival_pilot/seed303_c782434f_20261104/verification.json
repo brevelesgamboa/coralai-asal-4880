@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "matched_image_state_population_score_rows": 40,
+  "scheduled_updates_per_run": 20,
+  "checkpoint_occupancy_recounts_match": 40,
+  "checkpoint_rgb_pixel_matches": 40,
+  "unique_complete_run_seed_update_keys": true,
+  "valid_grid_denominators": 10000,
+  "all_scores_finite": true,
+  "population_values_interpolated": false,
+  "historical_scores_reused": false,
+  "historical_artifacts_unchanged": 650,
+  "historical_rgb_hash_matches_out_of_20": {
+    "default": 17,
+    "selected": 16
+  },
+  "scoring_controls": [
+    {
+      "configuration": "default",
+      "clip_abs_error": 0.0,
+      "siglip_abs_error": 9.5367431640625e-07
+    },
+    {
+      "configuration": "selected",
+      "clip_abs_error": 8.940696716308594e-08,
+      "siglip_abs_error": 1.9073486328125e-06
+    }
+  ],
+  "visual_inspection": "Review figure and representative decoded GIF frames; record separately in review.json."
+}

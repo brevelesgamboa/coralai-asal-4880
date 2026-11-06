@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "visually_inspected": [
+    "seed_303_endpoint_comparison.png",
+    "endpoint_population_all_seeds.png",
+    "decoded GIF frames at completed updates 50, 500, and 1000"
+  ],
+  "readability": "Configuration, seed, completed-update labels, analysis-mask labels, counts, and chart labels fit and are readable.",
+  "gif_synchronization": "All 20 decoded GIF frames independently checked by builder against the exact quantized source pair, in order, at matching completed updates.",
+  "gif_loop_duration_ms": 10000,
+  "endpoint_counts": {
+    "default": 1899,
+    "ASAL-selected": 2400
+  },
+  "endpoint_rgb": "Original colors and orientation preserved exactly with integer nearest-neighbor enlargement.",
+  "mask_verification": "genome >= 0, endpoint only; x/y transpose matches RGB; white-pixel counts in saved composite equal summary.",
+  "existing_artifacts_unchanged": 643,
+  "tracked_code_and_slides_unchanged": true,
+  "reproduction": {
+    "command": "python results/week11/survival_evaluation/presentation_assets/build_assets.py --output-dir /tmp/coralai-classroom-repro",
+    "byte_identical_outputs": [
+      "seed_303_rgb_comparison.gif",
+      "seed_303_endpoint_comparison.png",
+      "endpoint_population_all_seeds.png",
+      "verification.json"
+    ]
+  },
+  "overwrite_guard_passed": true,
+  "simulations_rerun": false,
+  "model_scores_recomputed": false,
+  "intermediate_masks_generated": false,
+  "temporal_interpolation": false,
+  "cleanup_20261105": {
+    "removed_outputs": [
+      "captions.txt"
+    ],
+    "visual_assets_unchanged": true
+  }
+}

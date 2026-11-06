@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "six_run_identities_verified": true,
+  "grid_denominators_verified": true,
+  "all_population_ranges_valid": true,
+  "trajectory_rows": 726,
+  "population_observations": 612,
+  "scored_frames": 120,
+  "exact_population_score_matches": 6,
+  "scored_frames_missing_population": 114,
+  "initial_and_final_tensors_validated": 12,
+  "state_screenshot_pixel_matches": 12,
+  "cached_clip_and_siglip_finite_and_means_verified": true,
+  "source_hashes_unchanged_after_analysis": true,
+  "missing_state_artifacts": [],
+  "automated_checks_only": true,
+  "visual_review": "Inspect trajectories.png; review recorded separately in review.json."
+}

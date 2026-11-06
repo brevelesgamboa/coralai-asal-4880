@@ -1,0 +1,15 @@
+From the repository root; requires Python with Torch, NumPy, Pillow, Matplotlib, and git history.
+Existing outputs are protected: use a fresh output directory. No model weights or Coralai runtime installation required.
+
+Original execution:
+/usr/bin/python scripts/evaluate_survival.py --source results/week9/supervised_coralai_20261022 --scores-dir results/week10/model_validation --output-dir results/week11/survival_evaluation
+
+Reproduce to a fresh directory:
+/usr/bin/python scripts/evaluate_survival.py --source results/week9/supervised_coralai_20261022 --scores-dir results/week10/model_validation --output-dir /tmp/coralai-survival-repro
+
+Checks:
+python -m unittest discover -s tests -p 'test_survival_evaluation.py'
+python -m unittest discover -s tests -p 'test_entropy_over_time.py'
+python scripts/validate_saved_clip_siglip.py --check-inputs
+
+Versions and historical environments: execution.json. Source hashes and update coverage: manifest.json.

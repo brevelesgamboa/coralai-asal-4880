@@ -1,0 +1,4 @@
+seed,population_comparison_update,final_cell_difference_selected_minus_default,final_fraction_difference_selected_minus_default,both_have_living_cells_at_last_observation,clip_at_1000_difference_selected_minus_default,siglip_at_1000_difference_selected_minus_default,clip_difference,clip_preferred,siglip_difference,siglip_preferred
+101,1000,392,0.039199999999999985,True,-0.0007422566413879395,1.5014739036560059,-0.002311617136001587,default,1.0610042095184324,selected
+202,1000,392,0.03920000000000001,True,-0.03550496697425842,0.05269193649291992,-0.0034314393997192383,default,1.1804759979248045,selected
+303,1000,501,0.05009999999999998,True,-0.016385003924369812,-0.43115901947021484,-0.01126188039779663,default,-1.1609674215316765,default

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "original_frame_hashes_verified": 40,
+  "decoded_gif_frames_verified": 20,
+  "matching_completed_updates_on_both_sides": true,
+  "loop_duration_ms": 10000,
+  "static_original_rgb_pixels_preserved": true,
+  "endpoint_state_reproduces_original_rgb": true,
+  "mask_counts_match_summary": {
+    "default": 1899,
+    "selected": 2400
+  },
+  "mask_orientation_matches_rgb": true,
+  "all_six_chart_values_verified": true,
+  "input_hashes_unchanged": true,
+  "simulation_rerun": false,
+  "model_scores_recomputed": false,
+  "intermediate_masks_created": false,
+  "visual_review": "Record human-visible inspection in review.json."
+}

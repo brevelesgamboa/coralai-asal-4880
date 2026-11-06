@@ -1,0 +1,47 @@
+{
+  "objective": "Separate seed-303 paired pilot of exact-update occupied-cell population and fresh image-text alignment",
+  "cwd": "/home/sparky/Documents/School/CS 4880/coralai-asal-4880",
+  "source_tree": "/tmp/coralai-aligned-pilot-source",
+  "isolation_branch": "issue25-aligned-survival-pilot",
+  "simulator_commit": "c782434f33807704d52982c353854771fa15591c",
+  "shared_runner_modified": false,
+  "harness": "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py",
+  "final_harness_sha256": "f443b6031b4c6116a7518411afb72d2b426224d7bd17b2ab48fa26917e0288f2",
+  "commands_executed": [
+    "/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py record",
+    "/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py fetch",
+    "/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py score",
+    "/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py report",
+    "/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py verify"
+  ],
+  "effective_child_commands": "default/command.json and selected/command.json",
+  "environment_versions": "environment.json",
+  "all_installed_versions": "requirements-used.txt",
+  "models_and_hashes": "models.json",
+  "recording_manifest": "recording_manifest.json",
+  "scoring_definition_and_controls": "scoring.json",
+  "fresh_reproduction_command": "bash results/week11/aligned_survival_pilot/seed303_c782434f_20261104/reproduce.sh results/week11/aligned_survival_pilot/seed303_reproduction",
+  "runtime_python_version": "3.11.17",
+  "runtime_torch_version": "2.7.1+cpu",
+  "only_configuration_changes": [
+    "seed=303",
+    "checkpoint_interval=50 (recording only)",
+    "output_dir (fresh pilot output)"
+  ],
+  "no_remaining_blockers": true,
+  "audit_20261105": {
+    "change": "Verification now rejects missing/duplicate recording-manifest identities before comparing the 40 saved tuples. Added a regression test; recording and scoring procedures unchanged.",
+    "review_harness_sha256": "f84b2fab6e91722958d264c0cd720c05b995b9124f503bb1c72e4a21bf9f65ae",
+    "review_checks_sha256": "e134e6a970128982ccff03ef9d418fc90509d67b08a4d3fccd6d54d27f3c7f5b",
+    "original_execution_harness_sha256": "f443b6031b4c6116a7518411afb72d2b426224d7bd17b2ab48fa26917e0288f2",
+    "scientific_outputs_unchanged": true
+  },
+  "cleanup_20261105": {
+    "removed_outputs": [
+      "followup_slide_bullets.txt",
+      "interpretation.txt"
+    ],
+    "current_harness_sha256": "3c378d618485e38fc7cde4fcd07bdac774ea0ec2a7fcf14546fbee322c6ed379",
+    "recording_scoring_and_visual_outputs_unchanged": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "independent_occupancy_recounts": 40,
+  "summary_changes_and_interval_counts_independently_checked": true,
+  "focused_recording_tests_passed": 4,
+  "existing_clip_tests_passed": 5,
+  "existing_survival_tests_passed": 9,
+  "existing_score_input_check": {
+    "runs": 6,
+    "frames": 120,
+    "passed": true
+  },
+  "pip_check_passed": true,
+  "visual_review": {
+    "figure": "All three panels, score units, sample points and legend are readable.",
+    "gif": "Updates 50,500,1000 visually inspected. Both sides share each displayed update; count/fraction labels match exact checkpoints. All 20 decoded frames checked programmatically.",
+    "gif_duration_seconds": 10,
+    "gif_frames": 20
+  },
+  "historical_artifacts_unchanged": 651,
+  "tracked_main_repo_changes": false,
+  "pinned_source_changes": false,
+  "overwrite_guards": [
+    {
+      "stage": "record",
+      "refused_existing_output": true
+    },
+    {
+      "stage": "score",
+      "refused_existing_output": true
+    },
+    {
+      "stage": "report",
+      "refused_existing_output": true
+    }
+  ],
+  "reproduction_script_syntax_checked": true,
+  "reproduction_runs_executed": false,
+  "reproduction_note": "Exactly two pilot simulations were executed. Reproduction commands are supplied for a fresh directory; additional runs may differ through parallel arithmetic.",
+  "limitations": [
+    "One seed, one paired pilot; no across-seed or causal claims.",
+    "20 related temporal samples per run, not independent experiments.",
+    "Observed interval changes compare endpoints; intermediate changes remain unmeasured.",
+    "Occupancy is not organism count or reproductive viability."
+  ]
+}

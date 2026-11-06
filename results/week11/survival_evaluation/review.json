@@ -1,0 +1,66 @@
+{
+  "status": "passed_with_existing_suite_dependency_limit",
+  "independent_saved_output_audit": {
+    "unique_run_seed_update_keys": 726,
+    "population_observations": 612,
+    "scored_frames": 120,
+    "exact_matches_at_update_1000": 6,
+    "score_only_rows_with_blank_population": 114,
+    "state_counts_independently_recounted": 12,
+    "all_denominators": 10000,
+    "all_log_counts_and_score_values_match_originals": true,
+    "all_six_living_at_last_observation": true,
+    "observed_zero_populations": 0
+  },
+  "new_survival_unit_checks": {
+    "passed": 9,
+    "command": "python -m unittest discover -s tests -p 'test_survival_evaluation.py' -v"
+  },
+  "existing_entropy_checks": {
+    "passed": 4,
+    "command": "python -m unittest discover -s tests -p 'test_entropy_over_time.py' -v"
+  },
+  "existing_score_input_check": {
+    "passed": true,
+    "command": "python scripts/validate_saved_clip_siglip.py --check-inputs",
+    "runs": 6,
+    "images": 120
+  },
+  "existing_suites_unavailable": [
+    {
+      "command": "python -m unittest discover -s tests -p 'test_coralai_pilot_validation.py' -v",
+      "reason": "ImportError: jsonschema is absent from the available analysis environment; suite could not start."
+    },
+    {
+      "command": "python -m unittest discover -s tests -p 'test_coralai_contract.py' -v",
+      "reason": "ImportError: jsonschema is absent from the available analysis environment; suite could not start."
+    }
+  ],
+  "dependency_changes_made": false,
+  "reproduction": {
+    "command": "/usr/bin/python scripts/evaluate_survival.py --source results/week9/supervised_coralai_20261022 --scores-dir results/week10/model_validation --output-dir /tmp/coralai-survival-repro",
+    "exit_code": 0,
+    "byte_identical_data_text_png_artifacts": [
+      "trajectory.csv",
+      "per_run_summary.csv",
+      "per_run_summary.md",
+      "paired_comparison.csv",
+      "manifest.json",
+      "survival_definition.md",
+      "interpretation.md",
+      "trajectories.png",
+      "verification.json"
+    ],
+    "svg_comparison": "Not byte-compared: Matplotlib emits timestamps and generated element IDs."
+  },
+  "overwrite_guard": {
+    "passed": true,
+    "exit_code": 2,
+    "existing_output_unchanged": true
+  },
+  "original_week9_week10_artifacts_unchanged": 630,
+  "figure_visually_inspected": true,
+  "figure_review": "All nine panels, legend, units, endpoint markers and timing caveat are readable; zero-baseline population axis; separate score scales. Final PNG pixel-identical to inspected first pass.",
+  "executed_script_hash_matches": true,
+  "scientific_limit": "Historical same-update populations missing at updates 50..950; no independent-frame or causal inference, uninterrupted-survival or permanent-extinction conclusion."
+}

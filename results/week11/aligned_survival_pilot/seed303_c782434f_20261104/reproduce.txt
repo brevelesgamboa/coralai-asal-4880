@@ -1,0 +1,16 @@
+Run from the repository root using the prepared environment and model cache:
+
+bash results/week11/aligned_survival_pilot/seed303_c782434f_20261104/reproduce.sh results/week11/aligned_survival_pilot/seed303_reproduction
+
+Choose a fresh output directory. This runs both configurations, scores the
+40 synchronized frames, creates the figure/GIF, and verifies the saved pairs.
+
+To check the existing results without running simulations or scoring:
+/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py verify
+
+Requires the Python 3.11 environment at /tmp/coralai-aligned-pilot-env,
+source checkout at /tmp/coralai-aligned-pilot-source pinned to c782434f33807704d52982c353854771fa15591c,
+and model cache at /tmp/coralai-aligned-models. Versions are recorded in
+requirements-pilot.txt, environment.json, and models.json. If the cache is
+missing, run the pilot's fetch stage without --local-files-only first.
+New runs may differ because parallel execution is not bitwise reproducible.

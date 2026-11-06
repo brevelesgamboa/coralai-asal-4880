@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-05",
+  "status": "ready_for_user_review",
+  "branch": "main",
+  "head": "c735155103b0ee92d44a2a7d0b8fefa8580ca790",
+  "remote": "origin: https://github.com/brevelesgamboa/coralai-asal-4880.git",
+  "remote_refs": "Inspected local tracking refs only; no fetch performed.",
+  "already_committed": [
+    {
+      "commit": "d414230",
+      "work": "CPU/GPU CLIP validation and Week 9 supervised search."
+    },
+    {
+      "commit": "da38640",
+      "work": "CLIP/SigLIP validation script and Week 10 model_validation artifacts; merged into current main."
+    },
+    {
+      "commit": "f830ad0",
+      "work": "Teammate issue #20 seed-repeatability reproduction; merged by c735155, preserved and excluded from new commit."
+    }
+  ],
+  "ready_for_review": [
+    "scripts/evaluate_survival.py",
+    "tests/test_survival_evaluation.py",
+    "results/week11/survival_evaluation/ (20 files including classroom assets)",
+    "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/ (195 proposed files after exclusions)",
+    "Two documentation-only attribution edits in results/week9/"
+  ],
+  "unrelated_or_unfinished_teammate_work": "No tracked edits, staged edits, or unrelated untracked work found in this checkout. Existing committed issue #20 results are left untouched.",
+  "existing_files_changed_in_audit": [
+    {
+      "path": "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/pilot.py",
+      "reason": "Validate complete recording-manifest identities before zip, preventing truncated manifests from falsely reporting 40 verified tuples."
+    },
+    {
+      "path": "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/check_alignment.py",
+      "reason": "Add a regression test that supplies a truncated manifest using mocked reads/writes."
+    },
+    {
+      "path": "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/execution.json",
+      "reason": "Append the audited verifier/check fingerprints while preserving the original execution fingerprint; no simulation/scoring results changed."
+    }
+  ],
+  "new_audit_files": [
+    "results/week11/review_audit_20261105/audit.json",
+    "results/week11/review_audit_20261105/commit-files.txt",
+    "results/week11/review_audit_20261105/excluded-files.txt"
+  ],
+  "consistency": {
+    "occupancy_definition": "genome >= 0; grid-cell occupancy, not organism count or reproductive viability",
+    "historical_timing": "Completed-update labels 0,1,11,...,991,1000; only six exact score matches at 1000; 114 scored frames have blank population values.",
+    "pilot": "Separate 40-pair seed-303 experiment, fresh inference, pinned baseline, matching completed updates 50..1000.",
+    "models": "CLIP cosine alignment and SigLIP raw logits retain separate scales and preprocessing.",
+    "interpretations": "No causation, independent-frame significance, or pilot across-seed generalization.",
+    "captions_and_figures": "Match saved counts; masks labelled as analysis views; renderer mixtures and per-frame normalization explained."
+  },
+  "tests": {
+    "passed": 23,
+    "groups": {
+      "survival_evaluation": 9,
+      "clip_devices": 5,
+      "entropy_over_time": 4,
+      "focused_pilot_recording": 5
+    },
+    "commands": [
+      "/tmp/coralai-aligned-pilot-env/bin/python -m unittest discover -s tests -p test_survival_evaluation.py -v",
+      "/tmp/coralai-aligned-pilot-env/bin/python -m unittest discover -s tests -p test_clip_devices.py -v",
+      "/tmp/coralai-aligned-pilot-env/bin/python -m unittest discover -s tests -p test_entropy_over_time.py -v",
+      "/tmp/coralai-aligned-pilot-env/bin/python results/week11/aligned_survival_pilot/seed303_c782434f_20261104/check_alignment.py"
+    ],
+    "cached_score_input_validation": "Passed: 6 runs, 120 images; no inference.",
+    "pip_check": "Passed: no broken requirements.",
+    "bash_syntax": "reproduce.sh passed bash -n.",
+    "unavailable_focused_checks": [],
+    "not_run": "Fresh simulation, model inference/download, full reproduction, and GPU execution were deliberately not rerun for this audit."
+  },
+  "artifact_checks": {
+    "historical_source_hashes_verified": 207,
+    "historical_trajectory_rows": 726,
+    "historical_population_observations": 612,
+    "historical_scores": 120,
+    "historical_exact_matches": 6,
+    "historical_score_only_rows": 114,
+    "historical_tensors_recounted": 12,
+    "pilot_exact_matches_recounted_and_rendered": 40,
+    "pilot_summaries_and_correlations_verified": true,
+    "model_provenance_hashes_match_originals": true,
+    "fresh_score_controls_within_recorded_tolerances": true,
+    "gifs": [
+      {
+        "path": "results/week11/survival_evaluation/presentation_assets/seed_303_rgb_comparison.gif",
+        "frames": 20,
+        "duration_ms": 10000,
+        "all_source_pairs_match": true
+      },
+      {
+        "path": "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/aligned_comparison.gif",
+        "frames": 20,
+        "duration_ms": 10000,
+        "all_source_pairs_match": true
+      }
+    ],
+    "endpoint_mask_counts": {
+      "default": 1899,
+      "selected": 2400
+    },
+    "captions_and_interpretations_match_data": true,
+    "existing_outputs_modified": false
+  },
+  "visual_inspection": "Reviewed historical/pilot trajectory figures, endpoint comparison, and a decoded endpoint GIF frame; labels, masks, units, timing and counts are readable and consistent.",
+  "commit_proposal": {
+    "file_list": "commit-files.txt",
+    "files": 219,
+    "bytes": 37398908,
+    "mib": 35.67,
+    "excluded_file_list": "excluded-files.txt",
+    "excluded_existing_nonignored_files": {
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/population.csv": "Duplicate population-only export; per_update.csv and recording_manifest.json retain every value.",
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/trajectories.svg": "Optional vector duplicate of the retained PNG figure.",
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/default/run/initial_state.pt": "Unscored update-0 state; not used by the 40-pair verifier or reported pilot comparison.",
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/default/run/screenshots/step_0000000.png": "Unscored update-0 screenshot; the retained animation/scoring window is 50\u20131,000.",
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/selected/run/initial_state.pt": "Unscored update-0 state; not used by the 40-pair verifier or reported pilot comparison.",
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/selected/run/screenshots/step_0000000.png": "Unscored update-0 screenshot; the retained animation/scoring window is 50\u20131,000."
+    },
+    "dependency_closure_verified": true,
+    "proposed_subset_verified": true,
+    "subject": "Evaluate Coralai occupancy alongside image\u2013text alignment",
+    "body": "Add the six-run issue #25 occupancy analysis and classroom assets. Preserve\nhistorical log timing: six exact endpoint matches and 114 scored frames without\nsame-update population measurements.\n\nAdd a separate seed-303 paired pilot pinned to simulator c782434f, with 40\nsynchronized image/checkpoint pairs and fresh CLIP/SigLIP scores. Default\noccupancy decreases as both scores rise; selected occupancy increases while\nCLIP decreases. Keep model scales separate and limit findings to these runs.\n\nReject incomplete recording-manifest coverage and add a regression test for a\ntruncated manifest. Validate 23 focused tests, 120 historical score inputs,\n52 checkpoint recounts, 40 aligned rendering matches, and both 10-second GIFs.\nOccupancy does not measure organisms or reproductive viability; no causal or\nacross-seed inference is made from the pilot."
+  },
+  "remaining_concerns": [
+    "Reproduction uses an isolated /tmp environment, source checkout, and model cache; reproduce.txt documents rebuilding these after cleanup.",
+    "The 40 simulation resume pickles contribute about 8.3 MB and are required by the current verifier. Removing them is a separate payload/verification choice.",
+    "Historical interpretation text and layouts are intentionally specific to this fixed six-run study; do not treat the script as a general study-report generator.",
+    "Older review.json test counts and dependency limitations describe the original executions; this audit records the current focused results separately."
+  ],
+  "preservation": {
+    "baseline_existing_artifacts": 861,
+    "existing_artifacts_unchanged": 858,
+    "changed_only_expected_three_files": true,
+    "all_numerical_results_images_checkpoints_and_captions_unchanged": true,
+    "index_sha256_before": "e097efe19d2fb9dac21d59f29549a3d5866f111e58911fddf3ed5c7804fb1764",
+    "index_sha256_after": "e097efe19d2fb9dac21d59f29549a3d5866f111e58911fddf3ed5c7804fb1764",
+    "staged_changes_before": [],
+    "staged_changes_after": [],
+    "staged_or_unstaged": false,
+    "commit_push_merge_publish": false
+  },
+  "cleanup_20261105": {
+    "removed_outputs": [
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/followup_slide_bullets.txt",
+      "results/week11/aligned_survival_pilot/seed303_c782434f_20261104/interpretation.txt",
+      "results/week11/survival_evaluation/presentation_assets/captions.txt"
+    ],
+    "pilot_reproduction_instructions_simplified": true,
+    "text_attribution_removed_from": [
+      "results/week9/supervised_coralai_20261022/summary.json",
+      "results/week9/headless_runner_verification_20261022/provenance.json"
+    ],
+    "protection_baseline_refreshed_for_documentation_only_changes": [
+      "results/week9/supervised_coralai_20261022/summary.json",
+      "results/week11/survival_evaluation/presentation_assets/build_assets.py",
+      "results/week11/survival_evaluation/presentation_assets/manifest.json",
+      "results/week11/survival_evaluation/presentation_assets/review.json"
+    ],
+    "scientific_values_checkpoints_scores_and_visuals_unchanged": true
+  },
+  "documentation_update_20261105": {
+    "survival_definition_simplified": true,
+    "generator_matches_saved_note": true,
+    "scientific_results_unchanged": true
+  }
+}
