@@ -173,3 +173,7 @@ cython_debug/
 data/
 *.egg-info/
 imgui.ini
+
+# Raw per-run simulation output for issue #26 (screenshots/checkpoints): summaries are tracked, raw runs stay local
+results/week11/issue26_smoke_test/
+results/week11/issue26_real_run/**/run/
