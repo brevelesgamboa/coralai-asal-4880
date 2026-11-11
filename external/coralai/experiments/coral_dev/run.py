@@ -51,7 +51,7 @@ parser.add_argument("--checkpoint-interval", type=int, default=1000,
                     help="Steps between checkpoints (0 = disable)")
 parser.add_argument("--log-interval", type=int, default=10)
 parser.add_argument("--env", type=str, default="flat",
-                    choices=["flat", "hole", "ring", "stripes", "corners", "patches", "oases"])
+                    choices=["flat", "hole", "ring", "stripes", "corners", "patches", "oases", "trail"])
 parser.add_argument("--env-param", type=float, default=None)
 parser.add_argument("--infra-decay", type=float, default=0.0,
                     help="Infra lost per step as a fraction (e.g. 0.002). 0=disabled.")
@@ -107,9 +107,11 @@ def main():
         env = exp.make_env("flat")
     else:
         env = exp.make_env(args.env, args.env_param)
-        env.seed(substrate)
 
     evolver = exp.make_evolver(substrate)
+
+    if not args.benchmark:
+        env.seed(substrate) 
 
     # Load checkpoint if resuming; otherwise this is step 0
     if args.resume_from:
@@ -223,7 +225,9 @@ def main():
 
         if step % args.radiate_interval == 0 and step > 0:
             sync(); t0 = time.perf_counter()
-            apply_radiation_mutation(evolver, 5)
+            apply_radiation_mutation(
+                evolver, 5,
+                seed_empty=(getattr(env, "spawn", "spread") == "spread"))
             sync(); timings["4_radiation"] += time.perf_counter() - t0
 
         # Periodic extinct-only cleanup: remove genomes with 0 cells (never kills live ones)
