@@ -42,51 +42,82 @@ def explore(mem: ti.types.ndarray(), max_act_i: ti.types.ndarray(),
             infra_delta: ti.types.ndarray(), energy_delta: ti.types.ndarray(),
             winning_genomes: ti.types.ndarray(), winning_rots: ti.types.ndarray(),
             dir_kernel: ti.types.ndarray(), dir_order: ti.types.ndarray(),
-            ti_inds: ti.template(), defense_coeff: ti.f32):
+            ti_inds: ti.template(), defense_coeff: ti.f32,
+            claim_efficiency: ti.f32, loser_cost: ti.f32, min_bid: ti.f32):
     inds = ti_inds[None]
+    n_dirs = dir_kernel.shape[0]
     for i, j in ti.ndrange(mem.shape[2], mem.shape[3]):
         winning_genome = mem[0, inds.genome, i, j]
-        # defense_coeff > 0: established cells (high infra) are harder to colonize
-        max_bid = mem[0, inds.energy, i, j] + mem[0, inds.infra, i, j] * defense_coeff
         winning_rot = mem[0, inds.rot, i, j]
-
-        for offset_n in ti.ndrange(dir_kernel.shape[0]): # this order doesn't matter
+ 
+        # Empty cells are undefended; occupied cells defend with energy
+        # (+ infra * defense_coeff).
+        defense = 0.0
+        if mem[0, inds.genome, i, j] >= 0:
+            defense = mem[0, inds.energy, i, j] + mem[0, inds.infra, i, j] * defense_coeff
+ 
+        best_bid = defense
+        win_x = -1
+        win_y = -1
+ 
+        for offset_n in ti.ndrange(n_dirs):
             neigh_x = (i + dir_kernel[offset_n, 0]) % mem.shape[2]
             neigh_y = (j + dir_kernel[offset_n, 1]) % mem.shape[3]
+            if neigh_x == i and neigh_y == j:
+                continue
             if mem[0, inds.genome, neigh_x, neigh_y] < 0:
                 continue
-            neigh_max_act_i = max_act_i[neigh_x, neigh_y] # Could be [0,0], so could overflow dir_kernel
+            neigh_max_act_i = max_act_i[neigh_x, neigh_y]
             if neigh_max_act_i == 0:
                 continue
-            neigh_max_act_i -= 1 # aligns with dir_kernel now
+            neigh_max_act_i -= 1  # aligns with dir_order
             neigh_rot = int(mem[0, inds.rot, neigh_x, neigh_y])
-            neigh_dir_ind = (neigh_rot + int(dir_order[neigh_max_act_i]) + dir_kernel.shape[0]) % dir_kernel.shape[0]
+            neigh_dir_ind = (neigh_rot + int(dir_order[neigh_max_act_i]) + n_dirs) % n_dirs
             neigh_dir_x = dir_kernel[neigh_dir_ind, 0]
             neigh_dir_y = dir_kernel[neigh_dir_ind, 1]
-            bid = 0.0
-            # If neigh's explore dir points towards this center
-            if ((neigh_dir_x + dir_kernel[offset_n, 0]) == 0 and (neigh_dir_y + dir_kernel[offset_n, 1]) == 0):
+ 
+            # Does this neighbour's explore direction point at (i, j)?
+            if ((neigh_dir_x + dir_kernel[offset_n, 0]) == 0
+                    and (neigh_dir_y + dir_kernel[offset_n, 1]) == 0):
                 bid = mem[0, inds.energy, neigh_x, neigh_y]
-                energy_delta[neigh_x, neigh_y] -= bid # bids are always taken as investment
-                bid = 0.9 # cost of dooing business
-                infra_delta[i, j] += bid
-                if bid > max_bid:
-                    max_bid = bid
+                if bid < min_bid:
+                    continue
+                # Every serious attacker pays loser_cost up front. Each attacker
+                # points at exactly one target, so only this thread writes here.
+                energy_delta[neigh_x, neigh_y] -= loser_cost * bid
+                if bid > best_bid:
+                    best_bid = bid
+                    win_x = neigh_x
+                    win_y = neigh_y
                     winning_genome = mem[0, inds.genome, neigh_x, neigh_y]
-                    winning_rot = (neigh_rot + int(dir_order[neigh_max_act_i]) + dir_kernel.shape[0]) % dir_kernel.shape[0]
+                    winning_rot = neigh_dir_ind - 0  # placeholder, fixed below
+ 
+        # Resolve the winner (if any) after the loop so we only charge it once.
+        if win_x >= 0:
+            w_act = max_act_i[win_x, win_y] - 1
+            w_rot = int(mem[0, inds.rot, win_x, win_y])
+            winning_rot = (w_rot + int(dir_order[w_act]) + n_dirs) % n_dirs
+            # Pay the remainder of the bid (loser_cost share already paid above).
+            energy_delta[win_x, win_y] -= (1.0 - loser_cost) * best_bid
+            # Payment becomes infrastructure in the conquered cell.
+            infra_delta[i, j] += claim_efficiency * best_bid
+ 
         winning_genomes[i, j] = winning_genome
         winning_rots[i, j] = winning_rot
-
-
+ 
+ 
 _explore_scratch = {}
-
-def explore_physics(substrate, dir_kernel, dir_order, defense_coeff: float = 0.0):
+ 
+ 
+def explore_physics(substrate, dir_kernel, dir_order, defense_coeff: float = 0.0,
+                    claim_efficiency: float = 0.9, loser_cost: float = 0.2,
+                    min_bid: float = 0.1):
     inds = substrate.ti_indices[None]
     grid_shape = substrate.mem[0, inds.infra].shape
     device = substrate.torch_device
-
+ 
     max_act_i = torch.argmax(substrate.mem[0, inds.acts_explore], dim=0)
-
+ 
     if "infra_delta" not in _explore_scratch or _explore_scratch["infra_delta"].shape != grid_shape:
         _explore_scratch["infra_delta"] = torch.zeros(grid_shape, dtype=substrate.mem.dtype, device=device)
         _explore_scratch["energy_delta"] = torch.zeros(grid_shape, dtype=substrate.mem.dtype, device=device)
@@ -97,11 +128,12 @@ def explore_physics(substrate, dir_kernel, dir_order, defense_coeff: float = 0.0
         _explore_scratch["energy_delta"].zero_()
         _explore_scratch["winning_genome"].zero_()
         _explore_scratch["winning_rots"].zero_()
-
+ 
     explore(substrate.mem, max_act_i,
             _explore_scratch["infra_delta"], _explore_scratch["energy_delta"],
             _explore_scratch["winning_genome"], _explore_scratch["winning_rots"],
-            dir_kernel, dir_order, substrate.ti_indices, defense_coeff)
+            dir_kernel, dir_order, substrate.ti_indices,
+            defense_coeff, claim_efficiency, loser_cost, min_bid)
     substrate.mem[0, inds.infra] += _explore_scratch["infra_delta"]
     substrate.mem[0, inds.energy] += _explore_scratch["energy_delta"]
     substrate.mem[0, inds.genome] = _explore_scratch["winning_genome"]

@@ -21,7 +21,7 @@ def kill_random_chunk(evolver, radius=5):
     evolver.set_chunk(-1, x, y, radius)
 
 
-def apply_radiation_mutation(evolver, n_spots=5, spot_live_radius=2, spot_dead_radius=4):
+def apply_radiation_mutation(evolver, n_spots=5, spot_live_radius=2, spot_dead_radius=4, seed_empty=True):
     """Spatial NEAT radiation: kill a circle, then mutate or crossover at that spot."""
     inds = evolver.substrate.ti_indices[None]
     xs = torch.randint(0, evolver.substrate.w, (n_spots,))
@@ -29,6 +29,8 @@ def apply_radiation_mutation(evolver, n_spots=5, spot_live_radius=2, spot_dead_r
 
     for i in range(n_spots):
         genome_key = int(evolver.substrate.mem[0, inds.genome, xs[i], ys[i]].item())
+        if genome_key < 0 and not seed_empty:
+            continue  
         rand_genome_key = torch.randint(0, len(evolver.genomes), (1,)).item()
         evolver.set_chunk(-1, xs[i], ys[i], spot_dead_radius)
 

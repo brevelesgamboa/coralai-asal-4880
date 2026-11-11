@@ -19,6 +19,8 @@ import torch
 
 from coralai.environment import StartEnvironment
 
+import math
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -488,6 +490,166 @@ class OasesEnvironment(StartEnvironment):
         }
 
 
+### TRAIL ENVIRONMENT
+
+# ---------------------------------------------------------------------------
+# Trail (food along a winding path; a few founders spawn at the start)
+# ---------------------------------------------------------------------------
+
+class TrailEnvironment(StartEnvironment):
+    """A serpentine food trail starting in the top-left corner.
+
+    Life is seeded only as a few small founder blobs at the trail's start.
+    The trail holds finite energy reserves (released into the substrate at
+    inject_rate per step) that grow richer toward the far end.
+
+    param n_lanes: number of back-and-forth lanes (default 4; --env-param).
+
+    Keyword parameters:
+      trail_width    : float — trail width in cells (4.0)
+      wiggle_frac    : float — lane wobble as fraction of min(W,H) (0.03)
+      margin_frac    : float — edge margin; also trail start offset (0.08)
+      max_capacity   : float — reserve per trail cell at the start (20.0)
+      goal_boost     : float — far end holds (1 + goal_boost)x reserve (2.0)
+      inject_rate    : float — energy released per trail cell per step (0.02)
+      init_energy    : float — standing energy on trail + founders at t=0 (0.4)
+      seed_infra     : float — infra added on trail + founders (0.4)
+      n_founders     : int   — founder blobs at the start (3)
+      founder_radius : float — founder blob radius in cells (3.0)
+      spawn_frac     : float — side of the founder spawn box, fraction of min(W,H) (0.12)
+    """
+    name = "trail"
+
+    def __init__(self, n_lanes: int = 4, *,
+                 spawn: str = "spread",
+                 trail_width: float = 4.0,
+                 wiggle_frac: float = 0.03,
+                 margin_frac: float = 0.08,
+                 max_capacity: float = 20.0,
+                 goal_boost: float = 2.0,
+                 inject_rate: float = 0.02,
+                 init_energy: float = 0.4,
+                 seed_infra: float = 0.4,
+                 n_founders: int = 1,
+                 founder_radius: float = 3.0,
+                 spawn_frac: float = 0.01):
+        self.n_lanes        = max(1, int(n_lanes))
+        self.spawn          = spawn
+        self.trail_width    = float(trail_width)
+        self.wiggle_frac    = float(wiggle_frac)
+        self.margin_frac    = float(margin_frac)
+        self.max_capacity   = float(max_capacity)
+        self.goal_boost     = float(goal_boost)
+        self.inject_rate    = float(inject_rate)
+        self.init_energy    = float(init_energy)
+        self.seed_infra     = float(seed_infra)
+        self.n_founders     = max(1, int(n_founders))
+        self.founder_radius = float(founder_radius)
+        self.spawn_frac     = float(spawn_frac)
+        self._capacity = None   # (w, h) energy reserve left on the trail
+
+    # ------------------------------------------------------------------
+    def _waypoints(self, w, h):
+        """Serpentine polyline in (x, y) cell coordinates, starting at (m, m)."""
+        m = self.margin_frac * min(w, h)
+        x_lo, x_hi = m, w - m
+        n = self.n_lanes
+        lane_ys = [m] if n == 1 else [m + k * (h - 2 * m) / (n - 1) for k in range(n)]
+        spacing = (h - 2 * m) / (n - 1) if n > 1 else h
+        amp = min(self.wiggle_frac * min(w, h), 0.3 * spacing)
+        pts, n_samples = [], 32
+        for k, y in enumerate(lane_ys):
+            for i in range(n_samples + 1):
+                u = i / n_samples
+                x = x_lo + (x_hi - x_lo) * (u if k % 2 == 0 else 1.0 - u)
+                # sin has period 1/2 lane -> zero at both ends, so lanes join cleanly
+                yy = y + ((-1) ** k) * amp * math.sin(2 * math.pi * 2 * u)
+                pts.append((x, yy))
+        return pts
+
+    def _build_trail(self, w, h, device):
+        """Return (trail_mask, progress): mask in {0,1}, progress in [0,1] along path."""
+        pts = self._waypoints(w, h)
+        seg_len = [math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1)]
+        total = max(sum(seg_len), 1e-6)
+
+        xs = torch.arange(w, device=device, dtype=torch.float32).view(w, 1)
+        ys = torch.arange(h, device=device, dtype=torch.float32).view(1, h)
+        best = torch.full((w, h), float("inf"), device=device)
+        prog = torch.zeros(w, h, device=device)
+
+        cum = 0.0
+        for (ax, ay), (bx, by), L in zip(pts[:-1], pts[1:], seg_len):
+            abx, aby = bx - ax, by - ay
+            L2 = max(abx * abx + aby * aby, 1e-9)
+            t = (((xs - ax) * abx + (ys - ay) * aby) / L2).clamp(0.0, 1.0)
+            d2 = (xs - (ax + t * abx)) ** 2 + (ys - (ay + t * aby)) ** 2
+            closer = d2 < best
+            best = torch.where(closer, d2, best)
+            prog = torch.where(closer, (cum + t * L) / total, prog)
+            cum += L
+
+        trail = (best <= (self.trail_width / 2.0) ** 2).float()
+        return trail, prog
+
+    def _founder_map(self, w, h, device):
+        """(w, h) float tensor: -1 everywhere; founder blob i holds genome index i."""
+        m = self.margin_frac * min(w, h)
+        half = self.spawn_frac * min(w, h) / 2.0
+        xs = torch.arange(w, device=device, dtype=torch.float32).view(w, 1)
+        ys = torch.arange(h, device=device, dtype=torch.float32).view(1, h)
+        gmap = torch.full((w, h), -1.0, device=device)
+        for i in range(self.n_founders):
+            cx = random.uniform(max(0.0, m - half), m + half)
+            cy = random.uniform(max(0.0, m - half), m + half)
+            blob = (xs - cx) ** 2 + (ys - cy) ** 2 <= self.founder_radius ** 2
+            gmap = torch.where(blob, torch.full_like(gmap, float(i)), gmap)
+        return gmap
+
+    def seed(self, substrate):
+        mem = substrate.mem
+        w, h = mem.shape[2], mem.shape[3]
+        device = substrate.torch_device
+        inds = substrate.ti_indices[None]
+
+        trail, prog = self._build_trail(w, h, device)
+        self._capacity = trail * self.max_capacity * (1.0 + self.goal_boost * prog)
+
+        if self.spawn == "corner":
+            gmap = self._founder_map(w, h, device)
+            founders = (gmap >= 0).float()
+            mem[0, inds.genome].copy_(gmap)
+            mem[0, inds.infra].zero_()
+        else:
+            founders = torch.zeros(w, h, device=device)   # genomes and infra untouched
+
+        # Trail is the only food; founders (corner mode) get a starting meal too
+        lit = torch.maximum(trail, founders)
+        mem[0, inds.energy].zero_()
+        mem[0, inds.energy].add_(lit * self.init_energy).clamp_(0, 100)
+        mem[0, inds.infra].add_(lit * self.seed_infra).clamp_(0, 100)
+
+    def step(self, substrate):
+        inds = substrate.ti_indices[None]
+        injection = self._capacity.clamp(max=self.inject_rate)
+        substrate.mem[0, inds.energy].add_(injection).clamp_(0, 100)
+        self._capacity.sub_(injection).clamp_(min=0)
+
+    @property
+    def persist(self) -> bool:
+        return True
+
+    def to_dict(self) -> dict:
+        return {
+            "name": self.name, "n_lanes": self.n_lanes,
+            "trail_width": self.trail_width, "wiggle_frac": self.wiggle_frac,
+            "margin_frac": self.margin_frac, "max_capacity": self.max_capacity,
+            "goal_boost": self.goal_boost, "inject_rate": self.inject_rate,
+            "init_energy": self.init_energy, "seed_infra": self.seed_infra,
+            "n_founders": self.n_founders, "founder_radius": self.founder_radius,
+            "spawn_frac": self.spawn_frac,
+        }
+
 # ---------------------------------------------------------------------------
 # Registry
 # ---------------------------------------------------------------------------
@@ -500,6 +662,7 @@ ENVIRONMENTS = {
     "corners": CornersEnvironment,
     "patches": PatchesEnvironment,
     "oases":   OasesEnvironment,
+    "trail": TrailEnvironment,
 }
 
 
