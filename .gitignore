@@ -177,3 +177,6 @@ imgui.ini
 # Raw per-run simulation output for issue #26 (screenshots/checkpoints): summaries are tracked, raw runs stay local
 results/week11/issue26_smoke_test/
 results/week11/issue26_real_run/**/run/
+
+# Raw per-run output (screenshots/checkpoints) for week 12 runs: keep summaries tracked, raw runs local
+results/week12/**/run/
