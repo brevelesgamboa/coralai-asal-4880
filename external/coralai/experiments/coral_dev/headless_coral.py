@@ -113,6 +113,7 @@ DEVICE = torch.device(args.device)
 
 # This file lives in experiments/coral_dev, so these are the same imports as run.py.
 from coralai.evolver import apply_weights_and_biases
+from coralai.provenance import simulator_fingerprint
 from experiment import EXPERIMENT as exp
 from evolution import apply_radiation_mutation
 
@@ -191,6 +192,7 @@ def main():
 
     metadata = {
             "experiment": exp.name, "config_file": str(cli_args.config),
+            "simulator_provenance": simulator_fingerprint(),
             "effective_config": vars(args),
             "shape": list(shape), "seed": args.seed,
             "env": env.to_dict(), "env_persist": env.persist,
