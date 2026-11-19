@@ -1,0 +1,28 @@
+{
+  "focused_unit_tests_passed": 18,
+  "controller_lookup_and_input_indexing_verified": true,
+  "common_prefix_and_repeat_checks_passed": true,
+  "scientific_run_grid": [
+    400,
+    400
+  ],
+  "scientific_run_updates": 1000,
+  "state_and_mask_capture_checks": 82,
+  "per_update_resource_checks": 2002,
+  "phase_event_checks": 2000,
+  "same_mask_endpoint_decomposition_checks": 328,
+  "previous_files_checked": 1111,
+  "previous_files_unchanged": 1109,
+  "intentional_existing_source_changes": [
+    "scripts/render_food_movement_presentation.py",
+    "external/coralai/experiments/coral_dev/environments.py"
+  ],
+  "new_presentation_frame_counts": {
+    "overview": 174,
+    "closeup": 174
+  },
+  "reproduction_shell_syntax_and_command_resolution_passed": true,
+  "source_patch_reverse_check_passed": true,
+  "staged_changes": false,
+  "code_syntax_whitespace_and_saved_summary_consistency_passed": true
+}

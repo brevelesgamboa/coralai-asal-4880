@@ -1,0 +1,155 @@
+{
+  "previous_corrected_result": "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/results/week12/controller_lookup_fix/seed42_452f3b2_20261111",
+  "previous_configs": {
+    "fixed": {
+      "steps": 1000,
+      "shape": 400,
+      "seed": 42,
+      "env": "trail",
+      "env_param": 4,
+      "env_options": {
+        "spawn": "spread",
+        "trail_width": 4.0,
+        "max_capacity": 20.0,
+        "inject_rate": 0.02,
+        "shift_interval": 0,
+        "shift_cells": 2
+      },
+      "infra_decay": 0.0,
+      "defense_coeff": 0.0,
+      "radiate_interval": 50,
+      "cleanup_interval": 100,
+      "emergency_pop_cap": 1000
+    },
+    "dynamic": {
+      "steps": 1000,
+      "shape": 400,
+      "seed": 42,
+      "env": "trail",
+      "env_param": 4,
+      "env_options": {
+        "spawn": "spread",
+        "trail_width": 4.0,
+        "max_capacity": 20.0,
+        "inject_rate": 0.02,
+        "shift_interval": 125,
+        "shift_cells": 2
+      },
+      "infra_decay": 0.0,
+      "defense_coeff": 0.0,
+      "radiate_interval": 50,
+      "cleanup_interval": 100,
+      "emergency_pop_cap": 1000
+    }
+  },
+  "previous_validation": {
+    "starting_states_bitwise_equal": true,
+    "starting_reserves_bitwise_equal": true,
+    "initial_state_sha256": {
+      "fixed": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88",
+      "dynamic": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88"
+    },
+    "per_update_budget_checks": 2002,
+    "reserve_location_checks": 82,
+    "state_rgb_source_measurement_matches": 82,
+    "decoded_gif_occupied_panel_matches": 82,
+    "final_checkpoint_matches": 2,
+    "animation_frames": 41,
+    "frame_duration_ms": 180,
+    "resource_wraps": 0,
+    "maximum_differing_occupied_locations": 33177,
+    "pre_first_movement": {
+      "maximum_abs_state_difference": 0.0,
+      "maximum_differing_occupied_locations": 0
+    },
+    "first_saved_update_with_different_occupancy": 150,
+    "initial_controller_parameters_equal": true,
+    "initial_genomes_equal": true,
+    "initial_registries_equal": true,
+    "initial_rng_states_equal": true,
+    "registered_controller_count": 50,
+    "event_update_checks": 2000
+  },
+  "previous_resource_budget": {
+    "runs": {
+      "fixed": {
+        "completed_update": 1000,
+        "initial_capacity": 294956.1356315613,
+        "remaining_capacity": 147472.89807332307,
+        "cumulative_requested": 147479.994833529,
+        "cumulative_delivered": 147479.9925735727,
+        "cumulative_clipped": 0.0,
+        "reserve_depletion_minus_requested": 3.24272470921278,
+        "requested_minus_delivered": 0.0022599562944378704
+      },
+      "dynamic": {
+        "completed_update": 1000,
+        "initial_capacity": 294956.1356315613,
+        "remaining_capacity": 147472.89807332307,
+        "cumulative_requested": 147479.994833529,
+        "cumulative_delivered": 147479.99254241717,
+        "cumulative_clipped": 0.0,
+        "reserve_depletion_minus_requested": 3.24272470921278,
+        "requested_minus_delivered": 0.002291111828526482
+      }
+    },
+    "initial_energy": 2949.600043952465,
+    "initial_infrastructure": 162949.59982419014,
+    "maximum_actual_delivery_difference": 3.177064354531467e-05,
+    "accounting": "Actual after-minus-before addition/clamp at every update; no rescaling. Request and remaining-reserve totals independently checked every update. Float32 residuals retained and reported.",
+    "source_region": "remaining capacity > 0 after this completed update's release; mask motion alone can change inside/outside counts"
+  },
+  "previous_events": {
+    "fixed": {
+      "net_gains": 675163,
+      "net_losses": 683562,
+      "colonization_gains": 674008,
+      "colonization_losses": 0,
+      "colonization_replacements": 307266,
+      "resource_death_gains": 0,
+      "resource_death_losses": 682130,
+      "resource_death_replacements": 0,
+      "chunk_death_gains": 0,
+      "chunk_death_losses": 476,
+      "chunk_death_replacements": 0,
+      "radiation_gains": 1187,
+      "radiation_losses": 988,
+      "radiation_replacements": 327,
+      "cleanup_gains": 0,
+      "cleanup_losses": 0,
+      "cleanup_replacements": 74054,
+      "cull_gains": 0,
+      "cull_losses": 0,
+      "cull_replacements": 0,
+      "initial_occupied": 32186,
+      "final_occupied": 23787,
+      "first_local_colonization_update": 1
+    },
+    "dynamic": {
+      "net_gains": 674367,
+      "net_losses": 682171,
+      "colonization_gains": 673181,
+      "colonization_losses": 0,
+      "colonization_replacements": 310834,
+      "resource_death_gains": 0,
+      "resource_death_losses": 680706,
+      "resource_death_replacements": 0,
+      "chunk_death_gains": 0,
+      "chunk_death_losses": 510,
+      "chunk_death_replacements": 0,
+      "radiation_gains": 1208,
+      "radiation_losses": 977,
+      "radiation_replacements": 310,
+      "cleanup_gains": 0,
+      "cleanup_losses": 0,
+      "cleanup_replacements": 96111,
+      "cull_gains": 0,
+      "cull_losses": 0,
+      "cull_replacements": 0,
+      "initial_occupied": 32186,
+      "final_occupied": 24382,
+      "first_local_colonization_update": 1
+    }
+  },
+  "this_week": "Only movement-frequency comparison and three-condition evidence are new; moving reserves and controller fixes were established last week."
+}

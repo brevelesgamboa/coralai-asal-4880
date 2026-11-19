@@ -43,6 +43,11 @@ All four frames matched across these runs; repeat tensors differed by at most `7
 See [pilot validation](docs/coralai_pilot_validation.md) for saved-artifact checks,
 reproduction commands, and [the recorded checks](results/week8/validation/README.md).
 
+## Week 13 food movement
+
+Matched fixed/slower/faster reserves and optional direction reversal, with saved-state
+GUI-style and occupancy views. [Usage, reproduction, evidence, and slide assets](results/week13/presentation_ready/START_HERE.txt).
+
 ## Next steps
 - Compute Shannon and discretized entropy on saved runs.
 - Connect Coralai simulation frames to ASAL scoring.

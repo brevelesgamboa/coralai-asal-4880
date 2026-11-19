@@ -1,0 +1,54 @@
+[
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880-food-movement-speeds/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_dynamic_energy.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880-food-movement-speeds/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_trail_reference.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880-food-movement-speeds/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_food_movement.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880-food-movement-speeds/.venv-novelty/bin/python",
+      "-B",
+      "scripts/verify_controller_lookup.py",
+      "--output",
+      "results/week13/food_direction_change/seed42_20261118/checks/controllers.json"
+    ],
+    "exit_code": 0
+  }
+]

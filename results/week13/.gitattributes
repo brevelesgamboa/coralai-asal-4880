@@ -1,0 +1,4 @@
+# Preserve recorded CSV bytes, including csv.writer CRLF line endings.
+**/measurements/*.csv -text whitespace=cr-at-eol
+# Preserved unified diffs legitimately contain space-prefixed blank context lines.
+**/source_changes.patch -whitespace

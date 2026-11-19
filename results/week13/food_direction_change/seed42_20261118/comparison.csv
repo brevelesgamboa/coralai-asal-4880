@@ -1,0 +1,3 @@
+condition,initial_occupied,final_occupied,final_occupied_inside_own_source,final_occupied_in_original_region,final_occupied_in_same_returning_region,local_colonization_gains,radiation_reseeding_gains,actual_delivered_energy,requested_energy,remaining_reserve,clipped_energy
+continues,32186,24382,4000,2253,2251,673181,1208,147479.99254241717,147479.994833529,147472.89807332307,0.0
+reverses,32186,22928,3796,3799,3796,677261,1215,147479.99260018294,147479.994833529,147472.89807332307,0.0

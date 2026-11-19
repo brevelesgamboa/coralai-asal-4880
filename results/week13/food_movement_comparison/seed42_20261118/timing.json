@@ -1,0 +1,11 @@
+{
+  "grid": [
+    400,
+    400
+  ],
+  "updates": 50,
+  "wall_seconds": 16.091121353994822,
+  "simulation_capture_seconds": 13.07522276599775,
+  "linear_three_run_seconds": 784.513365959865,
+  "decision": "Keep 400x400 grid, physics and 1000-update duration unchanged."
+}

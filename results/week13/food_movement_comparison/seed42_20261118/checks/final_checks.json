@@ -1,0 +1,18 @@
+{
+  "original_branch_preserved": "feature/dynamic-energy-demo",
+  "original_status_sha256_unchanged": "1a7614c25c554f9de97c7a4026f2b141c5bafd40d72d3fc7cf4b9115227efa0f",
+  "original_file_hashes_verified": 183,
+  "simulation_and_teammate_search_sources_match_baseline": true,
+  "staged_changes": false,
+  "focused_unit_tests_passed": 24,
+  "controller_assignment_and_input_layout_checks_passed": true,
+  "reproduction_shell_syntax_and_command_resolution_passed": true,
+  "changed_python_syntax_and_whitespace_passed": true,
+  "presentation_explanation_word_count": 99,
+  "media_representative_frames_reviewed": [
+    0,
+    500,
+    1000
+  ],
+  "saved_summary_and_provenance_consistency_passed": true
+}

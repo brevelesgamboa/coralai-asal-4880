@@ -180,7 +180,7 @@ results/week11/issue26_real_run/**/run/
 
 # Isolated CPU runtime for the temporal-novelty pilot
 .runtime-novelty/
-.venv-novelty/
+.venv-novelty
 
 # Raw week-12 simulation data and duplicate source/render captures stay local.
 results/week12/**/run/

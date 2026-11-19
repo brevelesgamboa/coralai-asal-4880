@@ -1,0 +1,73 @@
+[
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/.venv-novelty/bin/python",
+      "-B",
+      "scripts/verify_controller_lookup.py",
+      "--output",
+      "results/week13/food_movement_comparison/seed42_20261118/checks/controller_fixes.json"
+    ],
+    "exit_code": 0,
+    "log": "checks/existing_check_0.txt"
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_controller_lookup.py"
+    ],
+    "exit_code": 0,
+    "log": "checks/existing_check_1.txt"
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_controller_integration.py"
+    ],
+    "exit_code": 0,
+    "log": "checks/existing_check_2.txt"
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_dynamic_energy.py"
+    ],
+    "exit_code": 0,
+    "log": "checks/existing_check_3.txt"
+  },
+  {
+    "argv": [
+      "/home/sparky/Documents/School/CSC 4880/coralai-asal-4880/.venv-novelty/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_trail_reference.py"
+    ],
+    "exit_code": 0,
+    "log": "checks/existing_check_4.txt"
+  }
+]

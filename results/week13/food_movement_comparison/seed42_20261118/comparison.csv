@@ -1,0 +1,4 @@
+condition,shift_interval_updates,movement_cells_per_update,final_displacement_y_cells,initial_occupied_cells,final_occupied_cells,final_occupied_inside_current_source,final_occupied_outside_current_source,local_colonization_gains,radiation_reseeding_gains,actual_energy_delivered,requested_energy,clipped_energy,remaining_reserve,final_available_energy,final_infrastructure
+fixed,0,0,0,32186,23787,3957,19830,674008,1187,147479.9925735727,147479.994833529,0.0,147472.89807332307,1996.2931014756077,35391.71905811137
+slower,250,0.008,8,32186,24319,3730,20589,676437,1210,147479.99250969544,147479.994833529,0.0,147472.89807332307,2007.748973571369,35002.56050448111
+faster,125,0.016,16,32186,24382,4000,20382,673181,1208,147479.99254241717,147479.994833529,0.0,147472.89807332307,2005.063944578204,35559.64209717432

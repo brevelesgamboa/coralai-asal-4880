@@ -1,0 +1,2 @@
+# Extra user-created playback conversions remain local; keep selected MP4/PNG assets.
+presentation_ready/**/*.gif

@@ -1,0 +1,43 @@
+{
+  "grid": [
+    400,
+    400
+  ],
+  "seed": 42,
+  "completed_updates": 1000,
+  "continues": {
+    "0": 0,
+    "125": 2,
+    "250": 4,
+    "375": 6,
+    "500": 8,
+    "625": 10,
+    "750": 12,
+    "875": 14,
+    "1000": 16
+  },
+  "reverses": {
+    "0": 0,
+    "125": 2,
+    "250": 4,
+    "375": 6,
+    "500": 8,
+    "625": 6,
+    "750": 4,
+    "875": 2,
+    "1000": 0
+  },
+  "offset_units": "y cells relative to initial reserves; +y is down",
+  "only_treatment_difference": "env_options.reverse_after_update=500, absent for continues",
+  "phase": "Movement at 500 is downward in both; first upward movement is 625. Reserve translation before release, after NN/physics/evolution and before radiation/cleanup.",
+  "initial_y_bounds": [
+    18,
+    382
+  ],
+  "resource_wraps": 0,
+  "initialization": "Two fresh independent seeded starts; exact tensors, genomes, controller parameters, registries and Python/NumPy/Torch RNG states checked. No incomplete tensor-only fork.",
+  "fork_not_used": "Trail resume explicitly unsupported by runner: checkpoints omit environment reserves/state. No reliable complete midpoint fork exists.",
+  "capture": "0,25,...,1000, after all completed-update operations; resource and event logs every update",
+  "source_region": "remaining reserve > 0, distinct from already available energy",
+  "previous_faster_reference": "results/week13/food_movement_comparison/seed42_20261118"
+}

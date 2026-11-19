@@ -1,0 +1,11 @@
+{
+  "grid": [
+    400,
+    400
+  ],
+  "completed_updates": 50,
+  "wall_seconds": 14.28508828599297,
+  "simulation_capture_seconds": 12.422720457994728,
+  "linear_pair_estimate_seconds": 496.90881831978913,
+  "decision": "Keep established grid, duration and physics."
+}

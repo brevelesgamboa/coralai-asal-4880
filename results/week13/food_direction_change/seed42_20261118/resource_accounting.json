@@ -1,0 +1,28 @@
+{
+  "runs": {
+    "continues": {
+      "completed_update": 1000,
+      "initial_capacity": 294956.1356315613,
+      "remaining_capacity": 147472.89807332307,
+      "cumulative_requested": 147479.994833529,
+      "cumulative_delivered": 147479.99254241717,
+      "cumulative_clipped": 0.0,
+      "reserve_depletion_minus_requested": 3.24272470921278,
+      "requested_minus_delivered": 0.002291111828526482
+    },
+    "reverses": {
+      "completed_update": 1000,
+      "initial_capacity": 294956.1356315613,
+      "remaining_capacity": 147472.89807332307,
+      "cumulative_requested": 147479.994833529,
+      "cumulative_delivered": 147479.99260018294,
+      "cumulative_clipped": 0.0,
+      "reserve_depletion_minus_requested": 3.24272470921278,
+      "requested_minus_delivered": 0.002233346051070839
+    }
+  },
+  "maximum_cumulative_actual_delivery_difference": 5.798603524453938e-05,
+  "fraction_of_final_requested_energy": 3.931789888519611e-10,
+  "units": "Simulator energy units. Actual delivered = measured after-minus-before addition/clamp each update.",
+  "residual": "Repeated float32 reserve subtraction has a nonzero depletion-minus-request residual; independently checked and retained, without rescaling."
+}
