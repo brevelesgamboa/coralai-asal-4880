@@ -519,6 +519,7 @@ class TrailEnvironment(StartEnvironment):
       spawn_frac     : float — side of the founder spawn box, fraction of min(W,H) (0.12)
       shift_interval : int   — completed updates between reserve translations; 0 disables
       shift_cells    : int   — cells to translate remaining reserve along y, with wrapping
+      reverse_after_update : int — 0 disables; reverse later scheduled shifts strictly after this completed update
     """
     name = "trail"
 
@@ -536,14 +537,16 @@ class TrailEnvironment(StartEnvironment):
                  founder_radius: float = 3.0,
                  spawn_frac: float = 0.01,
                  shift_interval: int = 0,
-                 shift_cells: int = 1):
+                 shift_cells: int = 1,
+                 reverse_after_update: int = 0):
         if spawn not in {"spread", "corner"}:
             raise ValueError("trail spawn must be spread or corner")
         for key, value in (("trail_width", trail_width), ("max_capacity", max_capacity),
                            ("inject_rate", inject_rate)):
             if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
                 raise ValueError(f"trail {key} must be finite and positive")
-        for key, value in (("shift_interval", shift_interval), ("shift_cells", shift_cells)):
+        for key, value in (("shift_interval", shift_interval), ("shift_cells", shift_cells),
+                           ("reverse_after_update", reverse_after_update)):
             if isinstance(value, bool) or not isinstance(value, int) or value < 0:
                 raise ValueError(f"trail {key} must be a nonnegative integer")
         self.n_lanes        = max(1, int(n_lanes))
@@ -563,6 +566,7 @@ class TrailEnvironment(StartEnvironment):
         # wrapping at the boundary. Never move cells or replenish the reserve.
         self.shift_interval = shift_interval
         self.shift_cells = shift_cells
+        self.reverse_after_update = reverse_after_update
         self._capacity = None   # (w, h) energy reserve left on the trail
 
     # ------------------------------------------------------------------
@@ -654,7 +658,10 @@ class TrailEnvironment(StartEnvironment):
         inds = substrate.ti_indices[None]
         self._step_count += 1
         if self.shift_interval and self._step_count % self.shift_interval == 0:
-            self._capacity = torch.roll(self._capacity, self.shift_cells, dims=1)
+            # The movement at the enabling update retains its original direction.
+            shift = (-self.shift_cells if self.reverse_after_update
+                     and self._step_count > self.reverse_after_update else self.shift_cells)
+            self._capacity = torch.roll(self._capacity, shift, dims=1)
         injection = self._capacity.clamp(max=self.inject_rate)
         before = substrate.mem[0, inds.energy].double()
         substrate.mem[0, inds.energy].add_(injection).clamp_(0, 100)
@@ -692,6 +699,7 @@ class TrailEnvironment(StartEnvironment):
             "n_founders": self.n_founders, "founder_radius": self.founder_radius,
             "spawn_frac": self.spawn_frac,
             "shift_interval": self.shift_interval, "shift_cells": self.shift_cells,
+            **({"reverse_after_update": self.reverse_after_update} if self.reverse_after_update else {}),
         }
 
 # ---------------------------------------------------------------------------
@@ -719,7 +727,7 @@ def make_env(env_name: str, param=None, options=None) -> StartEnvironment:
     options = {} if options is None else options
     if not isinstance(options, dict):
         raise ValueError("env_options must be a JSON object")
-    supported = {"spawn", "trail_width", "max_capacity", "inject_rate", "shift_interval", "shift_cells"}
+    supported = {"spawn", "trail_width", "max_capacity", "inject_rate", "shift_interval", "shift_cells", "reverse_after_update"}
     if options and (env_name != "trail" or set(options) - supported):
-        raise ValueError("env_options supports only trail spawn, trail_width, max_capacity, inject_rate, shift_interval, shift_cells")
+        raise ValueError("env_options supports only trail spawn, trail_width, max_capacity, inject_rate, shift_interval, shift_cells, reverse_after_update")
     return cls(param, **options) if param is not None else cls(**options)

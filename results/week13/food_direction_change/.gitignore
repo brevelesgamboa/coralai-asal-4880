@@ -1,0 +1,12 @@
+# Raw states, checkpoints, calibration runs, and caches.
+*/local/
+# Original exports stay local; selected assets are in presentation_ready/.
+*/presentation_assets/*
+!*/presentation_assets/original_color/
+*/presentation_assets/original_color/*
+!*/presentation_assets/original_color/verification.json
+# Legacy presentation notes and redundant status reports stay local.
+*/presentation_explanation.txt
+*/technical_results.txt
+*/git_evidence.json
+*/checks/*.txt

@@ -1,0 +1,68 @@
+{
+  "initial_tensors_reserves_controllers_genomes_registries_and_available_rng_states_equal": true,
+  "includes_previous_faster_initial_state": true,
+  "registered_controllers": 50,
+  "initial_tensor_sha256": {
+    "continues": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88",
+    "reverses": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88",
+    "previous_faster": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88"
+  },
+  "resource_budget_checks": 2002,
+  "state_rgb_source_phase_checks": 82,
+  "final_checkpoint_matches": 2,
+  "source_region_pair_counts": 164,
+  "mask_endpoint_decomposition_checks": 328,
+  "phase_event_update_checks": 2000,
+  "resource_wraps": 0,
+  "captured_common_prefix_max_abs_state_difference": 0.0,
+  "captured_common_prefix_max_occupancy_difference": 0,
+  "last_common_schedule_capture_update": 600,
+  "first_different_source_shift_completed_update": 625,
+  "common_schedule_resource_log_max_abs_differences_through_624": {
+    "completed_update": 0.0,
+    "occupied_cells": 0.0,
+    "occupied_inside_source": 0.0,
+    "occupied_outside_source": 0.0,
+    "source_cells": 0.0,
+    "cumulative_requested": 0.0,
+    "cumulative_delivered": 0.0,
+    "cumulative_clipped": 0.0,
+    "remaining_capacity": 0.0,
+    "total_energy": 0.0,
+    "total_infra": 0.0
+  },
+  "common_schedule_event_rows_through_624_equal": true,
+  "first_captured_occupancy_difference": 650,
+  "previous_faster_repeat_max_abs_state_difference": 0.0,
+  "previous_faster_repeat_max_occupancy_difference": 0,
+  "previous_faster_repeat_max_actual_delivery_difference": 0.0,
+  "previous_faster_repeat_all_reserve_fields_equal": true,
+  "previous_faster_repeat_per_update_resource_max_abs_differences": {
+    "occupied_cells": 0.0,
+    "occupied_inside_source": 0.0,
+    "occupied_outside_source": 0.0,
+    "source_cells": 0.0,
+    "cumulative_requested": 0.0,
+    "cumulative_delivered": 0.0,
+    "cumulative_clipped": 0.0,
+    "remaining_capacity": 0.0,
+    "total_energy": 0.0,
+    "total_infra": 0.0
+  },
+  "first_per_update_total_occupancy_difference": 626,
+  "first_different_event_count_row": {
+    "completed_update": 626,
+    "different_fields": [
+      "occupied_after",
+      "net_gains",
+      "net_losses",
+      "colonization_gains",
+      "colonization_replacements",
+      "resource_death_losses"
+    ]
+  },
+  "radiation_gains_updates_625_through_650": {
+    "continues": 0,
+    "reverses": 0
+  }
+}

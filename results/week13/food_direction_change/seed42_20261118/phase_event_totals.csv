@@ -1,0 +1,9 @@
+condition,window,first_update,last_update,net_gains,net_losses,colonization_gains,colonization_losses,colonization_replacements,resource_death_gains,resource_death_losses,resource_death_replacements,chunk_death_gains,chunk_death_losses,chunk_death_replacements,radiation_gains,radiation_losses,radiation_replacements,cleanup_gains,cleanup_losses,cleanup_replacements,cull_gains,cull_losses,cull_replacements
+continues,common_schedule,1,624,560157,569978,559463,0,296265,0,568817,0,0,401,0,714,780,244,0,0,73735,0,0,0
+continues,divergent_schedule,625,1000,114210,112193,113718,0,14569,0,111889,0,0,109,0,494,197,66,0,0,22376,0,0,0
+continues,first_post_turn_capture_interval,625,650,8626,8045,8626,0,1081,0,8045,0,0,0,0,0,0,0,0,0,0,0,0,0
+continues,total,1,1000,674367,682171,673181,0,310834,0,680706,0,0,510,0,1208,977,310,0,0,96111,0,0,0
+reverses,common_schedule,1,624,560157,569978,559463,0,296265,0,568817,0,0,401,0,714,780,244,0,0,73735,0,0,0
+reverses,divergent_schedule,625,1000,118295,117732,117798,0,13726,0,117441,0,0,101,0,501,194,59,0,0,21642,0,0,0
+reverses,first_post_turn_capture_interval,625,650,8809,8230,8809,0,1040,0,8230,0,0,0,0,0,0,0,0,0,0,0,0,0
+reverses,total,1,1000,678452,687710,677261,0,309991,0,686258,0,0,502,0,1215,974,303,0,0,95377,0,0,0

@@ -1,0 +1,98 @@
+{
+  "starting_states_bitwise_equal": true,
+  "starting_reserves_bitwise_equal": true,
+  "initial_controller_parameters_equal": true,
+  "initial_genomes_equal": true,
+  "initial_registries_equal": true,
+  "initial_rng_states_equal": true,
+  "initial_registered_controllers": 50,
+  "initial_state_sha256": {
+    "fixed": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88",
+    "slower": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88",
+    "faster": "5b700cd5722108a16da656126d2a3670a5b99fa75cbb390b396f95cb5138dd88"
+  },
+  "per_update_resource_budget_records_checked": 3003,
+  "event_update_records_checked": 3000,
+  "reserve_location_checks": 123,
+  "state_count_source_rgb_checks": 123,
+  "final_checkpoint_matches": 3,
+  "same_moving_mask_control_records": 82,
+  "pairwise_spatial_records": 123,
+  "decoded_gif_occupancy_and_resource_panels_checked": 246,
+  "animation": {
+    "frames": 41,
+    "frame_duration_ms": 300,
+    "loop": 0,
+    "size": [
+      1296,
+      1096
+    ],
+    "total_seconds": 12.299999999999999,
+    "completed_updates": [
+      0,
+      25,
+      50,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      250,
+      275,
+      300,
+      325,
+      350,
+      375,
+      400,
+      425,
+      450,
+      475,
+      500,
+      525,
+      550,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750,
+      775,
+      800,
+      825,
+      850,
+      875,
+      900,
+      925,
+      950,
+      975,
+      1000
+    ],
+    "mp4_frames": 41,
+    "mp4_full_decode_passed": true
+  },
+  "resource_wraps": 0,
+  "pre_movement_checks": {
+    "fixed_vs_slower": {
+      "before_completed_update": 250,
+      "maximum_abs_state_difference": 0.0,
+      "maximum_differing_occupied_locations": 0,
+      "first_captured_update_with_occupancy_difference": 275
+    },
+    "fixed_vs_faster": {
+      "before_completed_update": 125,
+      "maximum_abs_state_difference": 0.0,
+      "maximum_differing_occupied_locations": 0,
+      "first_captured_update_with_occupancy_difference": 150
+    },
+    "slower_vs_faster": {
+      "before_completed_update": 125,
+      "maximum_abs_state_difference": 0.0,
+      "maximum_differing_occupied_locations": 0,
+      "first_captured_update_with_occupancy_difference": 150
+    }
+  }
+}

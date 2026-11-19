@@ -1,0 +1,3 @@
+Opt-in trail direction change: reverse_after_update=0 preserves the established behavior and metadata. At 500, the movement remains downward; subsequent scheduled shifts reverse, first at 625.
+Only remaining resource reserves are translated, before release. No cell, infrastructure, or stored-energy translation is added.
+Experiment, focused checks, source patch, accounting, and findings: results/week13/food_direction_change/seed42_20261118/ at the outer repository root.

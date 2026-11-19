@@ -1,0 +1,41 @@
+{
+  "runs": {
+    "fixed": {
+      "completed_update": 1000,
+      "initial_capacity": 294956.1356315613,
+      "remaining_capacity": 147472.89807332307,
+      "cumulative_requested": 147479.994833529,
+      "cumulative_delivered": 147479.9925735727,
+      "cumulative_clipped": 0.0,
+      "reserve_depletion_minus_requested": 3.24272470921278,
+      "requested_minus_delivered": 0.0022599562944378704
+    },
+    "slower": {
+      "completed_update": 1000,
+      "initial_capacity": 294956.1356315613,
+      "remaining_capacity": 147472.89807332307,
+      "cumulative_requested": 147479.994833529,
+      "cumulative_delivered": 147479.99250969544,
+      "cumulative_clipped": 0.0,
+      "reserve_depletion_minus_requested": 3.24272470921278,
+      "requested_minus_delivered": 0.0023238335561472923
+    },
+    "faster": {
+      "completed_update": 1000,
+      "initial_capacity": 294956.1356315613,
+      "remaining_capacity": 147472.89807332307,
+      "cumulative_requested": 147479.994833529,
+      "cumulative_delivered": 147479.99254241717,
+      "cumulative_clipped": 0.0,
+      "reserve_depletion_minus_requested": 3.24272470921278,
+      "requested_minus_delivered": 0.002291111828526482
+    }
+  },
+  "maximum_actual_delivery_range_across_conditions_energy_units": 6.50702859275043e-05,
+  "maximum_delivery_range_fraction_of_final_delivery": 4.41214328750681e-10,
+  "initial_available_energy": 2949.600043952465,
+  "initial_infrastructure": 162949.59982419014,
+  "accounting": "Actual float64 after-minus-before sum around float32 energy injection/clamp, logged each update. Reserves and requested release independently checked every update. No rescaling.",
+  "float32_reserve_depletion_residual": "Repeated float32 subtraction leaves a nonzero depletion-minus-requested residual; preserved in each budget. Equal in all three treatments.",
+  "interpretation": "Use measured delivery range before attributing differences to movement. Remaining reserves are future supply; available energy has already been released."
+}

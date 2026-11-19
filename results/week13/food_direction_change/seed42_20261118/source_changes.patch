@@ -1,0 +1,124 @@
+--- a/external/coralai/experiments/coral_dev/environments.py
++++ b/external/coralai/experiments/coral_dev/environments.py
+@@ -519,6 +519,7 @@
+       spawn_frac     : float — side of the founder spawn box, fraction of min(W,H) (0.12)
+       shift_interval : int   — completed updates between reserve translations; 0 disables
+       shift_cells    : int   — cells to translate remaining reserve along y, with wrapping
++      reverse_after_update : int — 0 disables; reverse later scheduled shifts strictly after this completed update
+     """
+     name = "trail"
+ 
+@@ -536,14 +537,16 @@
+                  founder_radius: float = 3.0,
+                  spawn_frac: float = 0.01,
+                  shift_interval: int = 0,
+-                 shift_cells: int = 1):
++                 shift_cells: int = 1,
++                 reverse_after_update: int = 0):
+         if spawn not in {"spread", "corner"}:
+             raise ValueError("trail spawn must be spread or corner")
+         for key, value in (("trail_width", trail_width), ("max_capacity", max_capacity),
+                            ("inject_rate", inject_rate)):
+             if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
+                 raise ValueError(f"trail {key} must be finite and positive")
+-        for key, value in (("shift_interval", shift_interval), ("shift_cells", shift_cells)):
++        for key, value in (("shift_interval", shift_interval), ("shift_cells", shift_cells),
++                           ("reverse_after_update", reverse_after_update)):
+             if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+                 raise ValueError(f"trail {key} must be a nonnegative integer")
+         self.n_lanes        = max(1, int(n_lanes))
+@@ -563,6 +566,7 @@
+         # wrapping at the boundary. Never move cells or replenish the reserve.
+         self.shift_interval = shift_interval
+         self.shift_cells = shift_cells
++        self.reverse_after_update = reverse_after_update
+         self._capacity = None   # (w, h) energy reserve left on the trail
+ 
+     # ------------------------------------------------------------------
+@@ -654,7 +658,10 @@
+         inds = substrate.ti_indices[None]
+         self._step_count += 1
+         if self.shift_interval and self._step_count % self.shift_interval == 0:
+-            self._capacity = torch.roll(self._capacity, self.shift_cells, dims=1)
++            # The movement at the enabling update retains its original direction.
++            shift = (-self.shift_cells if self.reverse_after_update
++                     and self._step_count > self.reverse_after_update else self.shift_cells)
++            self._capacity = torch.roll(self._capacity, shift, dims=1)
+         injection = self._capacity.clamp(max=self.inject_rate)
+         before = substrate.mem[0, inds.energy].double()
+         substrate.mem[0, inds.energy].add_(injection).clamp_(0, 100)
+@@ -692,6 +699,7 @@
+             "n_founders": self.n_founders, "founder_radius": self.founder_radius,
+             "spawn_frac": self.spawn_frac,
+             "shift_interval": self.shift_interval, "shift_cells": self.shift_cells,
++            **({"reverse_after_update": self.reverse_after_update} if self.reverse_after_update else {}),
+         }
+ 
+ # ---------------------------------------------------------------------------
+@@ -719,7 +727,7 @@
+     options = {} if options is None else options
+     if not isinstance(options, dict):
+         raise ValueError("env_options must be a JSON object")
+-    supported = {"spawn", "trail_width", "max_capacity", "inject_rate", "shift_interval", "shift_cells"}
++    supported = {"spawn", "trail_width", "max_capacity", "inject_rate", "shift_interval", "shift_cells", "reverse_after_update"}
+     if options and (env_name != "trail" or set(options) - supported):
+-        raise ValueError("env_options supports only trail spawn, trail_width, max_capacity, inject_rate, shift_interval, shift_cells")
++        raise ValueError("env_options supports only trail spawn, trail_width, max_capacity, inject_rate, shift_interval, shift_cells, reverse_after_update")
+     return cls(param, **options) if param is not None else cls(**options)
+--- a/scripts/render_food_movement_presentation.py
++++ b/scripts/render_food_movement_presentation.py
+@@ -138,12 +138,13 @@
+     return command
+ 
+ 
+-def verify_video(path, source_frames, timeline, fallback):
++def verify_video(path, source_frames, timeline, fallback, *, size=SIZE, panel_x=PANEL_X,
++                 panel_y=PANEL_Y, label_slice=(70, 290)):
+     probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-count_frames',
+         '-show_streams', '-show_format', '-of', 'json', str(path)], text=True))
+     stream = probe['streams'][0]
+     require(int(stream['nb_read_frames']) == len(timeline), 'Video frame count mismatch')
+-    require((stream['width'], stream['height']) == SIZE, 'Video aspect ratio mismatch')
++    require((stream['width'], stream['height']) == size, 'Video aspect ratio mismatch')
+     require(abs(float(probe['format']['duration']) - len(timeline)/FPS) < .01, 'Video duration mismatch')
+     require(stream['avg_frame_rate'] == '10/1', 'Video playback rate mismatch')
+     # Inspect the actual decoded RGB frames, including every movement capture and hold.
+@@ -151,7 +152,7 @@
+     decoder = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+     reference_update, original, final = None, None, None
+     max_label_error, min_occupancy_agreement, max_outline_error = 0, 1.0, 0.0
+-    frame_bytes = SIZE[0]*SIZE[1]*3
++    frame_bytes = size[0]*size[1]*3
+     try:
+         for i, update in enumerate(timeline):
+             raw = bytearray()
+@@ -159,15 +160,15 @@
+                 piece = decoder.stdout.read(frame_bytes-len(raw))
+                 require(bool(piece), 'Video ended before expected frame')
+                 raw.extend(piece)
+-            decoded = np.frombuffer(raw, dtype=np.uint8).reshape(SIZE[1], SIZE[0], 3)
++            decoded = np.frombuffer(raw, dtype=np.uint8).reshape(size[1], size[0], 3)
+             if update != reference_update or update in (0, 1000):
+                 original = np.asarray(Image.open(source_frames/f'update_{update:04d}.png').convert('RGB'))
+-                label_error = float(np.abs(decoded[70:290].astype(np.int16)-original[70:290].astype(np.int16)).mean())
++                label_error = float(np.abs(decoded[label_slice[0]:label_slice[1]].astype(np.int16)-original[label_slice[0]:label_slice[1]].astype(np.int16)).mean())
+                 require(label_error < 5, 'Video labels changed excessively')
+                 max_label_error = max(max_label_error, label_error)
+-                for x in PANEL_X:
+-                    actual = decoded[PANEL_Y:PANEL_Y+800, x:x+800]
+-                    wanted = original[PANEL_Y:PANEL_Y+800, x:x+800]
++                for x in panel_x:
++                    actual = decoded[panel_y:panel_y+800, x:x+800]
++                    wanted = original[panel_y:panel_y+800, x:x+800]
+                     annotation = np.all(wanted == ORANGE, axis=2)
+                     actual_occupied = (actual[..., 1] > 150) & (actual[..., 2] > 150)
+                     wanted_occupied = np.all(wanted == CYAN, axis=2)
+@@ -193,7 +194,7 @@
+     with Image.open(fallback) as image:
+         require(np.array_equal(np.asarray(image), final), 'Static fallback/video mismatch')
+     return {'decoded_frames': len(timeline), 'duration_seconds': float(probe['format']['duration']),
+-        'fps': FPS, 'size': SIZE, 'all_41_updates_verified_against_lossless_renders': True,
++        'fps': FPS, 'size': size, 'all_41_updates_verified_against_lossless_renders': True,
+         'max_label_mean_rgb_error': max_label_error, 'minimum_occupancy_agreement_outside_outline': min_occupancy_agreement,
+         'max_outline_mean_rgb_error': max_outline_error, 'fallback_equals_final_decoded_frame': True}
+ 

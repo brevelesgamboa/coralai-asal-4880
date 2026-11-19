@@ -1,0 +1,73 @@
+{
+  "grid": [
+    400,
+    400
+  ],
+  "seed": 42,
+  "completed_updates": 1000,
+  "initial_y_bounds_inclusive": [
+    18,
+    382
+  ],
+  "schedules": {
+    "fixed": {
+      "shift_interval_updates": 0,
+      "shift_distance_cells": 2,
+      "direction": "+y",
+      "mean_cells_per_update": 0,
+      "translation_updates": [],
+      "final_displacement_y_cells": 0,
+      "final_y_bounds_inclusive": [
+        18,
+        382
+      ]
+    },
+    "slower": {
+      "shift_interval_updates": 250,
+      "shift_distance_cells": 2,
+      "direction": "+y",
+      "mean_cells_per_update": 0.008,
+      "translation_updates": [
+        250,
+        500,
+        750,
+        1000
+      ],
+      "final_displacement_y_cells": 8,
+      "final_y_bounds_inclusive": [
+        26,
+        390
+      ]
+    },
+    "faster": {
+      "shift_interval_updates": 125,
+      "shift_distance_cells": 2,
+      "direction": "+y",
+      "mean_cells_per_update": 0.016,
+      "translation_updates": [
+        125,
+        250,
+        375,
+        500,
+        625,
+        750,
+        875,
+        1000
+      ],
+      "final_displacement_y_cells": 16,
+      "final_y_bounds_inclusive": [
+        34,
+        398
+      ]
+    }
+  },
+  "treatment": "Only movement frequency changes; slower/faster refer to food reserves, not cells.",
+  "selection": "125 is the established schedule; 250 halves its frequency. Faster than 125 risks crossing the edge; no route or boundary change is introduced.",
+  "initial_reserve_energy_units": 294956.1356315613,
+  "resource_wraps": 0,
+  "units": "Grid cells, completed updates, simulator energy and infrastructure units.",
+  "source_region": "Remaining reserve > 0 after shift and release; distinct from available substrate energy.",
+  "phase": "After NN/physics/evolution/chunk death, resource shift/release, radiation, cleanup/cull.",
+  "initialization": "Independent seeded initialization with exact tensor/controller/registry/Python/NumPy/Torch RNG equality verified from initial checkpoints. Trail resume is unsupported.",
+  "limits": "Single seed. Serial CPU requested; atomic/kernel ordering may still vary. Occupancy changes do not establish learning, adaptation or individual locomotion."
+}

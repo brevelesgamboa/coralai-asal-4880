@@ -1,0 +1,35 @@
+Slide 1 — Does Food Movement Speed Change the World?
+Insert: 01_food_speed/food_speed.mp4
+Fallback: 01_food_speed/food_speed_fallback.png
+
+Slide 2 — What Happens When the Food Turns Back?
+Insert: 02_direction_change/direction_change.mp4
+Fallback: 02_direction_change/direction_change_fallback.png
+
+Slide 3 — Changing the Route Changes Where Cells Persist
+Insert: 03_findings/final_comparison.png
+
+Red = energy; green = infrastructure; blue = rotation, each auto-scaled by its full-grid maximum. Orange outlines mark the source region, not available energy. Color/brightness does not measure occupancy/population; use backup/reversal_occupancy.png for occupied-cell findings.
+
+Both direction-change conditions share the same history before the turn. Turn enabled at update 500; first upward shift at 625. One matched seed; more persistence near the returning route does not mean a larger total population. Controller corrections affect actual behavior; these files only package its presentation.
+
+Reproduction (from repository root; use fresh output directories):
+Python 3.11, ffmpeg/ffprobe, DejaVu Sans. Reuse .venv-novelty/bin/python if available.
+For a fresh environment: python3.11 -m venv .venv
+.venv/bin/python -m pip install torch==2.7.1+cpu --index-url https://download.pytorch.org/whl/cpu
+.venv/bin/python -m pip install -r configs/food_movement_requirements.txt
+Set PY to that Python, for example: PY=.venv-novelty/bin/python
+
+$PY -B scripts/compare_food_movement.py --output-dir results/week13/food_movement_comparison/repeat
+$PY -B scripts/compare_food_direction.py --reference-dir results/week13/food_movement_comparison/repeat --output-dir results/week13/food_direction_change/repeat
+$PY -B scripts/render_food_gui_style.py --experiment speeds --results-dir results/week13/food_movement_comparison/repeat
+$PY -B scripts/render_food_gui_style.py --experiment direction --results-dir results/week13/food_direction_change/repeat
+Add --view occupancy to export the supporting cyan view. Renderers read saved state channels, never compressed videos; use --output-dir for another fresh export folder.
+
+Evidence: results/week13/{food_movement_comparison,food_direction_change}/seed42_20261118/ holds frozen effective configs, comparison/measurement tables, resource accounting, validation, source hashes, exact recorded reproduce.sh commands, and full environment records. Maintained input configs are under configs/food_movement_comparison/ and configs/food_direction_change/. Base e749162 includes controller corrections (6eedc6c); the environment supports optional direction reversal. Recorded source hashes identify the original experiment code; analysis and rendering tools are maintained separately.
+
+Verify compact evidence and chosen-media hashes without raw states:
+$PY -B scripts/verify_food_results.py
+Add --decode for full playback/endpoint checks; add --raw to require the ignored local captures. Raw states/checkpoints, original exports, and extra GIFs are excluded from Git. Re-running analysis (--stage analyze) needs local runs; the direction repeat check also needs the referenced faster run. Copy local/ when transferring saved states; a Git-only checkout must reproduce runs first. Do not analyze over the frozen result directories.
+
+These are GUI-style defaults, not a reconstruction of unknown Week 11 display settings. CPU atomic ordering can change later trajectories; fixed seed does not promise bitwise reproduction. Recorded validation covers the completed experiments.
