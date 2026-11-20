@@ -1,0 +1,29 @@
+{
+  "experiment": "coral_dev",
+  "shape": [
+    400,
+    400
+  ],
+  "seed": 42,
+  "env": {
+    "name": "oases",
+    "n_cols": 3,
+    "n_rows": 3,
+    "wall_width": 10,
+    "bridge_width": 4,
+    "patches_per_region": 2,
+    "patch_radius_frac": 0.12,
+    "max_capacity": 25.0,
+    "inject_rate": 0.05,
+    "spawn_interval": 300
+  },
+  "env_persist": true,
+  "start_step": 0,
+  "resumed_from": null,
+  "start_time": "2026-10-28T13:53:10.143477",
+  "git_hash": "14fe3cc6d7fe42f2e2864999f294f06f8874d684",
+  "infra_decay": 0.002,
+  "defense_coeff": 0.5,
+  "cleanup_interval": 100,
+  "emergency_pop_cap": 1000
+}

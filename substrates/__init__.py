@@ -52,6 +52,9 @@ def create_substrate(substrate_name):
     elif substrate_name=='gol':
         substrate = GameOfLife(grid_size=64)
         rollout_steps = 1024
+    elif substrate_name=='coralai':
+        from .coralai_new import CoralaiSubstrate
+        substrate = CoralaiSubstrate(grid=128, n_genomes=4, hidden=16, base_seed=0, init_scale=0.1, rollout_steps=500)
     else:
         raise ValueError(f"Unknown substrate name: {substrate_name}")
     substrate.name = substrate_name

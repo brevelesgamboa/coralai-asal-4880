@@ -1,0 +1,199 @@
+{
+  "prompt": "branching colonies",
+  "model": "ASAL CLIP",
+  "interpretation": "Lower target loss / higher alignment indicates stronger alignment with the prompt.",
+  "generated_at": "2026-10-22T13:13:54",
+  "n_images_scored": 21,
+  "best_loss": -0.2415170669555664,
+  "progress": [
+    {
+      "step": 0,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000000.png",
+      "asal_target_loss": -0.2263336330652237,
+      "alignment": 0.2263336330652237,
+      "change_from_initial_loss": 0.0,
+      "best_loss_so_far": -0.2263336330652237,
+      "is_best_so_far": true
+    },
+    {
+      "step": 50,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000050.png",
+      "asal_target_loss": -0.228139266371727,
+      "alignment": 0.228139266371727,
+      "change_from_initial_loss": -0.001805633306503296,
+      "best_loss_so_far": -0.228139266371727,
+      "is_best_so_far": true
+    },
+    {
+      "step": 100,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000100.png",
+      "asal_target_loss": -0.2327549308538437,
+      "alignment": 0.2327549308538437,
+      "change_from_initial_loss": -0.006421297788619995,
+      "best_loss_so_far": -0.2327549308538437,
+      "is_best_so_far": true
+    },
+    {
+      "step": 150,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000150.png",
+      "asal_target_loss": -0.24053531885147095,
+      "alignment": 0.24053531885147095,
+      "change_from_initial_loss": -0.014201685786247253,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": true
+    },
+    {
+      "step": 200,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000200.png",
+      "asal_target_loss": -0.2396923452615738,
+      "alignment": 0.2396923452615738,
+      "change_from_initial_loss": -0.013358712196350098,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 250,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000250.png",
+      "asal_target_loss": -0.2382304072380066,
+      "alignment": 0.2382304072380066,
+      "change_from_initial_loss": -0.011896774172782898,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 300,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000300.png",
+      "asal_target_loss": -0.23701085150241852,
+      "alignment": 0.23701085150241852,
+      "change_from_initial_loss": -0.010677218437194824,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 350,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000350.png",
+      "asal_target_loss": -0.23623313009738922,
+      "alignment": 0.23623313009738922,
+      "change_from_initial_loss": -0.009899497032165527,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 400,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000400.png",
+      "asal_target_loss": -0.23668931424617767,
+      "alignment": 0.23668931424617767,
+      "change_from_initial_loss": -0.01035568118095398,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 450,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000450.png",
+      "asal_target_loss": -0.23751404881477356,
+      "alignment": 0.23751404881477356,
+      "change_from_initial_loss": -0.011180415749549866,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 500,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000500.png",
+      "asal_target_loss": -0.23739750683307648,
+      "alignment": 0.23739750683307648,
+      "change_from_initial_loss": -0.011063873767852783,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 550,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000550.png",
+      "asal_target_loss": -0.23750996589660645,
+      "alignment": 0.23750996589660645,
+      "change_from_initial_loss": -0.011176332831382751,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 600,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000600.png",
+      "asal_target_loss": -0.23785759508609772,
+      "alignment": 0.23785759508609772,
+      "change_from_initial_loss": -0.011523962020874023,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 650,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000650.png",
+      "asal_target_loss": -0.2395447939634323,
+      "alignment": 0.2395447939634323,
+      "change_from_initial_loss": -0.013211160898208618,
+      "best_loss_so_far": -0.24053531885147095,
+      "is_best_so_far": false
+    },
+    {
+      "step": 700,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000700.png",
+      "asal_target_loss": -0.2408624142408371,
+      "alignment": 0.2408624142408371,
+      "change_from_initial_loss": -0.014528781175613403,
+      "best_loss_so_far": -0.2408624142408371,
+      "is_best_so_far": true
+    },
+    {
+      "step": 750,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000750.png",
+      "asal_target_loss": -0.23868903517723083,
+      "alignment": 0.23868903517723083,
+      "change_from_initial_loss": -0.012355402112007141,
+      "best_loss_so_far": -0.2408624142408371,
+      "is_best_so_far": false
+    },
+    {
+      "step": 800,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000800.png",
+      "asal_target_loss": -0.24135446548461914,
+      "alignment": 0.24135446548461914,
+      "change_from_initial_loss": -0.015020832419395447,
+      "best_loss_so_far": -0.24135446548461914,
+      "is_best_so_far": true
+    },
+    {
+      "step": 850,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000850.png",
+      "asal_target_loss": -0.2409641146659851,
+      "alignment": 0.2409641146659851,
+      "change_from_initial_loss": -0.014630481600761414,
+      "best_loss_so_far": -0.24135446548461914,
+      "is_best_so_far": false
+    },
+    {
+      "step": 900,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000900.png",
+      "asal_target_loss": -0.23985210061073303,
+      "alignment": 0.23985210061073303,
+      "change_from_initial_loss": -0.013518467545509338,
+      "best_loss_so_far": -0.24135446548461914,
+      "is_best_so_far": false
+    },
+    {
+      "step": 950,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0000950.png",
+      "asal_target_loss": -0.24000318348407745,
+      "alignment": 0.24000318348407745,
+      "change_from_initial_loss": -0.01366955041885376,
+      "best_loss_so_far": -0.24135446548461914,
+      "is_best_so_far": false
+    },
+    {
+      "step": 1000,
+      "image": "external\\coralai\\runs\\coral_dev_headless_20261022_130910\\screenshots\\step_0001000.png",
+      "asal_target_loss": -0.2415170669555664,
+      "alignment": 0.2415170669555664,
+      "change_from_initial_loss": -0.015183433890342712,
+      "best_loss_so_far": -0.2415170669555664,
+      "is_best_so_far": true
+    }
+  ]
+}

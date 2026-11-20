@@ -58,8 +58,8 @@ def main(args):
 
     rng, _rng = split(rng)
     params_init = 0.*jax.random.normal(_rng, (args.pop_size, substrate.n_params))
-    pop = [rollout_fn(_rng, p) for p in tqdm(params_init)]
-    pop = jax.tree.map(lambda *x: jnp.stack(x, axis=0), *pop)
+    pop0 = rollout_fn(_rng, params_init[0])
+    pop = jax.tree.map(lambda x: jnp.repeat(x[None], args.pop_size, axis=0), pop0)  
 
     @jax.jit
     def do_iter(pop, rng): # do one iteration of the optimization

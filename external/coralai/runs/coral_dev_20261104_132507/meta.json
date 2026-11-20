@@ -1,0 +1,21 @@
+{
+  "experiment": "coral_dev",
+  "shape": [
+    800,
+    800
+  ],
+  "seed": 42,
+  "env": {
+    "name": "stripes",
+    "n_stripes": 5
+  },
+  "env_persist": true,
+  "start_step": 0,
+  "resumed_from": null,
+  "start_time": "2026-11-04T13:25:07.352698",
+  "git_hash": "14fe3cc6d7fe42f2e2864999f294f06f8874d684",
+  "infra_decay": 0.0,
+  "defense_coeff": 0.0,
+  "cleanup_interval": 100,
+  "emergency_pop_cap": 1000
+}
