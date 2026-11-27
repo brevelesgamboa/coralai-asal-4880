@@ -1,0 +1,26 @@
+{
+  "experiment": "coral_dev",
+  "config_file": "coral_dev\\config\\new_test_config.json",
+  "shape": [
+    800,
+    800
+  ],
+  "seed": 31,
+  "env": {
+    "name": "oases",
+    "n_cols": 1,
+    "n_rows": 1,
+    "wall_width": 10,
+    "bridge_width": 4,
+    "patches_per_region": 2,
+    "patch_radius_frac": 0.12,
+    "max_capacity": 25.0,
+    "inject_rate": 0.05,
+    "spawn_interval": 300
+  },
+  "env_persist": true,
+  "start_step": 0,
+  "resumed_from": null,
+  "infra_decay": 0.002,
+  "defense_coeff": 0.5
+}

@@ -1,0 +1,32 @@
+{
+  "experiment": "coral_dev",
+  "shape": [
+    800,
+    800
+  ],
+  "seed": 42,
+  "env": {
+    "name": "trail",
+    "n_lanes": 4,
+    "trail_width": 4.0,
+    "wiggle_frac": 0.03,
+    "margin_frac": 0.08,
+    "max_capacity": 20.0,
+    "goal_boost": 2.0,
+    "inject_rate": 0.02,
+    "init_energy": 0.4,
+    "seed_infra": 0.4,
+    "n_founders": 3,
+    "founder_radius": 3.0,
+    "spawn_frac": 0.12
+  },
+  "env_persist": true,
+  "start_step": 0,
+  "resumed_from": null,
+  "start_time": "2026-11-04T13:32:02.564317",
+  "git_hash": "14fe3cc6d7fe42f2e2864999f294f06f8874d684",
+  "infra_decay": 0.0,
+  "defense_coeff": 0.0,
+  "cleanup_interval": 100,
+  "emergency_pop_cap": 1000
+}

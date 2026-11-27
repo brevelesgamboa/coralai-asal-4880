@@ -1,0 +1,18 @@
+{
+  "experiment": "coral_dev",
+  "config_file": "coral_dev\\config\\progression_scoring_config.json",
+  "shape": [
+    400,
+    400
+  ],
+  "seed": 42,
+  "env": {
+    "name": "stripes",
+    "n_stripes": 12
+  },
+  "env_persist": true,
+  "start_step": 0,
+  "resumed_from": null,
+  "infra_decay": 0.0,
+  "defense_coeff": 0.0
+}
