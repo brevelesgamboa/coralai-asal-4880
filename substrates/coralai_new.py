@@ -1,8 +1,12 @@
-"""
-Coralai substrate for ASAL. Ported in Jax from the original Python/NumPy implementation in experiments/coral_dev/experiment.py.
+"""Distinct JAX Coralai implementation; not an equivalence-validated NEAT port.
+
+Spatial offsets index array axes (first, second). Headings 0..7 index KERNEL[1:];
+the center is a sensor/flow neighbor only. Sensors are center, forward, then the
+remaining perimeter in kernel order. Actions retain DIR_ORDER's signed turns.
 """
 
 import colorsys
+import inspect
 
 import numpy as np
 import jax
@@ -12,10 +16,11 @@ import jax.numpy as jnp
 KERNEL = np.array([[0, 0], [1, 0], [1, 1], [0, 1], [-1, 1],
                    [-1, 0], [-1, -1], [0, -1], [1, -1]], dtype=np.int32)
 DIR_ORDER = np.array([0, -1, 1], dtype=np.int32)   # fwd, left, right
-N_DIRS = len(KERNEL)                               # 9 (includes the centre!)
+N_DIRS = len(KERNEL) - 1                           # 8 perimeter headings
+IMPLEMENTATION_VERSION = 'coralai-jax-v2-relative-heading'
 
 N_SENSE = 6                  # energy, infra, com a/b/c/d
-N_IN = N_SENSE * N_DIRS      # 3x3 neighbourhood of the sense channels
+N_IN = N_SENSE * len(KERNEL) # 54: center + eight heading-relative neighbors
 N_OUT = 10                   # invest, liquidate, explore x4, com x4
 
 
@@ -52,6 +57,7 @@ class CoralaiSubstrate:
         self.grid = grid
         self.n_genomes = n_genomes
         self.hidden = hidden
+        self.base_seed = base_seed
         self.init_scale = init_scale
         self.rollout_steps = rollout_steps
 
@@ -96,6 +102,10 @@ class CoralaiSubstrate:
             [colorsys.hsv_to_rgb((0.55 + k / n_genomes) % 1.0, 0.75, 1.0)
              for k in range(n_genomes)], dtype=jnp.float32)
 
+    def settings(self):
+        """Effective constructor settings, including the resolved spawn count."""
+        return {name: getattr(self, name) for name in inspect.signature(type(self)).parameters}
+
     # ------------------------------------------------------------------
     # ASAL substrate interface
     # ------------------------------------------------------------------
@@ -130,7 +140,7 @@ class CoralaiSubstrate:
         rot, genome, capacity = state['rot'], state['genome'], state['capacity']
 
         # ---- 1. NN forward + activate_outputs ----------------------------
-        raw = self._nn_forward(params, energy, infra, com, genome)
+        raw = self._nn_forward(params, energy, infra, com, genome, rot)
         invest, liquidate, explore, com = self._activate(raw, genome)
 
         # ---- 2. physics ---------------------------------------------------
@@ -185,17 +195,21 @@ class CoralaiSubstrate:
     # ------------------------------------------------------------------
     # NN
     # ------------------------------------------------------------------
-    def _nn_forward(self, params, energy, infra, com, genome):
+    def _sense_inputs(self, energy, infra, com, rot):
+        sense = jnp.concatenate([jnp.log1p(jnp.maximum(energy, 0.0))[..., None],
+                                 jnp.log1p(jnp.maximum(infra, 0.0))[..., None], com], axis=-1)
+        perimeter = jnp.stack([_shift(sense, int(dx), int(dy)) for dx, dy in KERNEL[1:]], axis=-2)
+        order = (rot[..., None] + jnp.arange(N_DIRS)) % N_DIRS
+        relative = jnp.take_along_axis(perimeter, order[..., None], axis=-2)
+        return jnp.concatenate([sense[..., None, :], relative], axis=-2).reshape((*rot.shape, N_IN))
+
+    def _nn_forward(self, params, energy, infra, com, genome, rot):
         w1 = self._base['w1'] + params['w1']
         b1 = self._base['b1'] + params['b1']
         w2 = self._base['w2'] + params['w2']
         b2 = self._base['b2'] + params['b2']
 
-        sense = jnp.concatenate([jnp.log1p(jnp.maximum(energy, 0.0))[..., None],
-                                 jnp.log1p(jnp.maximum(infra, 0.0))[..., None],
-                                 com], axis=-1)                              # (H,W,6)
-        nbhd = jnp.concatenate([_shift(sense, int(dx), int(dy)) for dx, dy in KERNEL],
-                               axis=-1)                                      # (H,W,54)
+        nbhd = self._sense_inputs(energy, infra, com, rot)
         h = jnp.tanh(jnp.einsum('hwi,kij->khwj', nbhd, w1) + b1[:, None, None, :])
         out = jnp.einsum('khwj,kjo->khwo', h, w2) + b2[:, None, None, :]     # (K,H,W,10)
         onehot = jax.nn.one_hot(genome, self.n_genomes)                      # dead -> zeros
@@ -224,14 +238,14 @@ class CoralaiSubstrate:
                 explore * alive[..., None], com)
 
     def _explore(self, genome, rot, energy, infra, explore):
-        kernel = jnp.asarray(KERNEL)
+        kernel = jnp.asarray(KERNEL[1:])
         dir_order = jnp.asarray(DIR_ORDER)
 
         max_act = jnp.argmax(explore, axis=-1)
         att_dir = (rot + dir_order[jnp.clip(max_act - 1, 0, 2)] + N_DIRS) % N_DIRS
         att_dx, att_dy = kernel[att_dir][..., 0], kernel[att_dir][..., 1]
         # a "serious attacker" pays loser_cost whether or not it wins
-        serious = ((genome >= 0) & (max_act != 0) & (att_dir != 0)
+        serious = ((genome >= 0) & (max_act != 0)
                    & (energy >= self.min_bid))
 
         best_bid = jnp.where(genome >= 0,
@@ -239,7 +253,7 @@ class CoralaiSubstrate:
         win_off = jnp.full(genome.shape, -1, jnp.int32)
         win_genome, win_rot = genome, rot
 
-        for k in range(1, N_DIRS):                 # same order as the kernel loop
+        for k in range(1, len(KERNEL)):
             dx, dy = int(KERNEL[k, 0]), int(KERNEL[k, 1])
             points_here = (_shift(serious, dx, dy)
                            & (_shift(att_dx, dx, dy) + dx == 0)
@@ -254,7 +268,7 @@ class CoralaiSubstrate:
         won = win_off >= 0
         infra_delta = jnp.where(won, self.claim_efficiency * best_bid, 0.0)
         energy_delta = -self.loser_cost * energy * serious
-        for k in range(1, N_DIRS):                 # winner pays the rest of its bid
+        for k in range(1, len(KERNEL)):            # winner pays the rest of its bid
             dx, dy = int(KERNEL[k, 0]), int(KERNEL[k, 1])
             charge = jnp.where(win_off == k, (1.0 - self.loser_cost) * best_bid, 0.0)
             energy_delta = energy_delta - _scatter_shift(charge, dx, dy)
@@ -274,7 +288,7 @@ class CoralaiSubstrate:
         # distribute_energy / distribute_infra: overflow spreads evenly over 3x3
         def spread(x, cap):
             over = x > cap
-            share = jnp.where(over, x / N_DIRS, 0.0)
+            share = jnp.where(over, x / len(KERNEL), 0.0)
             return jnp.where(over, 0.0, x) + sum(_scatter_shift(share, dx, dy)
                                                  for dx, dy in offs)
 
@@ -317,18 +331,7 @@ class CoralaiSubstrate:
         return genome
 
 
-# ----------------------------------------------------------------------
-# Register in substrates/__init__.py::create_substrate:
-#
-#     elif substrate_name == 'coralai':
-#         from .coralai import CoralaiSubstrate
-#         substrate = CoralaiSubstrate()
-#
-# If your create_substrate sets rollout_steps itself (check how 'boids' does
-# it), add:  substrate.rollout_steps = 500
-# ----------------------------------------------------------------------
-
-if __name__ == "__main__":   # smoke test:  python coralai.py
+if __name__ == "__main__":   # python -m substrates.coralai_new
     import time
     sub = CoralaiSubstrate()
     rng = jax.random.PRNGKey(0)

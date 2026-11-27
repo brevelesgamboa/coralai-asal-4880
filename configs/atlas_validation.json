@@ -1,0 +1,8 @@
+{
+  "grid": 128,
+  "n_genomes": 4,
+  "hidden": 16,
+  "base_seed": 0,
+  "init_scale": 0.1,
+  "rollout_steps": 50
+}
