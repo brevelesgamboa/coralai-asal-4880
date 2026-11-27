@@ -1,0 +1,175 @@
+{
+  "source_revision": "a56370965fba1619b9cef35b61158b982726537d",
+  "audit_revision": "a56370965fba1619b9cef35b61158b982726537d",
+  "audit_status": "Fetched origin/main is the audited revision. Center/heading mixing, global-sensing/relative-action inconsistency, factory rollout override, copied initialization, varying evaluation worlds, short-run save failure, overwrite risk, incomplete legacy replay metadata, float32 preview storage, and 64-tile truncation were confirmed and addressed.",
+  "branch": "fix/atlas-replay-validation",
+  "worktree": "/home/sparky/Documents/School/CS 4880/coralai-atlas-validation",
+  "commands": {
+    "search": "JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=.cache/matplotlib HF_HOME=.cache/atlas-hf .venv/bin/python main_illuminate.py --substrate coralai --substrate_config configs/atlas_validation.json --foundation_model clip --offline --seed 0 --eval_seed 42 --pop_size 16 --n_child 4 --n_iters 5 --rollout_steps 50 --k_nbrs 2 --sigma 0.1 --record_selection --save_dir results/optional/atlas_validation/seed0_eval42_20261127",
+    "replay": "JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=.cache/matplotlib HF_HOME=.cache/atlas-hf .venv/bin/python illumination_results/res.py --run_dir results/optional/atlas_validation/seed0_eval42_20261127 --candidate_ids 3 16 35 --offline",
+    "tests": "JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=.cache/matplotlib HF_HOME=.cache/atlas-hf .venv/bin/python -m unittest discover -s tests -p test_illumination.py -v",
+    "export": "JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=.cache/matplotlib HF_HOME=.cache/atlas-hf .venv/bin/python illumination_results/res.py --run_dir results/optional/atlas_validation/seed0_eval42_20261127"
+  },
+  "regression": {
+    "tests": 10,
+    "passed": true,
+    "test_source_sha256": "9a40da2f25f96f01426f159b5d89ce1ed3d7b0d0b279534f0b892178aa2ce33d",
+    "cases": [
+      "48 direction/turn fixtures, including toroidal boundaries",
+      "54-input relative sensing and genome-specific weight/bias/flatten mapping",
+      "candidate world/state isolation",
+      "nine-cell resource conservation unchanged",
+      "n_iters 0,1,5,9 final saves and output collision refusal",
+      "legacy/fingerprint rejection",
+      "65-entry two-page gallery with a deliberate image duplicate",
+      "candidate identity/key/parameter selection alignment"
+    ],
+    "post_run_export_test": "The 65-entry pagination/duplicate/mapping regression passed again after the title-only edit (0.679 seconds). Existing Coralai gallery re-export was byte-identical."
+  },
+  "environment": {
+    "existing_jax_environment_or_clip_cache_found": false,
+    "setup": "New ignored .venv using Python 3.11 and existing requirements.txt pins; existing environments and system Python unchanged. Pinned CLIP snapshot cached under ignored .cache/atlas-hf. No feeding-cycle environment used.",
+    "versions": {
+      "jax": "0.4.38",
+      "jaxlib": "0.4.38",
+      "flax": "0.10.2",
+      "evosax": "0.1.6",
+      "transformers": "4.47.1",
+      "numpy": "2.2.1",
+      "Pillow": "11.0.0"
+    }
+  },
+  "selection_verification": {
+    "iterations": 5,
+    "numpy_float32_kill_sequences_match": 5,
+    "max_float64_choice_regret": 0.0,
+    "archive_ids_match_final_selection": true,
+    "initial_ids_then_monotonic_child_ids_verified": true,
+    "method": "Independent NumPy greedy cosine-similarity oracle on saved pool embeddings; float64 reference also checked each saved removal against the minimum score."
+  },
+  "gallery_verification": {
+    "entries_checked": 16,
+    "all_image_boxes_match_saved_uint8_previews": true,
+    "all_candidate_ids_keys_and_parameter_row_references_match": true,
+    "counts": {
+      "archive_entries": 16,
+      "unique_effective_parameters": 16,
+      "unique_rendered_images": 16,
+      "duplicate_parameter_entries": 0,
+      "duplicate_image_entries": 0
+    },
+    "visually_inspected": "gallery_001.png"
+  },
+  "replay": {
+    "entries": [
+      {
+        "candidate_id": 3,
+        "archive_index": 0,
+        "eval_key": [
+          0,
+          42
+        ],
+        "float_image_sha256_matches": true,
+        "uint8_image_max_abs_difference": 0,
+        "embedding_exact_match": false,
+        "embedding_max_abs_difference": 3.688037395477295e-07
+      },
+      {
+        "candidate_id": 16,
+        "archive_index": 7,
+        "eval_key": [
+          0,
+          42
+        ],
+        "float_image_sha256_matches": true,
+        "uint8_image_max_abs_difference": 0,
+        "embedding_exact_match": false,
+        "embedding_max_abs_difference": 2.4400651454925537e-07
+      },
+      {
+        "candidate_id": 35,
+        "archive_index": 15,
+        "eval_key": [
+          0,
+          42
+        ],
+        "float_image_sha256_matches": true,
+        "uint8_image_max_abs_difference": 0,
+        "embedding_exact_match": false,
+        "embedding_max_abs_difference": 2.086162567138672e-07
+      }
+    ],
+    "jax_backend": "cpu",
+    "note": "Measured reconstruction in this environment; bitwise identity across other backends/versions is not promised."
+  },
+  "observed_resources": {
+    "external_wall_seconds": 40.11,
+    "search_internal_seconds": 38.217643495999255,
+    "initial_evaluation_including_compilation_seconds": 14.801478465999935,
+    "iteration_seconds": [
+      12.033888834999743,
+      1.5819280079995224,
+      1.4330562300001475,
+      1.4289541299995108,
+      1.596577506000358
+    ],
+    "peak_rss_kib": 5957432,
+    "replay_external_wall_seconds": 15.23,
+    "replay_peak_rss_kib": 4197228,
+    "archive_bytes": 855790,
+    "preview_dtype": "uint8; float-image hashes also retained",
+    "controller_parameters": "16 x 4200 float32 offsets plus all four base-network tensors, retained in archive.npz",
+    "ignored_environment_bytes_approx": 978321408,
+    "ignored_clip_cache_bytes_approx": 609222656
+  },
+  "limits": [
+    "One fixed starting world and 50 updates; no cross-world generality or behavioral diversity established.",
+    "Same initial patches remain visible; genome colors can dominate CLIP differences.",
+    "50 completed updates end before positive-time radiation at update 51 and patch respawn at update 250. Longer dynamics are not validated by this smoke test.",
+    "MLP controller bank, initialization, radiation/reseeding and renderer intentionally remain distinct from the original NEAT implementation.",
+    "Selection remains quadratic in pool storage with repeated row sorting per child; optional pool-embedding traces also grow with iterations.",
+    "Replay image arrays matched exactly for IDs 3,16,35; embeddings differ by at most 3.688037395477295e-7 across batched search versus individual replay."
+  ],
+  "recommendation": "The pipeline is ready for a modest follow-up, not a giant atlas. Keep 16 entries and fixed key 42, extend to 500 updates to exercise disturbances/patch respawn, then profile before increasing archive size. Current 16-entry CLIP evaluation already peaks near 5.7 GiB RSS.",
+  "artifacts": {
+    "meta.json": {
+      "bytes": 6205,
+      "sha256": "0e132fec599d515a6028cf98c3318068e6cc137868c92732ce48d7844e6be040"
+    },
+    "history.npz": {
+      "bytes": 225,
+      "sha256": "64735e3609da599ea7d085b4bc01ceaf0bd0c9aa8b4b32cc9104e8d66636c949"
+    },
+    "selection.npz": {
+      "bytes": 191472,
+      "sha256": "1072a5b8af50f6e999fbec3cb57cd2501dd7beef5cca8a812b7788544d295b16"
+    },
+    "archive.npz": {
+      "bytes": 855790,
+      "sha256": "0d9cbc1f1eb5f3e137454266564e360fb87b5856c5c26ad3ea49b9c3b0bacfeb"
+    },
+    "gallery_001.png": {
+      "bytes": 545196,
+      "sha256": "e27b288983de54c2098429fca4b1d827c771e3375d037f4ff110d75c4cca0cc5"
+    },
+    "gallery.json": {
+      "bytes": 5794,
+      "sha256": "d5270b48d49373fd240f4e0bef6ec1815593a6fdaef06fec15cbe75e23786f98"
+    },
+    "replay.json": {
+      "bytes": 826,
+      "sha256": "95d51bf0e33f59c49e054fa61fc4760c5035708f4e740d04cb7d52985dbd8809"
+    }
+  },
+  "review_source_sha256": {
+    "substrates/coralai_new.py": "a6e5045043d7981520de8f95fbad1b0e05ed39445c24f6ed453322870ba9fd0e",
+    "substrates/__init__.py": "00a18f25811009b6abdae9e0a5e23d9841a175af057a87fd8a582672607745be",
+    "rollout.py": "59c49d430a2e00d20f5c6ecdb5f649402c598747af105522b3e2269b7a1fd693",
+    "foundation_models/clip.py": "50fdd9067ef4059f164524981a3f21a7224737b8e40974c2b9fa842fff898b1c",
+    "foundation_models/pixels.py": "6dd0e13abf650ff8375a22ac903c895eda715e1eb310659b992040148ecf5d6d",
+    "main_illuminate.py": "34fcbd699f76d90e38acc206afdce7feec3e1c1b9d628eb3bd8c9d44c6cd62f0",
+    "illumination_results/res.py": "9e752a7fa07ef692038ef9250922d72ee73b3e619f90fa318edbed4188c53ddc",
+    "asal_metrics.py": "75b7eaa9a751acf7e88c5902621937401ec28ab84199edf11fdb4db0514f5aa4"
+  },
+  "post_run_change": "Only the generic gallery title now names non-Coralai substrates correctly. Reversing that title-only edit exactly reproduces the recorded execution source hash. All simulator/model source hashes and all saved artifact hashes remain unchanged; original run provenance is preserved."
+}

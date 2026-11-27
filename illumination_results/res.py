@@ -1,25 +1,24 @@
-import pickle
-import numpy as np
+"""Export every atlas entry or replay identified candidates; never rerun search."""
+import argparse
+from pathlib import Path
+import sys
 
-pop = pickle.load(open("illumination_results/test4/pop.pkl", "rb"))
-data = pickle.load(open("illumination_results/test4/data.pkl", "rb"))
-#print(pop)
-#print(data)
-#print(pop['params'].shape, data['loss'][-5:])
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from main_illuminate import export_gallery, replay_archive
 
-import matplotlib.pyplot as plt
 
-fig, axs = plt.subplots(8, 8, figsize=(16, 16))
-for ax, img in zip(axs.flat, pop['rgb'][:64]):
-    ax.imshow(img); ax.axis('off')
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--run_dir', type=Path, required=True)
+    parser.add_argument('--candidate_ids', nargs='+', type=int, help='reconstruct these saved candidate IDs and compare images/embeddings')
+    parser.add_argument('--clip_model_path', type=Path)
+    parser.add_argument('--offline', action='store_true')
+    args = parser.parse_args()
+    if args.candidate_ids:
+        print(replay_archive(args.run_dir, args.candidate_ids, args.clip_model_path, args.offline))
+    else:
+        print(export_gallery(args.run_dir)['counts'])
 
-#plt.show()
 
-'''i = 0  # which individual
-img = pop['rgb'][i]
-plt.imshow(img)
-plt.axis('off')
-plt.show()
-
-plt.show()'''
-
+if __name__ == '__main__':
+    main()

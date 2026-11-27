@@ -11,7 +11,7 @@ from .nca import NCA
 from .gol import GameOfLife
 
 
-def create_substrate(substrate_name):
+def create_substrate(substrate_name, **options):
     """
     Create the substrate given a substrate name.
     The substrate parameterizes the space of simulations to search over.
@@ -31,6 +31,8 @@ def create_substrate(substrate_name):
         - 'nca_d3': NCA with d_state=3
         - 'gol': GameOfLife
     """
+    if options and substrate_name != 'coralai':
+        raise ValueError('Constructor overrides are supported only for the JAX coralai substrate')
     rollout_steps = 1000
     if substrate_name=='boids':
         substrate = Boids(n_boids=128, n_nbrs=16, visual_range=0.1, speed=0.5, controller='network', dt=0.01, bird_render_size=0.015, bird_render_sharpness=40.)
@@ -54,7 +56,9 @@ def create_substrate(substrate_name):
         rollout_steps = 1024
     elif substrate_name=='coralai':
         from .coralai_new import CoralaiSubstrate
-        substrate = CoralaiSubstrate(grid=128, n_genomes=4, hidden=16, base_seed=0, init_scale=0.1, rollout_steps=500)
+        settings = dict(grid=128, n_genomes=4, hidden=16, base_seed=0, init_scale=0.1, rollout_steps=500)
+        substrate = CoralaiSubstrate(**(settings | options))
+        rollout_steps = substrate.rollout_steps
     else:
         raise ValueError(f"Unknown substrate name: {substrate_name}")
     substrate.name = substrate_name
