@@ -1,0 +1,96 @@
+{
+  "question": "Does reserve movement interact with the timing of food availability?",
+  "status": "Exploratory; not adopted as main project findings.",
+  "source_revision": "54de9f5ae9960de4b744ad8338819ef2c239ada7",
+  "reference_config": "configs/food_movement_comparison/fixed.json",
+  "grid": [
+    400,
+    400
+  ],
+  "seed": 42,
+  "completed_updates": 1000,
+  "capture_interval": 25,
+  "cycles": 5,
+  "steady_rate": 0.02,
+  "pulsed_rate": 0.04,
+  "feeding_update_ranges_inclusive": [
+    [
+      1,
+      100
+    ],
+    [
+      201,
+      300
+    ],
+    [
+      401,
+      500
+    ],
+    [
+      601,
+      700
+    ],
+    [
+      801,
+      900
+    ]
+  ],
+  "paused_update_ranges_inclusive": [
+    [
+      101,
+      200
+    ],
+    [
+      301,
+      400
+    ],
+    [
+      501,
+      600
+    ],
+    [
+      701,
+      800
+    ],
+    [
+      901,
+      1000
+    ]
+  ],
+  "movement_updates": [
+    125,
+    250,
+    375,
+    500,
+    625,
+    750,
+    875,
+    1000
+  ],
+  "movement": "Translate remaining reserve only, +2 y cells before release; zero replenishment.",
+  "capture_phase": "After all operations of the labeled completed update. Feeding/Paused names describe release at that update, not the next update. At update 0 release has not started.",
+  "cycle_end_comparisons": [
+    200,
+    400,
+    600,
+    800,
+    1000
+  ],
+  "feeding_end_comparisons": [
+    100,
+    300,
+    500,
+    700,
+    900
+  ],
+  "planned_analysis": "Compare occupancy (genome >= 0), spatial disagreement, within-phase occupancy changes, colonization and radiation gains, and movement x feeding differences at both feeding and complete-cycle ends. Single seed; no universal strategy ranking.",
+  "accounting": {
+    "nominal_per_source_cell_release": 20.0,
+    "material_release_difference_relative_tolerance": 1e-06,
+    "delivery_accounting_absolute_tolerance": 0.02,
+    "exact_float32_replay_absolute_tolerance": 1e-07,
+    "reserve_residual_bound": "sum over release steps: 0.5 * float32 spacing(max initial capacity) * initial source cells; subtraction rounding only, no correction.",
+    "rationale": "Float32 rate/addition/subtraction round; accumulate measured changes in float64. One ppm defines material end-of-experiment supply mismatch, not biological significance. Exact reserve replay must also pass. Record residuals without rescaling."
+  },
+  "scope": "Four specified conditions only. No schedule tuning, new physics, ASAL search, main-result edits, commits or pushes."
+}
